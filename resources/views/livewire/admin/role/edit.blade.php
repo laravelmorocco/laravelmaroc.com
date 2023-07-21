@@ -16,7 +16,7 @@
 
         <div class="float-right p-2 mb-4">
             <button
-                class="leading-4 md:text-sm sm:text-xs bg-green-500 text-white hover:text-green-800 hover:bg-green-100 active:bg-green-200 focus:ring-green-300 font-medium uppercase px-6 py-2 rounded-md shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 text-center"
+                class="leading-4 md:text-sm sm:text-xs bg-red-500 text-white hover:text-red-800 hover:bg-red-100 active:bg-red-200 focus:ring-green-300 font-medium uppercase px-6 py-2 rounded-md shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 text-center"
                 type="submit">
                 {{ __('Save') }}
             </button>

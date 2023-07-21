@@ -79,7 +79,7 @@
                     </x-table.td>
                     <x-table.td>
                         @if ($featuredbanner['featured'] == false)
-                            <a class="btn btn-sm bg-green-500 text-white" title="{{ __('Set as featured') }}"
+                            <a class="btn btn-sm bg-red-500 text-white" title="{{ __('Set as featured') }}"
                                 wire:click="setFeatured( {{ $featuredbanner['id'] }} )">
                                 {{ __('Set as featured') }}
                             </a>

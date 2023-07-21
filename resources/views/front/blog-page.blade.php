@@ -16,7 +16,7 @@
             <meta itemprop="url" content="{{ route('front.blogPage', $blog->slug) }}" />
 
             <h1
-                class="text-5xl md:text-6xl lg:text-7xl px-10 text-center leading-tight text-green-600 font-bold tracking-tighter mt-20">
+                class="text-5xl md:text-6xl lg:text-7xl px-10 text-center leading-tight text-red-600 font-bold tracking-tighter mt-20">
                 <span class="hover:underline transition duration-200 ease-in-out uppercase">
                     {{ $blog->title }}
                 </span>

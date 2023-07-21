@@ -7,7 +7,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Livewire\Front\Index as FrontIndex;
 use App\Http\Livewire\Front\Blogs as BlogIndex;
 use App\Http\Livewire\Front\ShowBlog as BlogShow;
-use App\Livewire\Front\DynamicPage;
+use App\Http\Livewire\Front\DynamicPage;
 use App\Http\Controllers\UploadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
