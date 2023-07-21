@@ -6,6 +6,7 @@ namespace App\Http\Livewire\Front;
 
 use App\Models\Project;
 use App\Models\Section;
+use App\Models\Blog;
 use App\Models\Developer;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -20,9 +21,9 @@ class Index extends Component
         return Section::where('type', PageType::HOME)->active()->firstOrFail();
     }
 
-    public function getProjectsProperty()
+    public function getBlogsProperty()
     {
-        return Project::all();
+        return Blog::query()->active()->latest()->take(6)->get();
     }
 
     public function getDevelopersProperty(): Collection

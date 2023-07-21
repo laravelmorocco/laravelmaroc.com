@@ -6,6 +6,7 @@ namespace App\Models;
 
 use App\Support\HasAdvancedFilter;
 use Illuminate\Database\Eloquent\Model;
+use App\Enums\Status;
 
 class Blog extends Model
 {
@@ -57,5 +58,14 @@ class Blog extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    protected $casts = [
+        'satuts' => Status::class,
+    ];
+
+    public function scopeActive($query): void
+    {
+        $query->where('status', true);
     }
 }

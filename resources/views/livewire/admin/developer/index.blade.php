@@ -101,17 +101,17 @@
             </tr>
         </x-slot>
         <x-table.tbody>
-            @forelse($developers as $partner)
-                <x-table.tr wire:loading.class.delay="opacity-50" wire:key="row-{{ $partner->id }}">
+            @forelse($developers as $developer)
+                <x-table.tr wire:loading.class.delay="opacity-50" wire:key="row-{{ $developer->id }}">
                     <x-table.td>
-                        <input type="checkbox" value="{{ $partner->id }}" wire:model="selected">
+                        <input type="checkbox" value="{{ $developer->id }}" wire:model="selected">
                     </x-table.td>
                     <x-table.td>
-                        {{ $partner->name }}
+                        {{ $developer->name }}
                     </x-table.td>
                     <x-table.td>
-                        @if ($partner->image)
-                            <img src="{{ asset('images/developers/' . $partner->image) }}" alt="{{ $partner->name }}"
+                        @if ($developer->image)
+                            <img src="{{ asset('images/developers/' . $developer->image) }}" alt="{{ $developer->name }}"
                                 class="w-10 h-10 rounded-full">
                         @else
                             {{ __('No image') }}
@@ -119,11 +119,11 @@
                     </x-table.td>
                     <x-table.td>
                         <div class="flex justify-start space-x-2">
-                            <x-button primary type="button" wire:click="$emit('editModal', {{ $partner->id }})"
+                            <x-button primary type="button" wire:click="$emit('editModal', {{ $developer->id }})"
                                 wire:loading.attr="disabled">
                                 <i class="fas fa-edit"></i>
                             </x-button>
-                            <x-button danger type="button" wire:click="deleteModal({{ $partner->id }})"
+                            <x-button danger type="button" wire:click="deleteModal({{ $developer->id }})"
                                 wire:loading.attr="disabled">
                                 <i class="fas fa-trash-alt"></i>
                             </x-button>
@@ -150,7 +150,7 @@
     @livewire('admin.developers.create')
 
     <!-- Edit Modal -->
-    @livewire('admin.developers.edit', ['partner' => $partner])
+    @livewire('admin.developers.edit', ['developer' => $developer])
     
     </x-card>
 </div>
