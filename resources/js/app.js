@@ -62,23 +62,6 @@ Alpine.data("mainState", () => {
         }
     };
 
-    const loadingMask = {
-        pageLoaded: false,
-        init() {
-            window.onload = () => {
-                this.pageLoaded = true;
-            };
-            this.animateCharge();
-        },
-        animateCharge() {
-            setInterval(() => {
-                this.showText = true;
-                setTimeout(() => {
-                    this.showText = false;
-                }, 2000);
-            }, 4000);
-        },
-    };
 
 
     const getTheme = () => {
@@ -108,7 +91,6 @@ Alpine.data("mainState", () => {
 
     return {
         init,
-        loadingMask,
         scrollToAnchor,
         isDarkMode: getTheme(),
         toggleTheme() {
@@ -143,6 +125,15 @@ Alpine.data("mainState", () => {
         scrollingUp: false,
     };
 });
+
+Alpine.data("loadingMask", () => ({
+    pageLoaded: false,
+    init() {
+        window.onload = () => {
+            this.pageLoaded = true;
+        };
+    },
+}));
 
 Alpine.plugin(collapse)
 

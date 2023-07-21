@@ -65,7 +65,7 @@
 
     <section class="relative mt-6">
 
-        {{-- <x-topheader /> --}}
+        <x-topheader />
 
         <x-header vertical />
 

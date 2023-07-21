@@ -21,7 +21,7 @@
         </svg>
         <span class="hidden h-{{ $sizing[$size] }} w-{{ $sizing[$size] }}"></span>
         <div class="absolute top-0 left-0 w-full h-full animate-charge"></div>
-        <p x-show="showText" class="w-full text-red-500 text-center font-bold text-xl py-6">
+        <p class="w-full text-red-500 text-center font-bold text-xl py-6">
             LaravelMaroc
         </p>
     </div>

@@ -10,6 +10,6 @@ class Index extends Component
 {
     public function render()
     {
-        return view('livewire.auth.index')->extends('layouts.app');
+        return view('livewire.auth.index')->extends('layouts.guest');
     }
 }
