@@ -121,13 +121,13 @@
                                                 <a data-text="{{__('About')}}" data-type="about" class="addToMenus btn btn-info btn-sm float-right" href=""><i class="fas fa-plus"></i></a>
                                             </li>
         
-                                            <li class="list-group-item">{{__('Services')}}
-                                                <a data-text="{{__('Services')}}" data-type="services" class="addToMenus btn btn-info btn-sm float-right" href=""><i class="fas fa-plus"></i></a>
+                                            <li class="list-group-item">{{__('Tutorials')}}
+                                                <a data-text="{{__('Tutorials')}}" data-type="tutorials" class="addToMenus btn btn-info btn-sm float-right" href=""><i class="fas fa-plus"></i></a>
                                             </li>
                                          
         
                                             <li class="list-group-item">{{__('Portfolios')}}
-                                                <a data-text="{{__('Portfolios')}}" data-type="projects" class="addToMenus btn btn-info btn-sm float-right" href=""><i class="fas fa-plus"></i></a>
+                                                <a data-text="{{__('Portfolios')}}" data-type="tutorials" class="addToMenus btn btn-info btn-sm float-right" href=""><i class="fas fa-plus"></i></a>
                                             </li>
                                             <li class="list-group-item">{{__('Pages')}}
                                                 <a data-text="{{__('Pages')}}" data-type="pages" class="addToMenus btn btn-info btn-sm float-right" href=""><i class="fas fa-plus"></i></a>

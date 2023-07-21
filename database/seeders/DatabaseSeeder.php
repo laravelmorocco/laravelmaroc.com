@@ -28,9 +28,9 @@ class DatabaseSeeder extends Seeder
             BlogSeeder::class,
             SliderSeeder::class,
             PermissionSeeder::class,
-            ServiceSeeder::class,
-            ProjectSeeder::class,
-            PartnerSeeder::class,
+            TutorialSeeder::class,
+            TutorialSeeder::class,
+            DeveloperSeeder::class,
 
         ]);
     }

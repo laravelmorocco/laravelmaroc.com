@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Livewire\Admin\Project;
 
 use App\Models\Project;
-use App\Models\Service;
+use App\Models\Tutorial;
 use App\Models\Language;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -17,7 +17,7 @@ class Create extends Component
     use LivewireAlert;
     use WithFileUploads;
 
-    public $project;
+    public $tutorial;
 
     public $image;
 
@@ -32,14 +32,14 @@ class Create extends Component
     ];
 
     protected $rules = [
-        'project.title'            => 'required|unique:projects,title|max:191',
+        'tutorial.title'            => 'required|unique:tutorials,title|max:191',
         'description'          => 'required',
-        'project.client_name'      => 'required',
-        'project.link'             => 'required',
-        'project.service_id'       => 'required',
-        'project.meta_title'       => 'nullable',
-        'project.meta_description' => 'nullable',
-        'project.language_id'      => 'required',
+        'tutorial.client_name'      => 'required',
+        'tutorial.link'             => 'required',
+        'tutorial.user_id'       => 'required',
+        'tutorial.meta_title'       => 'nullable',
+        'tutorial.meta_description' => 'nullable',
+        'tutorial.language_id'      => 'required',
     ];
 
     public function updatedDescription($value)
@@ -53,7 +53,7 @@ class Create extends Component
 
         $this->resetValidation();
 
-        $this->project = new Project();
+        $this->tutorial = new Project();
 
         $this->description = "";
 
@@ -62,29 +62,29 @@ class Create extends Component
 
     public function submit()
     {
-        $this->project->slug = Str::slug($this->project->title);
+        $this->tutorial->slug = Str::slug($this->tutorial->title);
 
         if ($this->image) {
-            $imageName = Str::slug($this->project->title).'.'.$this->image->extension();
-            $this->image->storeAs('projects', $imageName);
-            $this->project->image = $imageName;
+            $imageName = Str::slug($this->tutorial->title).'.'.$this->image->extension();
+            $this->image->storeAs('tutorials', $imageName);
+            $this->tutorial->image = $imageName;
         }
 
         // Multiple images within an array
 
         foreach ($this->images as $key => $image) {
-            $this->images[$key] = $image->store('project', 'public');
+            $this->images[$key] = $image->store('tutorial', 'public');
         }
 
         $this->images = json_encode($this->images);
 
-        $this->project->gallery = $this->images;
+        $this->tutorial->gallery = $this->images;
 
-        $this->project->description = $this->description;
+        $this->tutorial->description = $this->description;
 
-        $this->project->save();
+        $this->tutorial->save();
 
-        $this->alert('success', __('Service created successfully!'));
+        $this->alert('success', __('Project created successfully!'));
 
         $this->emit('refreshIndex');
 
@@ -93,7 +93,7 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.admin.project.create');
+        return view('livewire.admin.tutorial.create');
     }
 
     public function getLanguagesProperty()
@@ -101,8 +101,8 @@ class Create extends Component
         return Language::pluck('name', 'id')->toArray();
     }
 
-    public function getServicesProperty()
+    public function getProjectsProperty()
     {
-        return Service::select('title', 'id')->get();
+        return Project::select('title', 'id')->get();
     }
 }

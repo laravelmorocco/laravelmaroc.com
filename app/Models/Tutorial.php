@@ -6,33 +6,39 @@ namespace App\Models;
 
 use App\Support\HasAdvancedFilter;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\Enums\Status;
 
-class Project extends Model
+class Tutorial extends Model
 {
     use HasAdvancedFilter;
     use HasFactory;
 
-    public $table = 'projects';
-
     public const ATTRIBUTES = [
-        'id', 'title', 'status', 'slug',
+        'id',
+        'title',
+        'status',
+        'type',
     ];
 
     public $orderable = self::ATTRIBUTES;
     public $filterable = self::ATTRIBUTES;
 
     protected $fillable = [
-        'id', 'title', 'status', 'slug', 
-        'image', 'service_id', 'content', 'meta_title',
-        'meta_description', 'gallery', 'link', 'language_id',
-        'user_id'
+        'title',
+        'image',
+        'content',
+        'tags',
+        'options',
+        'slug',
+        'status',
+        'language_id',
+        'type',
     ];
 
     protected $casts = [
-        'satuts' => Status::class,
+        'options'  => 'json',
+        'tags' => 'json',
+        'satuts'   => Status::class,
     ];
 
     /**
@@ -47,18 +53,8 @@ class Project extends Model
         $query->where('status', true);
     }
 
-    public function service(): BelongsTo
-    {
-        return $this->belongsTo(Tutorial::class, 'service_id');
-    }
-
     public function language()
     {
         return $this->belongsTo(Language::class);
-    }
-  
-    public function user()
-    {
-        return $this->belongsTo(User::class);
     }
 }

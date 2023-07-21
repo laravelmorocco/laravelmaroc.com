@@ -102,26 +102,6 @@ $mainbs = json_encode($mainbs);
         }
 
     });
-
-    // announcement banner magnific popup
-    if (mainbs.is_announcement == 1) {
-        $('.announcement-banner').magnificPopup({
-            type: 'image',
-            mainClass: 'mfp-fade',
-            callbacks: {
-                open: function() {
-                    $.magnificPopup.instance.close = function() {
-                        // Do whatever else you need to do here
-                        sessionStorage.setItem("announcement", "closed");
-                        // console.log(sessionStorage.getItem('announcement'));
-
-                        // Call the original close method to close the announcement
-                        $.magnificPopup.proto.close.call(this);
-                    };
-                }
-            }
-        });
-    }
 </script>
 
 {{-- Cookie alert dialog start --}}

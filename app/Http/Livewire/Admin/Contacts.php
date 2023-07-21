@@ -71,7 +71,7 @@ class Contacts extends Component
         $this->sortBy = 'id';
         $this->sortDirection = 'desc';
         $this->perPage = 100;
-        $this->paginationOptions = config('project.pagination.options');
+        $this->paginationOptions = config('tutorial.pagination.options');
         $this->orderable = (new Contact())->orderable;
     }
 

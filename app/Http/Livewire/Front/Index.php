@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Livewire\Front;
 
+use App\Models\Tutorial;
 use App\Models\Project;
-use App\Models\Service;
 use App\Models\Section;
-use App\Models\Partner;
+use App\Models\Developer;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
@@ -18,17 +18,22 @@ class Index extends Component
 {
     public function getHomeSectionProperty()
     {
-        return Section::where('type', PageType::HOME)->active()->first();
+        return Section::where('type', PageType::HOME)->active()->firstOrFail();
+    }
+    
+    public function getProjectsProperty()
+    {
+        return Project::all();
     }
 
-    public function getPartnersProperty(): Collection
+    public function getDevelopersProperty(): Collection
     {
-        return Partner::active()->get();
+        return Developer::active()->get();
     }
 
     public function getAboutSectionProperty()
     {
-        return Section::where('type', PageType::ABOUT)->active()->first();
+        return Section::where('type', PageType::ABOUT)->active()->firstOrFail();
     }
 
     public function render(): View|Factory

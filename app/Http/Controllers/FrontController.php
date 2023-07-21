@@ -7,8 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Page;
-use App\Models\Service;
-use App\Models\Project;
+use App\Models\Tutorial;
 use App\Models\Section;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
@@ -28,14 +27,6 @@ class FrontController extends Controller
         return back();
     }
 
-    public function index()
-    {
-        $section = Section::find(1);
-        $services = Service::all();
-        $projects = Project::all();
-
-        return view('front.index', compact('section', 'services', 'projects'));
-    }
 
     public function categories()
     {
@@ -63,25 +54,25 @@ class FrontController extends Controller
         return view('front.dynamic-page', compact('page'));
     }
 
-      //Project page
-      public function project(Request $request)
+      //Tutorial page
+      public function tutorial(Request $request)
       {
           $section = Section::where('page', 6)->firstOrFail();
 
-          $projects = Project::where('status', 1)
+          $tutorials = Tutorial::where('status', 1)
               ->when($catid, function ($query, $catid) {
                   return $query->where('service_id', $catid);
               })
               ->paginate(8);
 
-          return view('front.project', compact('project', 'section'));
+          return view('front.tutorial', compact('tutorial', 'section'));
       }
 
      public function portfolioDetails($slug)
      {
-         $project = Project::where('slug', $slug)->firstOrFail();
+         $tutorial = Tutorial::where('slug', $slug)->firstOrFail();
 
-         return view('front.project-details', compact('project'));
+         return view('front.tutorial-details', compact('tutorial'));
      }
 
     public function generateSitemaps()

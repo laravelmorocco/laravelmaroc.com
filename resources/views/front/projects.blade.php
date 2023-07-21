@@ -34,11 +34,11 @@
     </header>
     <div class="container-fluid box-content">
         <div class="flex flex-wrap">
-            @foreach ($projects as $project)
+            @foreach ($tutorials as $project)
                 <div class="my-4 px-4 sm:w-full md:w-full lg:w-full xl:w-1/3">
                     <div class="boxy img-box">
                         <div class="img">
-                            <img style="background-image: url({{ asset('uploads/projects/' . $project->featured_image) }})"
+                            <img style="background-image: url({{ asset('uploads/tutorials/' . $project->featured_image) }})"
                                 alt="{{ $project->title }}">
                         </div>
                         <div class="bottom-text">
@@ -54,7 +54,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12 text-center">
-            <div class="d-inline-block"> {{ $projects->links() }}</div>
+            <div class="d-inline-block"> {{ $tutorials->links() }}</div>
         </div>
     </div>
     <div class="container-fluid clients-section">

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\Tutorial;
 use Illuminate\Database\Seeder;
+use App\Models\Developer;
 
-class TutorialSeeder extends Seeder
+class DeveloperSeeder extends Seeder
 {
     /**
-     * Run the database seeders.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        Tutorial::factory(10)->create();
+        Developer::factory(10)->create();
     }
 }

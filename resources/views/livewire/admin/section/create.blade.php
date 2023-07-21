@@ -30,11 +30,9 @@
                             <option value="" selected>{{ __('Select a Page') }}</option>
                             <option value="home">{{ __('Home Page') }}</option>
                             <option value="about">{{ __('About Page') }}</option>
-                            <option value="team">{{ __('Team Page') }}</option>
                             <option value="blog">{{ __('Blog Page') }}</option>
-                            <option value="service">{{ __('Service Page') }}</option>
-                            <option value="portfolio">{{ __('Portfolio Page') }}</option>
                             <option value="project">{{ __('Project Page') }}</option>
+                            <option value="project">{{ __('Tutorial Page') }}</option>
                         </select>
                         <x-input-error :messages="$errors->get('section.page')" for="section.page" class="mt-2" />
                     </div>

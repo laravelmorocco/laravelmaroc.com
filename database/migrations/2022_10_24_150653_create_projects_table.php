@@ -17,7 +17,6 @@ return new class () extends Migration {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->text('title');
-            $table->text('client_name')->nullable();
             $table->text('slug')->nullable();
             $table->string('link')->nullable();
             $table->text('content')->nullable();
@@ -26,9 +25,11 @@ return new class () extends Migration {
             $table->text('gallery')->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
-            $table->foreignId('service_id')->nullable()->constrained('services')->nullOnDelete();
+            $table->string('meta_keywords')->nullable();
             $table->foreignId('page_id')->nullable()->constrained('pages')->nullOnDelete();
             $table->foreignId('language_id')->nullable()->constrained('languages')->nullOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
+
             $table->timestamps();
             $table->softDeletes();
         });

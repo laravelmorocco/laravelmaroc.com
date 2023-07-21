@@ -16,6 +16,6 @@ class TutorialSeeder extends Seeder
      */
     public function run()
     {
-        Tutorial::factory(10)->create();
+        Tutorial::factory()->count(10)->create();
     }
 }

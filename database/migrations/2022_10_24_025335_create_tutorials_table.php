@@ -6,7 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class () extends Migration {
+class CreateTutorialsTable extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -14,19 +15,21 @@ return new class () extends Migration {
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('tutorials', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
+            $table->string('slug')->nullable();
+            $table->string('type')->nullable();
             $table->string('image')->nullable();
-            $table->string('slug')->unique();
-            $table->boolean('status')->default(true);
-            $table->boolean('featured')->default(false);
-            $table->text('meta_title')->nullable();
-            $table->text('meta_description')->nullable();
-            $table->foreignId('language_id')->nullable()->constrained('languages')->nullOnDelete();
-            $table->foreignId('category_id')->nullable()->constrained('blog_categories')->nullOnDelete();
+            $table->text('content')->nullable();
+            $table->json('tags')->nullable();
+            $table->json('options')->nullable();
+
+            $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('language_id')->nullable()->constrained('languages')->nullOnDelete();
+            
+            $table->boolean('status')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -39,6 +42,6 @@ return new class () extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('tutorials');
     }
-};
+}

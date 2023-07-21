@@ -34,8 +34,8 @@
                             </option>
                             <option value="contact" {{ old('page') == 'contact' ? 'selected' : '' }}>{{ __('Contact') }}
                             </option>
-                            <option value="service" {{ old('page') == 'service' ? 'selected' : '' }}>
-                                {{ __('Service') }}</option>
+                            <option value="service" {{ old('page') == 'tutorial' ? 'selected' : '' }}>
+                                {{ __('Tutorial') }}</option>
                             <option value="portfolio" {{ old('page') == 'portfolio' ? 'selected' : '' }}>
                                 {{ __('Portfolio') }}
                             </option>

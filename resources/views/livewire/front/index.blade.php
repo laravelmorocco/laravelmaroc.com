@@ -23,7 +23,7 @@
             <span class="hover:underline transition duration-200 ease-in-out">{{__('Developers')}} </span>
         </h3>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 space-y-2 px-6 items-center">
-            @foreach ($this->partners as $partner)
+            @foreach ($this->developers as $partner)
                 <p class="p-5 relative bg-gray-100">
                     <img class="mx-auto w-full h-24 my-4 rounded-xl filter grayscale transition duration-300 hover:grayscale-0"
                         src="" alt="{{ $partner->name }}">

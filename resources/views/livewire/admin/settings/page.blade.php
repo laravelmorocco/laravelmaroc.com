@@ -38,7 +38,7 @@
             </div>
 
             <div class="lg:w-1/2 sm:w-full px-2 justify-between">
-                <label for="partner">{{ __('Partner') }} *</label>
+                <label for="partner">{{ __('Developer') }} *</label>
                 <label class="switch">
                     <input type="checkbox" name="partner" value="1"
                         {{ $data->partner == 1 ? 'checked' : '' }}>

@@ -8,10 +8,9 @@ enum PageType: string
 {
     case HOME = 'home';
     case ABOUT = 'about';
-    case TEAM = 'team';
     case BLOG = 'blog';
-    case SERVICE = 'service';
-    case PORTFOLIO = 'portfolio';
+    case TUTORIAL = 'tutorial';
+    case DEVELOPER = 'developer';
     case PROJECT = 'project';
 
     public static function values(): array

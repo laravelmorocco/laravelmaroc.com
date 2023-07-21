@@ -35,7 +35,7 @@ Route::get('/', FrontIndex::class)->name('front.index');
 Route::get('/categories', [FrontController::class, 'categories'])->name('front.categories');
 Route::get('/categorie/{slug}', [FrontController::class, 'categoryPage'])->name('front.categoryPage');
 
-Route::get('/projects', [FrontController::class, 'project'])->name('front.projects');
+Route::get('/tutorials', [FrontController::class, 'project'])->name('front.tutorials');
 
 Route::get('/project/{slug}', [FrontController::class, 'portfolioDetails'])->name('front.portfolioDetails');
 

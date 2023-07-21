@@ -41,9 +41,9 @@ class Blog extends Model
         'meta_title',
         'meta_description',
         'language_id',
+        'user_id',
     ];
 
-    protected $dates = ['created_at'];
 
     public function category()
     {
@@ -53,5 +53,10 @@ class Blog extends Model
     public function language()
     {
         return $this->belongsTo(Language::class);
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

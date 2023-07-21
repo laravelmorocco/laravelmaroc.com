@@ -14,12 +14,12 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
-use App\Http\Controllers\Admin\TeamController;
 use App\Http\Livewire\Admin\Contacts;
-use App\Http\Livewire\Admin\Project\Index as ProjectIndex;
+use App\Http\Livewire\Admin\Developer\Index as DeveloperIndex;
+use App\Http\Livewire\Admin\Tutorial\Index as TutorialIndex;
 use App\Http\Livewire\Admin\Users\Index as UserIndex;
 use App\Http\Livewire\Admin\Blog\Index as BlogIndex;
-use App\Http\Livewire\Admin\Service\Index as ServiceIndex;
+use App\Http\Livewire\Admin\Project\Index as ProjectIndex;
 use App\Http\Livewire\Admin\Category\Index as CategoryIndex;
 use App\Http\Livewire\Admin\Email\Index as EmailIndex;
 use App\Http\Livewire\Admin\Menu\Index as MenuIndex;
@@ -40,7 +40,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'r
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
     // Contact
     Route::get('/contact', Contacts::class)->name('contact');
 
@@ -66,11 +65,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'r
     Route::get('/language', LanguageIndex::class)->name('language');
     Route::get('/translation/{code}', EditTranslation::class)->name('translation');
 
-    // Project
-    Route::get('projects', ProjectIndex::class)->name('projects.index');
+    // Tutorial
+    Route::get('tutorials', TutorialIndex::class)->name('tutorials.index');
 
-    // Service
-    Route::get('/services', ServiceIndex::class)->name('services.index');
+    // Projects
+    Route::get('/projects', ProjectIndex::class)->name('projects.index');
+
+    // Developer
+    Route::get('/developers', DeveloperIndex::class)->name('developers.index');
 
     // Sections
     Route::get('/sections', [SectionController::class, 'index'])->name('sections');
@@ -88,7 +90,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'r
     Route::get('/notification', [NotificationController::class, 'index'])->name('notification');
 
     // Setting
-    Route::get('/popupsettings', [SettingController::class, 'popupsettings'])->name('setting.popupsettings');
     Route::get('/redirects', [SettingController::class, 'redirects'])->name('setting.redirects');
     Route::get('/backup', BackupIndex::class)->name('setting.backup');
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');

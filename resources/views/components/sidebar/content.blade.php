@@ -22,9 +22,9 @@
             </span>
         </x-slot>
 
-        <x-sidebar.sublink title="{{ __('Team') }}" href="{{ route('admin.teams.index') }}" :active="request()->routeIs('admin.teams.index')" />
-        <x-sidebar.sublink title="{{ __('Projects') }}" href="{{ route('admin.projects.index') }}" :active="request()->routeIs('admin.projects.index')" />
-        <x-sidebar.sublink title="{{ __('Services') }}" href="{{ route('admin.services.index') }}" :active="request()->routeIs('admin.services.index')" />
+        
+        <x-sidebar.sublink title="{{ __('Projects') }}" href="{{ route('admin.projects.index') }}" :active="request()->routeIs('admin.tutorials.index')" />
+        <x-sidebar.sublink title="{{ __('Tutorials') }}" href="{{ route('admin.tutorials.index') }}" :active="request()->routeIs('admin.tutorials.index')" />
     
     </x-sidebar.dropdown>
     {{-- @endcan --}}
@@ -84,8 +84,6 @@
             :active="request()->routeIs('admin.menu-settings.index')" />
         {{-- @endcan --}}
         {{-- <x-sidebar.sublink title="{{ __('Backup') }}" href="{{ route('admin.setting.backup') }}" :active="request()->routeIs('admin.setting.backup')" /> --}}
-        <x-sidebar.sublink title="{{ __('Popup Settings') }}" href="{{ route('admin.setting.popupsettings') }}"
-            :active="request()->routeIs('admin.setting.popupsettings')" />
         <x-sidebar.sublink title="{{ __('Redirects') }}" href="{{ route('admin.setting.redirects') }}"
             :active="request()->routeIs('admin.setting.redirects')" />
 

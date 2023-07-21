@@ -60,12 +60,12 @@
                             <option value="{{ $value }}">{{ $value }}</option>
                         @endforeach
                     </select>
+                    @if ($this->selected)
+                        <x-button danger type="button" wire:click="deleteSelected" class="mx-3">
+                            <i class="fas fa-trash-alt"></i>
+                        </x-button>
+                    @endif
                 </div>
-                @if ($this->selected)
-                    <x-button danger type="button" wire:click="deleteSelected" class="mx-3">
-                        <i class="fas fa-trash-alt"></i>
-                    </x-button>
-                @endif
                 @if ($this->selectedCount)
                     <p class="text-sm items-center leading-5">
                         <span class="font-medium ml-2">
@@ -87,10 +87,6 @@
         <x-table>
             <x-slot name="thead">
                 <x-table.th>#</x-table.th>
-                {{-- <x-table.th sortable wire:click="sortBy('title')" :direction="$sorts['title'] ?? null">
-                {{ __('Title') }}
-                @include('components.table.sort', ['field' => 'title'])
-            </x-table.th> --}}
                 <x-table.th>
                     {{ __('Language') }}
                 </x-table.th>
@@ -98,99 +94,106 @@
                     {{ __('Title') }}
                     @include('components.table.sort', ['field' => 'title'])
                 </x-table.th>
-                <x-table.th>
-                    {{ __('Tutorial') }}
+                <x-table.th sortable wire:click="sortBy('type')" :direction="$sorts['type'] ?? null">
+                    {{ __('Type') }}
+                    @include('components.table.sort', ['field' => 'type'])
                 </x-table.th>
-                <x-table.th>
+                <x-table.th sortable wire:click="sortBy('status')" :direction="$sorts['status'] ?? null">
                     {{ __('Status') }}
+                    @include('components.table.sort', ['field' => 'status'])
                 </x-table.th>
                 <x-table.th>
-                    {{ __('Action') }}
+                    {{ __('Actions') }}
                 </x-table.th>
+
             </x-slot>
             <x-table.tbody>
-                @forelse($tutorials as $project)
-                    <x-table.tr class="panel-group" id="accordion-{{ $project->id }}" role="tablist"
-                        aria-multiselectable="true">
-                        <x-table.td id="accordion-collapse-{{ $project->id }}" data-accordion="collapse">
-                            <div id="accordion-collapse-heading-{{ $project->id }}">
-                                <button type="button"
-                                    class="font-bold border-transparent uppercase justify-center text-xs py-1 px-2 rounded shadow hover:shadow-md outline-none focus:outline-none focus:ring-2 focus:ring-offset-2 ease-linear transition-all duration-150 cursor-pointer text-white bg-blue-500 border-blue-800 hover:bg-blue-600 active:bg-blue-700 focus:ring-blue-300 mr-2"
-                                    data-accordion-target="#accordion-collapse-body-{{ $project->id }}"
-                                    aria-expanded="false" aria-controls="accordion-collapse-body-{{ $project->id }}">
-                                    <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
+                @forelse($tutorials as $index => $tutorial)
+                    <x-table.tr wire:loading.class.delay="opacity-50" wire:key="row-{{ $index }}" 
+                        x-data="{ 'isMenuOpen({{ $index }})': false }">
+                            <x-table.td class="flex flex-wrap gap-4">
+                                <button @click="isMenuOpen = true">
+                                    <i class="fa fa-caret-down"
+                                        :class="{
+                                            'fa-caret-up': 'isMenuOpen({{ $index }})',
+                                            'fa-caret-down': !'isMenuOpen({{ $index }})',
+                                        }"
+                                        aria-hidden="true">
+                                    </i>
                                 </button>
-                            </div>
-                            {{-- <input type="checkbox" value="{{ $project->id }}" wire:model="selected"> --}}
-                        </x-table.td>
-                        <x-table.td>
-                            <img src="{{ flagImageUrl($project->language->code) }}">
+                                <input type="checkbox" value="{{ $tutorial->id }}" wire:model="selected">
+                            </x-table.td>
 
-                        </x-table.td>
-                        <x-table.td>
-                            {{ $project->title }}
-                        </x-table.td>
-                        <x-table.td>
-                            @if (empty($project->service_id))
-                                {{ __('No relation') }}
-                            @else
-                                {{ $project->service->title }}
-                            @endif
-                        </x-table.td>
-                        <x-table.td>
-                            <livewire:utils.toggle-button :model="$project" field="status" key="{{ $project->id }}" />
-                        </x-table.td>
-                        <x-table.td>
-                            <div class="inline-flex">
-                                <a class="font-bold border-transparent uppercase justify-center text-xs py-1 px-2 rounded shadow hover:shadow-md outline-none focus:outline-none focus:ring-2 focus:ring-offset-2 mr-1 ease-linear transition-all duration-150 cursor-pointer text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-green-300mr-2"
-                                     wire:click="$emit('editModal', {{ $project->id }})">
-                                    <i class="fa fa-pen h-4 w-4"></i>
-                                </a>
-                                <button
-                                    class="font-bold border-transparent uppercase justify-center text-xs py-1 px-2 rounded shadow hover:shadow-md outline-none focus:outline-none focus:ring-2 focus:ring-offset-2 mr-1 ease-linear transition-all duration-150 cursor-pointer text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300"
-                                    type="button" wire:click="confirm('delete', {{ $project->id }})"
-                                    wire:loading.attr="disabled">
-                                    <i class="fa fa-trash h-4 w-4"></i>
-                                </button>
-                                <button
-                                    class="font-bold  bg-purple-500 border-purple-800 hover:bg-purple-600 active:bg-purple-700 focus:ring-purple-300 uppercase justify-center text-xs py-2 px-3 rounded shadow hover:shadow-md mr-1 ease-linear transition-all duration-150 cursor-pointer text-white"
-                                    type="button" wire:click='clone({{ $project->id }})'
-                                    wire:loading.attr="disabled">
-                                    <i class="fa fa-bin h-4 w-4"></i>
-                                </button>
-                            </div>
-                        </x-table.td>
-                    </x-table.tr>
-                    <tr id="accordion-collapse-body-{{ $project->id }}" class="hidden"
-                        aria-labelledby="accordion-collapse-heading-{{ $project->id }}">
-                        <td colspan="12">
-                            <div class="panel-body text-center p-5">
-                                <h1>{{ $project->title }}</h1>
-                                <p>{!! $project->content !!}</p>
-                                <p>{{ $project->link }}</p>
-                                <p>{{ $project->meta_keywords }}</p>
-                                <p>{{ $project->meta_description }}</p>
-                                <div class="container">
-                                    @if (empty($project->gallery))
-                                        {{ __('No images') }}
-                                    @else
-                                        @php
-                                            $images = explode(',', $project->gallery);
-                                        @endphp
-                                        @foreach ($images as $image)
-                                            <img class="w-52 rounded-full" src="{{ asset('uploads/' . $image) }}"
-                                                alt="">
-                                        @endforeach
-                                    @endif
+                            <x-table.td>
+                                <img src="{{ flagImageUrl($tutorial->language->code) }}">
+                            </x-table.td>
+
+
+                            <x-table.td>
+                                {{ $tutorial->title }}
+                            </x-table.td>
+
+                            <x-table.td>
+                                {{ $tutorial->type }}
+                            </x-table.td>
+
+                            <x-table.td>
+                                <livewire:utils.toggle-button :model="$tutorial" field="status"
+                                    key="{{ $tutorial->id }}" />
+                            </x-table.td>
+                            <x-table.td>
+                                <div class="inline-flex">
+                                    <a class="font-bold border-transparent uppercase justify-center text-xs py-2 px-3 rounded shadow hover:shadow-md outline-none focus:outline-none focus:ring-2 focus:ring-offset-2 ease-linear transition-all duration-150 cursor-pointer text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-green-300 mr-2"
+                                        wire:click="$emit('editModal', {{ $tutorial->id }})">
+                                        <i class="fa fa-pen h-4 w-4"></i>
+                                    </a>
+                                    <button
+                                        class="font-bold border-transparent uppercase justify-center text-xs py-2 px-3 rounded shadow hover:shadow-md outline-none focus:outline-none focus:ring-2 focus:ring-offset-2 ease-linear transition-all duration-150 cursor-pointer text-white bg-red-500 border-red-800 hover:bg-red-600 active:bg-red-700 focus:ring-red-300 mr-2"
+                                        type="button" wire:click="$emit('deleteModal', {{ $tutorial->id }})"
+                                        wire:loading.attr="disabled">
+                                        <i class="fa fa-trash h-4 w-4"></i>
+                                    </button>
+                                    <button
+                                        class="font-bold  bg-purple-500 border-purple-800 hover:bg-purple-600 active:bg-purple-700 focus:ring-purple-300 uppercase justify-center text-xs py-2 px-3 rounded shadow hover:shadow-md mr-1 ease-linear transition-all duration-150 cursor-pointer text-white"
+                                        type="button" wire:click="confirm('clone', {{ $tutorial->id }})"
+                                        wire:loading.attr="disabled">
+                                        <i class="fa fa-bin h-4 w-4"></i>
+                                    </button>
+
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
+                            </x-table.td>
+
+
+                            <tr x-show="isMenuOpen({{ $index }})"
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform scale-95"
+                                x-transition:enter-end="opacity-100 transform scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 transform scale-100"
+                                x-transition:leave-end="opacity-0 transform scale-95" x-cloak>
+                                <td class="py-4" colspan="12">
+                                    <div class="panel-body text-center p-5">
+                                        <h1>{{ $tutorial->title }}</h1>
+                                        <p>{!! $tutorial->content !!}</p>
+                                        <div class="container">
+                                            @if (empty($tutorial->image))
+                                                {{ __('No images') }}
+                                            @else
+                                                <img class="w-52 rounded-full"
+                                                    src="{{ asset('uploads/tutorials/' . $tutorial->image) }}"
+                                                    alt="">
+                                            @endif
+                                        </div>
+                                        <div class="mt-4">
+                                            <button @click="isMenuOpen = false"
+                                                class="px-4 py-2 text-sm font-medium text-gray-800 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+                                                Collapse
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    </x-table.tr>
                 @empty
                     <x-table.tr>
                         <x-table.td colspan="10" class="text-center">
@@ -215,8 +218,9 @@
             </div>
         </div>
     </x-card>
-    
-    @livewire('admin.tutorial.edit', [$project])
-    
+
+    @livewire('admin.tutorial.edit', ['tutorial' => $tutorial])
+
     @livewire('admin.tutorial.create')
+
 </div>

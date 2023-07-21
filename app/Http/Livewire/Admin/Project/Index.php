@@ -30,7 +30,7 @@ class Index extends Component
 
     public $language_id;
 
-    public $project;
+    public $tutorial;
 
     public $showModal = false;
 
@@ -84,7 +84,7 @@ class Index extends Component
         $this->sortBy = 'id';
         $this->sortDirection = 'desc';
         $this->perPage = 100;
-        $this->paginationOptions = config('project.pagination.options');
+        $this->paginationOptions = config('tutorial.pagination.options');
         $this->orderable = (new Project())->orderable;
     }
 
@@ -98,25 +98,25 @@ class Index extends Component
             'order_direction' => $this->sortDirection,
         ]);
 
-        $projects = $query->paginate($this->perPage);
+        $tutorials = $query->paginate($this->perPage);
 
-        return view('livewire.admin.project.index', compact('projects'))->extends('layouts.dashboard');
+        return view('livewire.admin.tutorial.index', compact('tutorials'))->extends('layouts.dashboard');
     }
 
-    public function showModal(Project $project)
+    public function showModal(Project $tutorial)
     {
-        // abort_if(Gate::denies('project_show'), 403);
+        // abort_if(Gate::denies('tutorial_show'), 403);
 
         $this->resetErrorBag();
 
         $this->resetValidation();
 
-        $this->project = $project;
+        $this->tutorial = $tutorial;
 
         $this->showModal = true;
     }
 
-    public function deleteModal($project)
+    public function deleteModal($tutorial)
     {
         $this->confirm(__('Are you sure you want to delete this?'), [
             'toast'             => false,
@@ -125,12 +125,12 @@ class Index extends Component
             'cancelButtonText'  => __('Cancel'),
             'onConfirmed'       => 'delete',
         ]);
-        $this->project = $project;
+        $this->tutorial = $tutorial;
     }
 
     public function deleteSelected()
     {
-        abort_if(Gate::denies('project_delete'), 403);
+        abort_if(Gate::denies('tutorial_delete'), 403);
 
         Project::whereIn('id', $this->selected)->delete();
 
@@ -139,20 +139,20 @@ class Index extends Component
 
     public function delete()
     {
-        abort_if(Gate::denies('project_delete'), 403);
+        abort_if(Gate::denies('tutorial_delete'), 403);
 
-        Project::findOrFail($this->project)->delete();
+        Project::findOrFail($this->tutorial)->delete();
 
         $this->alert('success', __('Project deleted successfully.'));
     }
 
       // Project  Clone
-    public function clone(Project $project)
+    public function clone(Project $tutorial)
     {
-        $portfolio_details = Project::find($project->id);
+        $portfolio_details = Project::find($tutorial->id);
         // dd($portfolio_details);
         Project::create([
-            'service_id'       => $portfolio_details->service_id,
+            'user_id'       => $portfolio_details->user_id,
             'language_id'      => $portfolio_details->language_id,
             'title'            => $portfolio_details->title,
             'slug'             => ! empty($portfolio_details->slug) ? Str::slug($portfolio_details->slug) : Str::slug($portfolio_details->title),

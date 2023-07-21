@@ -66,7 +66,7 @@
                                 <option value="" selected>{{ __('Select a Page') }}</option>
                                 <option value="1">{{ __('Home Page') }}</option>
                                 <option value="2">{{ __('About Page') }}</option>
-                                <option value="3">{{ __('Partner Page') }}</option>
+                                <option value="3">{{ __('Developer Page') }}</option>
                                 <option value="4">{{ __('Blog Page') }}</option>
                                 <option value="7">{{ __('Contact Page') }}</option>
                                 <option value="8">{{ __('Products Page') }}</option>
