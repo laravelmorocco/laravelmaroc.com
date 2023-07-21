@@ -32,6 +32,7 @@ class Tutorial extends Model
         'slug',
         'status',
         'language_id',
+        'category_id',
         'type',
     ];
 
@@ -56,5 +57,10 @@ class Tutorial extends Model
     public function language()
     {
         return $this->belongsTo(Language::class);
+    }
+    
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

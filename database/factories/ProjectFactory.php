@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class TutorialFactory extends Factory
+class ProjectFactory extends Factory
 {
     /**
      * Define the model's default state.

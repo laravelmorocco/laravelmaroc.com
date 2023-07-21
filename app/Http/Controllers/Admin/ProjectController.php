@@ -5,31 +5,31 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Tutorial;
+use App\Models\Project;
 
-class TutorialController extends Controller
+class ProjectController extends Controller
 {
-    // Index Tutorial
+    // Index Project
     public function index()
     {
-        return view('admin.tutorial.index');
+        return view('admin.project.index');
     }
 
-    // Add Tutorial
-    public function create(Tutorial $tutorial)
+    // Add Project
+    public function create(Project $project)
     {
-        return view('admin.tutorial.create', compact('tutorial'));
+        return view('admin.project.create', compact('project'));
     }
 
-    // Tutorial  Edit
-    public function edit(Tutorial $tutorial)
+    // Project  Edit
+    public function edit(Project $project)
     {
-        return view('admin.tutorial.edit', compact('tutorial'));
+        return view('admin.project.edit', compact('project'));
     }
 
-    // Tutorial  Show
-    public function show(Tutorial $tutorial)
+    // Project  Show
+    public function show(Project $project)
     {
-        return view('admin.tutorial.show', compact('tutorial'));
+        return view('admin.project.show', compact('project'));
     }
 }

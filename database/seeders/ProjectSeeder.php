@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\Tutorial;
+use App\Models\Project;
 use Illuminate\Database\Seeder;
 
-class TutorialSeeder extends Seeder
+class ProjectSeeder extends Seeder
 {
     /**
      * Run the database seeders.
@@ -16,6 +16,6 @@ class TutorialSeeder extends Seeder
      */
     public function run()
     {
-        Tutorial::factory(10)->create();
+        Project::factory(10)->create();
     }
 }

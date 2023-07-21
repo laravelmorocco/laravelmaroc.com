@@ -7,6 +7,8 @@ use App\Http\Controllers\FrontController;
 use App\Http\Livewire\Front\Index as FrontIndex;
 use App\Http\Livewire\Front\Blogs as BlogIndex;
 use App\Http\Livewire\Front\ShowBlog as BlogShow;
+use App\Http\Livewire\Front\Tutorials as TutorialIndex;
+use App\Http\Livewire\Front\ShowTutorial;
 use App\Http\Livewire\Front\DynamicPage;
 use App\Http\Controllers\UploadController;
 use Illuminate\Http\Request;
@@ -35,8 +37,8 @@ Route::get('/', FrontIndex::class)->name('front.index');
 Route::get('/categories', [FrontController::class, 'categories'])->name('front.categories');
 Route::get('/categorie/{slug}', [FrontController::class, 'categoryPage'])->name('front.categoryPage');
 
-Route::get('/tutorials', [FrontController::class, 'project'])->name('front.tutorials');
-
+Route::get('/tutorials', TutorialIndex::class)->name('front.tutorials');
+Route::get('/tutorial/{slug}', ShowTutorial::class)->name('front.tutorialPage');
 Route::get('/project/{slug}', [FrontController::class, 'portfolioDetails'])->name('front.portfolioDetails');
 
 Route::get('/contact', [FrontController::class, 'contact'])->name('front.contact');

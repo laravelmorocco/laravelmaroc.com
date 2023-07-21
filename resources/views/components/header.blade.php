@@ -20,6 +20,12 @@
             </li>
             <li>
                 <a class="text-red-500 hover:text-red-700 uppercase text-lg md:text-lg lg:text-1xl hover:underline cursor-pointer"
+                    href="{{ route('front.tutorials')}}">
+                    {{ __('Tutorials') }}
+                </a>
+            </li>
+            <li>
+                <a class="text-red-500 hover:text-red-700 uppercase text-lg md:text-lg lg:text-1xl hover:underline cursor-pointer"
                     href="{{ url('/') }}#dev">
                     {{ __('Developers') }}
                 </a>
