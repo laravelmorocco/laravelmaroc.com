@@ -19,10 +19,14 @@
                         <x-label for="slug" :value="__('Slug')" />
                         <x-input wire:model="page.slug" type="text" />
                     </div>
-                    <div class="w-full px-2">
-                        <x-label for="description" :value="__('Description')" />
-                        <x-trix name="description" wire:model.lazy="description" class="mt-1" />
-                        <x-input-error :messages="$errors->get('description')" for="description" class="mt-2" />
+                  
+                    <div class="w-full px-3 py-10 mx-auto border rounded-md shadow-sm">
+                        @livewire('editorjs', [
+                            'editorId' => 'myEditor',
+                            'value' => $description,
+                            'readOnly' => false,
+                            'placeholder' => 'Lorem ipsum dolor sit amet',
+                        ])
                     </div>
 
                     <div class="xl:w-1/2 md:w-1/2 px-3">
@@ -52,4 +56,9 @@
         </x-slot>
     </x-modal>
     <!-- End Create Modal -->
+    @once
+        @push('scripts')
+            <script src="{{ asset('vendor/livewire-editorjs/editorjs.js') }}"></script>
+        @endpush
+    @endonce
 </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Livewire\Front\Index as FrontIndex;
 use App\Http\Livewire\Front\Blogs as BlogIndex;
 use App\Http\Livewire\Front\ShowBlog as BlogShow;
+use App\Livewire\Front\DynamicPage;
 use App\Http\Controllers\UploadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -43,7 +44,7 @@ Route::get('/contact', [FrontController::class, 'contact'])->name('front.contact
 Route::get('/blog', BlogIndex::class)->name('front.blogs');
 Route::get('/blog/{slug}', BlogShow::class)->name('front.blogPage');
 
-Route::get('/page/{slug}', [FrontController::class, 'dynamicPage'])->name('front.dynamicPage');
+Route::get('/page/{slug}', DynamicPage::class)->name('front.dynamicPage');
 
 Route::get('/generate-sitemap', [FrontController::class, 'generateSitemaps'])->name('generate-sitemaps');
 

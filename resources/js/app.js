@@ -1,4 +1,5 @@
 import './bootstrap';
+// import './editorjs';
 import '../css/app.css';
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 import "../css/theme.css";

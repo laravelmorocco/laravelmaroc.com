@@ -66,7 +66,7 @@ class Create extends Component
         
         $this->blog->meta_title = $this->blog->title;
 
-        $this->blog->meta_description = $this->blog->details;
+        $this->blog->meta_description = $this->blog->description;
 
         $this->createModal = true;
     }

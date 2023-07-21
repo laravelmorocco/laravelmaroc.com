@@ -144,10 +144,10 @@
                         </div>
 
                         <div class="xl:w-1/2 md:w-1/2 px-3">
-                            <x-label for="details" :value="__('Details')" />
-                            <x-input id="details" class="block mt-1 w-full" type="text" name="details"
-                                wire:model.defer="featuredbanner.details" />
-                            <x-input-error :messages="$errors->get('featuredbanner.details')" for="featuredbanner.details" class="mt-2" />
+                            <x-label for="description" :value="__('Description')" />
+                            <x-input id="description" class="block mt-1 w-full" type="text" name="description"
+                                wire:model.defer="featuredbanner.description" />
+                            <x-input-error :messages="$errors->get('featuredbanner.description')" for="featuredbanner.description" class="mt-2" />
                         </div>
                         <div class="xl:w-1/2 md:w-1/2 px-3">
                             <x-label for="link" :value="__('Link')" />
