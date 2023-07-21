@@ -147,10 +147,10 @@
     </div>
 
     <!-- Create Modal -->
-    @livewire('admin.developers.create')
+    @livewire('admin.developer.create')
 
     <!-- Edit Modal -->
-    @livewire('admin.developers.edit', ['developer' => $developer])
+    @livewire('admin.developer.edit', ['developer' => $developer])
     
     </x-card>
 </div>
