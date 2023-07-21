@@ -13,11 +13,11 @@ class SettingSeeder extends Seeder
     protected $settings = [
         [
             'key'   => 'company_name',
-            'value' => 'HOTECH&SOFT',
+            'value' => 'LARAVELMAROC',
         ],
         [
             'key'   => 'site_title',
-            'value' => 'HOTECH&SOFT',
+            'value' => 'LARAVELMAROC',
         ],
         [
             'key'   => 'company_email_address',
@@ -49,11 +49,11 @@ class SettingSeeder extends Seeder
         ],
         [
             'key'   => 'seo_meta_title',
-            'value' => 'HOTECH&SOFT',
+            'value' => 'LARAVELMAROC',
         ],
         [
             'key'   => 'seo_meta_description',
-            'value' => 'HOTECH&SOFT',
+            'value' => 'LARAVELMAROC',
         ],
         [
             'key'   => 'social_facebook',
