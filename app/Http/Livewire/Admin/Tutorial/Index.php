@@ -77,7 +77,7 @@ class Index extends Component
         $this->sortBy = 'id';
         $this->sortDirection = 'desc';
         $this->perPage = 100;
-        $this->paginationOptions = config('tutorial.pagination.options');
+        $this->paginationOptions = config('project.pagination.options');
         $this->orderable = (new Tutorial())->orderable;
     }
 
