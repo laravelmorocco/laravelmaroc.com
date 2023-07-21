@@ -76,6 +76,6 @@ class Edit extends Component
 
     public function render(): View
     {
-        return view('livewire.admin.developers.edit');
+        return view('livewire.admin.developer.edit');
     }
 }

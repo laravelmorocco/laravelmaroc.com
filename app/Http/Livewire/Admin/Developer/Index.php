@@ -107,7 +107,7 @@ class Index extends Component
 
         $developers = $query->paginate($this->perPage);
 
-        return view('livewire.admin.developers.index', compact('developers'))->extends('layouts.dashboard');
+        return view('livewire.admin.developer.index', compact('developers'))->extends('layouts.dashboard');
     }
 
     public function showModal(Developer $developer)

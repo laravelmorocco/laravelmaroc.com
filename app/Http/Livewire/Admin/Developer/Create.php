@@ -37,7 +37,7 @@ class Create extends Component
     {
         abort_if(Gate::denies('developer_create'), 403);
 
-        return view('livewire.admin.developers.create');
+        return view('livewire.admin.developer.create');
     }
 
     public function createModal()
