@@ -23,7 +23,7 @@ class EmailTemplate extends Model
     public $filterable = self::ATTRIBUTES;
 
     protected $fillable = [
-        'id', 
+        'id',
         'name',
         'description',
         'message',
@@ -43,5 +43,4 @@ class EmailTemplate extends Model
     {
         return $query->where('status', 'active');
     }
-
 }

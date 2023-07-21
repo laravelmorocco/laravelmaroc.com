@@ -20,9 +20,9 @@ class Index extends Component
         'refreshIndex' => '$refresh',
         'delete',
     ];
-    
+
     public $deleteModal = false;
-    
+
     public int $perPage;
 
     public array $orderable;
@@ -89,7 +89,6 @@ class Index extends Component
         return view('livewire.admin.page.index', compact('pages'));
     }
 
-    
     public function delete()
     {
         // abort_if(Gate::denies('page_delete'), 403);
@@ -122,9 +121,8 @@ class Index extends Component
             'position'          => 'center',
             'showConfirmButton' => true,
             'cancelButtonText'  => __('Cancel'),
-            'onConfirmed' => 'delete',
+            'onConfirmed'       => 'delete',
         ]);
         $this->page = $page;
     }
-
-} 
+}

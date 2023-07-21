@@ -37,9 +37,9 @@ class Tutorial extends Model
     ];
 
     protected $casts = [
-        'options'  => 'json',
-        'tags' => 'json',
-        'satuts'   => Status::class,
+        'options' => 'json',
+        'tags'    => 'json',
+        'satuts'  => Status::class,
     ];
 
     /**
@@ -58,7 +58,7 @@ class Tutorial extends Model
     {
         return $this->belongsTo(Language::class);
     }
-    
+
     public function category()
     {
         return $this->belongsTo(Category::class);

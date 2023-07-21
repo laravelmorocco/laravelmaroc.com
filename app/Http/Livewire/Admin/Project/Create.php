@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\Livewire\Admin\Project;
 
 use App\Models\Project;
-use App\Models\Tutorial;
 use App\Models\Language;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -22,7 +21,7 @@ class Create extends Component
     public $image;
 
     public $images;
-    
+
     public $description;
 
     public $createModal = false;
@@ -33,10 +32,10 @@ class Create extends Component
 
     protected $rules = [
         'tutorial.title'            => 'required|unique:tutorials,title|max:191',
-        'description'          => 'required',
+        'description'               => 'required',
         'tutorial.client_name'      => 'required',
         'tutorial.link'             => 'required',
-        'tutorial.user_id'       => 'required',
+        'tutorial.user_id'          => 'required',
         'tutorial.meta_title'       => 'nullable',
         'tutorial.meta_description' => 'nullable',
         'tutorial.language_id'      => 'required',
@@ -55,7 +54,7 @@ class Create extends Component
 
         $this->tutorial = new Project();
 
-        $this->description = "";
+        $this->description = '';
 
         $this->createModal = true;
     }

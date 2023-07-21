@@ -41,7 +41,6 @@ Route::get('/tutorials', TutorialIndex::class)->name('front.tutorials');
 Route::get('/tutorial/{slug}', ShowTutorial::class)->name('front.tutorialPage');
 Route::get('/project/{slug}', [FrontController::class, 'portfolioDetails'])->name('front.portfolioDetails');
 
-Route::get('/contact', [FrontController::class, 'contact'])->name('front.contact');
 
 Route::get('/blog', BlogIndex::class)->name('front.blogs');
 Route::get('/blog/{slug}', BlogShow::class)->name('front.blogPage');

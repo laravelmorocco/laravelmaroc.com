@@ -13,7 +13,6 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Language;
-use Illuminate\Support\Collection;
 
 class Create extends Component
 {
@@ -33,7 +32,7 @@ class Create extends Component
     protected $rules = [
         'blog.title'            => 'required|min:3|max:255',
         'blog.category_id'      => 'required|integer',
-        'blog.slug'      => 'required|string',
+        'blog.slug'             => 'required|string',
         'description'           => 'required|min:3',
         'blog.language_id'      => 'nullable|integer',
         'blog.meta_title'       => 'nullable|max:100',
@@ -60,10 +59,10 @@ class Create extends Component
 
         $this->blog = new Blog();
 
-        $this->description = "";
+        $this->description = '';
 
         $this->blog->slug = Str::slug($this->blog->title);
-        
+
         $this->blog->meta_title = $this->blog->title;
 
         $this->blog->meta_description = $this->blog->description;
@@ -96,7 +95,7 @@ class Create extends Component
     {
         return Language::pluck('name', 'id')->toArray();
     }
-  
+
     public function getBlogCategoriesProperty()
     {
         return BlogCategory::pluck('title', 'id')->toArray();

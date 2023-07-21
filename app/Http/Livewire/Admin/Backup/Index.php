@@ -15,7 +15,7 @@ class Index extends Component
     use LivewireAlert;
 
     public $data = [];
-    
+
     public $clientId;
     public $clientSecret;
     public $refreshToken;
@@ -29,8 +29,6 @@ class Index extends Component
         'delete',
     ];
 
-   
-
     public function settingsModal()
     {
         // $this->backup_status = settings()->backup_status;
@@ -41,11 +39,11 @@ class Index extends Component
     public function saveToDriveManually($filename)
     {
         $fileData = Storage::get($filename);
-        Storage::cloud()->put(env('APP_NAME') . '/' . $filename, $fileData);
+        Storage::cloud()->put(env('APP_NAME').'/'.$filename, $fileData);
 
         $this->alert('success', __('Backup saved to Google Drive successfully!'));
     }
-    
+
     public function getContentsProperty()
     {
         $mainDisk = Storage::disk('google_backups');

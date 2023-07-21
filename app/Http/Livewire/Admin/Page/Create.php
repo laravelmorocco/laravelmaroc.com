@@ -22,14 +22,14 @@ class Create extends Component
     public $page;
 
     public $image;
-    
+
     public $description;
 
     public $listeners = [
         'createPage',
-    'editorjs-save:myEditor' => 'saveEditorState'
-];
-    
+        'editorjs-save:myEditor' => 'saveEditorState',
+    ];
+
     public function saveEditorState($editorJsonData)
     {
         $this->description = $editorJsonData;
@@ -38,7 +38,7 @@ class Create extends Component
     public array $rules = [
         'page.title'            => ['required', 'string', 'max:255'],
         'page.slug'             => ['required', 'unique:pages', 'max:255'],
-        'description'          => ['required'],
+        'description'           => ['required'],
         'page.meta_title'       => ['nullable|max:255'],
         'page.meta_description' => ['nullable|max:255'],
         'page.language_id'      => ['nullable'],

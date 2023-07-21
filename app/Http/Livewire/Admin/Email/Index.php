@@ -27,9 +27,9 @@ class Index extends Component
     public array $selected = [];
 
     protected $listeners = [
-        'refreshIndex' => '$refresh'
+        'refreshIndex' => '$refresh',
     ];
-    
+
     public array $paginationOptions;
 
     protected $queryString = [
@@ -86,11 +86,11 @@ class Index extends Component
         return view('livewire.admin.email.index', compact('emails'))->extends('layouts.dashboard');
     }
 
-     // Blog Category  Delete
-     public function delete(EmailTemplate $email)
-     {
-         // abort_if(Gate::denies('email_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+    // Blog Category  Delete
+    public function delete(EmailTemplate $email)
+    {
+        // abort_if(Gate::denies('email_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-         $email->delete();
-     }
+        $email->delete();
+    }
 }

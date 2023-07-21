@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Livewire\Front;
 
-use App\Models\Tutorial;
 use App\Models\Project;
 use App\Models\Section;
 use App\Models\Developer;
@@ -20,7 +19,7 @@ class Index extends Component
     {
         return Section::where('type', PageType::HOME)->active()->firstOrFail();
     }
-    
+
     public function getProjectsProperty()
     {
         return Project::all();

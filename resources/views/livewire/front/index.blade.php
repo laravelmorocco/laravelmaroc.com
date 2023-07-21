@@ -1,26 +1,26 @@
 <div>
     @section('title', __('Home'))
     <section class="relative bg-red-600 text-white items-center h-screen">
-
         <div class="anime max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-12 md:pt-40 md:pb-20">
-            <div class="text-center md:text-left pb-12 md:pb-16">
+            <div
+                class="mt-4 flex flex-col max-w-[1400px] items-center mx-auto text-center relative z-10 px-24 sm:px-18 lg:px-24">
                 <h1 h1 class="section-title mt-3 text-6xl sm:text-4xl lg:text-8xl font-extrabold text-white">
                     {{ $this->home_section->title }}
                 </h1>
-                <div class="max-w-3xl mx-auto md:mx-0">
-                    <p class="text-lg text-gray-400 leading-relaxed mb-4 md:mb-8" id="home_section-description">
-                        {!! $this->home_section->content !!}
-                    </p>
+                <div class="mb-4 text-3xl md:text-4xl font-heading font-bold text-white leading-normal lg:text-sm">
+                    {{ $this->home_section->subtitle }}
                 </div>
+                <p class="pb-10 text-md text-white leading-normal lg:text-sm lg:pt-0">
+                    {!! $this->home_section->description !!}
+                </p>
             </div>
         </div>
     </section>
 
-
     <section class="mx-auto py-20 h-auto text-left bg-gray-50" id="dev">
         <h3
             class="py-10 text-3xl md:text-4xl lg:text-5xl px-10 text-left leading-tight text-red-600 font-bold tracking-tighter uppercase cursor-pointer">
-            <span class="hover:underline transition duration-200 ease-in-out">{{__('Developers')}} </span>
+            <span class="hover:underline transition duration-200 ease-in-out">{{ __('Developers') }} </span>
         </h3>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 space-y-2 px-6 items-center">
             @foreach ($this->developers as $partner)

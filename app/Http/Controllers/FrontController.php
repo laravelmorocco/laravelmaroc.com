@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Tutorial;
@@ -27,7 +26,6 @@ class FrontController extends Controller
         return back();
     }
 
-
     public function categories()
     {
         return view('front.categories');
@@ -45,8 +43,6 @@ class FrontController extends Controller
         return view('front.contact');
     }
 
-    
-   
     public function dynamicPage($slug)
     {
         $page = Page::where('slug', $slug)->firstOrFail();
@@ -54,26 +50,26 @@ class FrontController extends Controller
         return view('front.dynamic-page', compact('page'));
     }
 
-      //Tutorial page
-      public function tutorial(Request $request)
-      {
-          $section = Section::where('page', 6)->firstOrFail();
+    //Tutorial page
+    public function tutorial(Request $request)
+    {
+        $section = Section::where('page', 6)->firstOrFail();
 
-          $tutorials = Tutorial::where('status', 1)
-              ->when($catid, function ($query, $catid) {
-                  return $query->where('service_id', $catid);
-              })
-              ->paginate(8);
+        $tutorials = Tutorial::where('status', 1)
+            ->when($catid, function ($query, $catid) {
+                return $query->where('service_id', $catid);
+            })
+            ->paginate(8);
 
-          return view('front.tutorial', compact('tutorial', 'section'));
-      }
+        return view('front.tutorial', compact('tutorial', 'section'));
+    }
 
-     public function portfolioDetails($slug)
-     {
-         $tutorial = Tutorial::where('slug', $slug)->firstOrFail();
+    public function portfolioDetails($slug)
+    {
+        $tutorial = Tutorial::where('slug', $slug)->firstOrFail();
 
-         return view('front.tutorial-details', compact('tutorial'));
-     }
+        return view('front.tutorial-details', compact('tutorial'));
+    }
 
     public function generateSitemaps()
     {
@@ -90,12 +86,12 @@ class FrontController extends Controller
         }
     }
 
-      // Change Language
-      public function changeLanguage($lang)
-      {
-          session()->put('lang', $lang);
-          app()->setLocale($lang);
+    // Change Language
+    public function changeLanguage($lang)
+    {
+        session()->put('lang', $lang);
+        app()->setLocale($lang);
 
-          return redirect()->route('front.index');
-      }
+        return redirect()->route('front.index');
+    }
 }

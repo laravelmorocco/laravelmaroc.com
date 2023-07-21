@@ -15,13 +15,13 @@
                             </a>
                         </li>
                         @foreach (\App\Helpers::getActivePages() as $page)
-                        <li>
-                            <a href="{{ route('front.dynamicPage' , $page->slug )}}"
-                                class="text-white hover:text-red-400 hover:underline">
-                                {{ $page->name }}
-                            </a>
-                        </li>
-                        @endforeach 
+                            <li>
+                                <a href="{{ route('front.dynamicPage', $page->slug) }}"
+                                    class="text-white hover:text-red-400 hover:underline">
+                                    {{ $page->name }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="w-full md:w-1/2 px-4 mb-10 lg:mb-0">
@@ -31,12 +31,6 @@
                         <li class="mb-6">
                             <a class="text-white hover:text-red-400 hover:underline" href="#">
                                 {{ __('Philosophy') }}</a>
-                        </li>
-                        <li>
-                            <a class="text-white hover:text-red-400 hover:underline"
-                                href="{{ route('front.contact') }}">
-                                {{ __('Contact') }}
-                            </a>
                         </li>
                     </ul>
                 </div>

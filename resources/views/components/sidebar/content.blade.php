@@ -10,11 +10,11 @@
 
 
     {{-- @can('user_access') --}}
-    <x-sidebar.dropdown title="{{ __('Agency') }}" :active="Str::startsWith(
+    <x-sidebar.dropdown title="{{ __('Community') }}" :active="Str::startsWith(
         request()
             ->route()
             ->uri(),
-        'agency',
+        'community',
     )">
         <x-slot name="icon">
             <span class="inline-block mr-3">
@@ -23,6 +23,7 @@
         </x-slot>
 
         
+        <x-sidebar.sublink title="{{ __('Developers') }}" href="{{ route('admin.developers.index') }}" :active="request()->routeIs('admin.tutorials.index')" />
         <x-sidebar.sublink title="{{ __('Projects') }}" href="{{ route('admin.projects.index') }}" :active="request()->routeIs('admin.tutorials.index')" />
         <x-sidebar.sublink title="{{ __('Tutorials') }}" href="{{ route('admin.tutorials.index') }}" :active="request()->routeIs('admin.tutorials.index')" />
     

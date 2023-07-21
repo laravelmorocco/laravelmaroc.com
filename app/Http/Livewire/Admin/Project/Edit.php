@@ -22,7 +22,7 @@ class Edit extends Component
     public $images;
 
     public $image;
-    
+
     public $description;
 
     public array $listsForFields = [];
@@ -35,10 +35,10 @@ class Edit extends Component
 
     protected $rules = [
         'tutorial.title'            => 'required|max:191',
-        'description'          => 'required',
+        'description'               => 'required',
         'tutorial.client_name'      => 'required',
         'tutorial.link'             => 'required',
-        'tutorial.user_id'       => 'required',
+        'tutorial.user_id'          => 'required',
         'tutorial.meta_title'       => 'nullable',
         'tutorial.meta_description' => 'nullable',
         'tutorial.language_id'      => 'required',

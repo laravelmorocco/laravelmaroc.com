@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Livewire\Front;
 
 use Livewire\Component;
 use App\Models\Tutorial;
+
 // use App\Models\TutorialCategory;
 
 class ShowTutorial extends Component

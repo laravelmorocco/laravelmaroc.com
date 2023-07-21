@@ -25,10 +25,10 @@ class Project extends Model
     public $filterable = self::ATTRIBUTES;
 
     protected $fillable = [
-        'id', 'title', 'status', 'slug', 
+        'id', 'title', 'status', 'slug',
         'image', 'service_id', 'content', 'meta_title',
         'meta_description', 'gallery', 'link', 'language_id',
-        'user_id'
+        'user_id',
     ];
 
     protected $casts = [
@@ -56,7 +56,7 @@ class Project extends Model
     {
         return $this->belongsTo(Language::class);
     }
-  
+
     public function user()
     {
         return $this->belongsTo(User::class);

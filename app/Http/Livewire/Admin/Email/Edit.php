@@ -17,7 +17,7 @@ class Edit extends Component
     use WithFileUploads;
 
     public $listeners = [
-        'editModal'
+        'editModal',
     ];
 
     public $editModal;
@@ -36,15 +36,14 @@ class Edit extends Component
     }
 
     protected $rules = [
-            'email_setting.name'             => ['required', 'max:255'],
-            'description'      => ['required'],
-            'message'          => ['required'],
-            'email_setting.default'          => ['required'],
-            'email_setting.placeholders'     => ['required'],
-            'email_setting.type'             => ['required'],
-            'email_setting.subject'          => ['required'],
+        'email_setting.name'         => ['required', 'max:255'],
+        'description'                => ['required'],
+        'message'                    => ['required'],
+        'email_setting.default'      => ['required'],
+        'email_setting.placeholders' => ['required'],
+        'email_setting.type'         => ['required'],
+        'email_setting.subject'      => ['required'],
     ];
-
 
     public function render(): View|Factory
     {
@@ -65,12 +64,12 @@ class Edit extends Component
     {
         $this->validate();
 
-        $this->email_setting->description  = $this->description;
-        
+        $this->email_setting->description = $this->description;
+
         $this->email_setting->save();
 
         $this->alert('success', __('Email template created successfully.'));
-        
+
         $this->emit('refreshIndex');
 
         $this->editModal = false;

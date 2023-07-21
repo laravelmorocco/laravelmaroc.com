@@ -28,7 +28,7 @@ class TutorialFactory extends Factory
             'image'       => 'image.jpg',
             'content'     => fake()->sentence(),
             'status'      => 1,
-            'tags'    => null,
+            'tags'        => null,
             'options'     => null,
             'language_id' => 1,
         ];

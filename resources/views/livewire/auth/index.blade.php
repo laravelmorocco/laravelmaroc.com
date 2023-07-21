@@ -37,7 +37,7 @@
                     class="flex justify-center items-center absolute pin bg-no-repeat md:bg-left w-full h-full bg-center bg-cover">
                     {{-- shadow to text , make it more bigger  --}}
                     <a href="/"
-                        class="my-auto lg:text-6xl md:text-5xl text-4xl text-white uppercase text-white font-extrabold font-heading opacity-75 cursor-pointer">
+                        class="my-auto lg:text-6xl md:text-5xl text-4xl text-white uppercase font-extrabold font-heading opacity-75 cursor-pointer">
                         {{ Helpers::settings('site_title') }}
                     </a>
                 </div>

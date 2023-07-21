@@ -19,12 +19,12 @@ class DeveloperFactory extends Factory
     public function definition()
     {
         return [
-            'name'             => fake()->name(),
-            'description'      => fake()->text(),
-            'city'              => fake()->city(),
-            'country'           => fake()->country(),
-            'phone'             => fake()->phoneNumber(),
-            'status'           => true,
+            'name'        => fake()->name(),
+            'description' => fake()->text(),
+            'city'        => fake()->city(),
+            'country'     => fake()->country(),
+            'phone'       => fake()->phoneNumber(),
+            'status'      => true,
         ];
     }
 }

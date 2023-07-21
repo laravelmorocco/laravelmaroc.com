@@ -33,12 +33,12 @@ class Edit extends Component
     ];
 
     protected $rules = [
-        'blog.title'       => 'required|min:3|max:255',
-        'blog.category_id' => 'required|integer',
-        'blog.slug'        => 'required|string',
-        'description'      => 'required|min:3',
-        'blog.language_id' => 'nullable|integer',
-        'blog.meta_title'  => 'nullable|max:100',
+        'blog.title'            => 'required|min:3|max:255',
+        'blog.category_id'      => 'required|integer',
+        'blog.slug'             => 'required|string',
+        'description'           => 'required|min:3',
+        'blog.language_id'      => 'nullable|integer',
+        'blog.meta_title'       => 'nullable|max:100',
         'blog.meta_description' => 'nullable|max:200',
     ];
 
@@ -94,5 +94,4 @@ class Edit extends Component
     {
         return BlogCategory::pluck('title', 'id')->toArray();
     }
-
 }

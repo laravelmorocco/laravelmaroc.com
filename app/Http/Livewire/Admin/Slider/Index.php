@@ -60,7 +60,7 @@ class Index extends Component
     protected $rules = [
         'slider.title'         => ['required', 'string', 'max:255'],
         'slider.subtitle'      => ['nullable', 'string'],
-        'slider.description'       => ['nullable'],
+        'slider.description'   => ['nullable'],
         'slider.link'          => ['nullable', 'string'],
         'slider.language_id'   => ['nullable', 'integer'],
         'slider.bg_color'      => ['nullable', 'string'],

@@ -70,10 +70,10 @@ class Index extends Component
         $this->selected = [];
     }
 
-      public function confirmed()
-      {
-          $this->emit('delete');
-      }
+    public function confirmed()
+    {
+        $this->emit('delete');
+    }
 
     public function mount()
     {

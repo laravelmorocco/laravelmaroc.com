@@ -146,13 +146,13 @@ class Index extends Component
         $this->alert('success', __('Project deleted successfully.'));
     }
 
-      // Project  Clone
+    // Project  Clone
     public function clone(Project $tutorial)
     {
         $portfolio_details = Project::find($tutorial->id);
         // dd($portfolio_details);
         Project::create([
-            'user_id'       => $portfolio_details->user_id,
+            'user_id'          => $portfolio_details->user_id,
             'language_id'      => $portfolio_details->language_id,
             'title'            => $portfolio_details->title,
             'slug'             => ! empty($portfolio_details->slug) ? Str::slug($portfolio_details->slug) : Str::slug($portfolio_details->title),

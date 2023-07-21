@@ -32,9 +32,9 @@ class Create extends Component
         'tutorial.language_id' => 'required',
         'tutorial.title'       => 'required|unique:tutorials,title|max:191',
         'tutorial.type'        => 'required',
-        'tutorial.tags'    => 'nullable',
+        'tutorial.tags'        => 'nullable',
         'tutorial.options'     => 'nullable',
-        'description'         => 'nullable',
+        'description'          => 'nullable',
     ];
 
     public function createModal()
@@ -45,10 +45,9 @@ class Create extends Component
 
         $this->service = new Tutorial();
 
-        $this->description = "";
-        
-        $this->createModal = true;
+        $this->description = '';
 
+        $this->createModal = true;
     }
 
     public function render()

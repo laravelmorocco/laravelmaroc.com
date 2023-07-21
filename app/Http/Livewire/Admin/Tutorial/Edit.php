@@ -32,9 +32,9 @@ class Edit extends Component
         'tutorial.language_id' => 'required',
         'tutorial.title'       => 'required|max:191',
         'tutorial.type'        => 'required',
-        'tutorial.tags'    => 'nullable',
+        'tutorial.tags'        => 'nullable',
         'tutorial.options'     => 'nullable',
-        'description'         => 'nullable',
+        'description'          => 'nullable',
     ];
 
     public function updatedDescription($value)

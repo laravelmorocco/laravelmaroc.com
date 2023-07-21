@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Livewire\Front;
 
 use Livewire\Component;
@@ -9,7 +11,6 @@ use Livewire\WithPagination;
 
 class Tutorials extends Component
 {
-
     use WithPagination;
 
     public $category;
@@ -25,7 +26,7 @@ class Tutorials extends Component
     {
         return Category::select('id', 'title')->get();
     }
-   
+
     public function render()
     {
         $tutorials = Tutorial::with('category')

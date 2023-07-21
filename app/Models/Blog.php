@@ -44,7 +44,6 @@ class Blog extends Model
         'user_id',
     ];
 
-
     public function category()
     {
         return $this->belongsTo(BlogCategory::class);
@@ -54,7 +53,7 @@ class Blog extends Model
     {
         return $this->belongsTo(Language::class);
     }
-    
+
     public function user()
     {
         return $this->belongsTo(User::class);

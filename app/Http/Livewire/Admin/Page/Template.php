@@ -51,7 +51,7 @@ class Template extends Component
             $page = [
                 'title'            => $this->selectedTemplate['title'],
                 'slug'             => $this->selectedTemplate['slug'],
-                'description'          => $this->selectedTemplate['description'],
+                'description'      => $this->selectedTemplate['description'],
                 'meta_title'       => $this->selectedTemplate['meta_title'],
                 'meta_description' => $this->selectedTemplate['meta_description'],
                 'image'            => $this->selectedTemplate['image'],

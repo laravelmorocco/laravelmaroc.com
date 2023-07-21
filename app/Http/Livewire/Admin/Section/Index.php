@@ -8,7 +8,6 @@ use App\Http\Livewire\Utils\WithSorting;
 use App\Models\Section;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -145,26 +144,26 @@ class Index extends Component
             'position'          => 'center',
             'showConfirmButton' => true,
             'cancelButtonText'  => __('Cancel'),
-            'onConfirmed' => 'delete',
+            'onConfirmed'       => 'delete',
         ]);
         $this->section = $section;
     }
 
-     // Section  Clone
-     public function clone(Section $section)
-     {
-         $section_details = Section::find($section->id);
+    // Section  Clone
+    public function clone(Section $section)
+    {
+        $section_details = Section::find($section->id);
 
-         Section::create([
-             'language_id' => $section_details->language_id,
-             'page'        => $section_details->page,
-             'title'       => $section_details->title,
-             'subtitle'    => $section_details->subtitle,
-             'link'        => $section_details->link,
-             'image'       => $section_details->image,
-             'description' => $section_details->description,
-             'status'      => 0,
-         ]);
-         $this->alert('success', __('Section Cloned successfully!'));
-     }
+        Section::create([
+            'language_id' => $section_details->language_id,
+            'page'        => $section_details->page,
+            'title'       => $section_details->title,
+            'subtitle'    => $section_details->subtitle,
+            'link'        => $section_details->link,
+            'image'       => $section_details->image,
+            'description' => $section_details->description,
+            'status'      => 0,
+        ]);
+        $this->alert('success', __('Section Cloned successfully!'));
+    }
 }

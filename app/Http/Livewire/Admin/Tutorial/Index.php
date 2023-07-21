@@ -11,7 +11,6 @@ use Livewire\WithPagination;
 use Illuminate\Support\Facades\Gate;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-
 class Index extends Component
 {
     use WithPagination;
@@ -145,24 +144,24 @@ class Index extends Component
             'position'          => 'center',
             'showConfirmButton' => true,
             'cancelButtonText'  => __('Cancel'),
-            'onConfirmed' => 'delete',
+            'onConfirmed'       => 'delete',
         ]);
         $this->service = $tutorial;
     }
 
-     // Tutorial  Clone
-     public function clone(Tutorial $tutorial)
-     {
-         $tutorial_details = Tutorial::find($tutorial->id);
-         // dd($tutorial_details);
-         Tutorial::create([
-             'language_id' => $tutorial_details->language_id,
-             'title'       => $tutorial_details->title,
-             'slug'        => $tutorial_details->slug,
-             'image'       => $tutorial_details->image,
-             'content'     => $tutorial_details->content,
-             'status'      => 0,
-         ]);
-         $this->alert('success', __('Tutorial Cloned successfully!') );
-     }
+    // Tutorial  Clone
+    public function clone(Tutorial $tutorial)
+    {
+        $tutorial_details = Tutorial::find($tutorial->id);
+        // dd($tutorial_details);
+        Tutorial::create([
+            'language_id' => $tutorial_details->language_id,
+            'title'       => $tutorial_details->title,
+            'slug'        => $tutorial_details->slug,
+            'image'       => $tutorial_details->image,
+            'content'     => $tutorial_details->content,
+            'status'      => 0,
+        ]);
+        $this->alert('success', __('Tutorial Cloned successfully!'));
+    }
 }

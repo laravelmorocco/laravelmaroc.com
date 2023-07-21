@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Livewire\Admin\Menu;
 
-use App\Http\Livewire\Utils\WithSorting;
 use App\Models\Menu;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -12,10 +11,10 @@ use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+
 class Index extends Component
 {
     use WithPagination;
-    use WithSorting;
     use LivewireAlert;
     
     public string $perPage = '100';
@@ -42,6 +41,7 @@ class Index extends Component
         'menus.*.url' => 'required',
         'menus.*.parent_id' => 'nullable|exists:menus,id',
         'menus.*.new_window' => 'boolean',
+        'menus.*.status' => 'boolean',
     ];
 
     public function mount()
@@ -93,6 +93,7 @@ class Index extends Component
             $this->menu->url = $menu['url'];
             $this->menu->parent_id = $menu['parent_id'] ?? null;
             $this->menu->new_window = $menu['new_window'] ?? false;
+            $this->menu->status = $menu['status'] ?? false;
 
             $this->menu->save();
 
@@ -122,7 +123,7 @@ class Index extends Component
         $menu->url = $this->url;
         $menu->parent_id = $this->parent_id ?? null;
         $menu->new_window = $this->new_window ?? false;
-        // Add any additional fields you have in your menu model
+        $menu->status = $this->status ?? false;
     
         $menu->save();
     
@@ -168,6 +169,7 @@ class Index extends Component
                 'url' => 'contact',
                 'parent_id' => null,
                 'new_window' => false,
+                'status' => true,
             ],
             [
                 'name' => 'Login',
@@ -176,6 +178,7 @@ class Index extends Component
                 'url' => 'login',
                 'parent_id' => null,
                 'new_window' => false,
+                'status' => true,
             ],
             [
                 'name' => 'Register',
@@ -184,6 +187,7 @@ class Index extends Component
                 'url' => 'register',
                 'parent_id' => null,
                 'new_window' => false,
+                'status' => true,
             ],
         ];
         // create the menus

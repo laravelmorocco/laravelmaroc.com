@@ -70,5 +70,4 @@ class Create extends Component
     {
         return Language::pluck('name', 'id')->toArray();
     }
-
 }

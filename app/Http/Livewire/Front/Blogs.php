@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Livewire\Front;
 
 use Livewire\Component;
@@ -9,7 +11,6 @@ use Livewire\WithPagination;
 
 class Blogs extends Component
 {
-
     use WithPagination;
 
     public $category;
@@ -25,7 +26,7 @@ class Blogs extends Component
     {
         return BlogCategory::select('id', 'title')->get();
     }
-   
+
     public function render()
     {
         $blogs = Blog::with('category')

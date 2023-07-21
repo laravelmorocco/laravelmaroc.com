@@ -28,7 +28,7 @@ class CreateTutorialsTable extends Migration
             $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignId('language_id')->nullable()->constrained('languages')->nullOnDelete();
-            
+
             $table->boolean('status')->default(true);
             $table->timestamps();
             $table->softDeletes();
