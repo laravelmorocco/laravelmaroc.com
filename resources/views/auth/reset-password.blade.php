@@ -1,51 +1,43 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="h-20 text-gray-500" />
-            </a>
-        </x-slot>
+@title('Réinitialiser votre mot de passe')
 
-        <form method="POST" action="{{ route('password.update') }}">
-            @csrf
+@extends('layouts.default')
 
-            <!-- Password Reset Token -->
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+@section('body')
 
-            <!-- Email Address -->
+    <div class="flex items-center justify-center min-h-full py-16 sm:py-24">
+        <div class="max-w-md w-full">
             <div>
-                <x-input-label for="email" :value="__('Email')" />
-
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
-
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <h2 class="text-center text-3xl font-extrabold text-skin-inverted font-heading sm:text-left">
+                    {{ __('Réinitialiser votre mot de passe') }}
+                </h2>
             </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
+            <form action="{{ route('password.update') }}" method="POST" class="mt-8 space-y-6">
+                @csrf
+                <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required />
+                <div class="block">
+                    <x-label for="email">{{ __('Adresse E-mail') }}</x-label>
+                    <x-email id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+                </div>
 
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
-            </div>
+                <div class="block">
+                    <x-label for="email">{{ __('Mot de passe') }}</x-label>
+                    <x-password id="password" class="block mt-1 w-full" name="password" required autocomplete="new-password" />
+                </div>
 
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                <div class="block">
+                    <x-label for="email">{{ __('Confirmer Mot de passe') }}</x-label>
+                    <x-password id="password_confirmation" class="block mt-1 w-full" name="password_confirmation" required autocomplete="new-password" />
+                </div>
 
-                <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                    type="password"
-                                    name="password_confirmation" required />
+                <div class="flex items-center justify-end mt-4">
+                    <x-button>
+                        {{ __('Réinitialiser mot de passe') }}
+                    </x-button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-primary-button type="submit" primary class="ml-3">
-                    {{ __('Reset Password') }}
-                </x-primary-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+@stop

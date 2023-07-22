@@ -4,34 +4,24 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\App;
 
-class DatabaseSeeder extends Seeder
+final class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
-        \App\Models\User::factory(10)->create();
+        $this->call(TagSeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(AddEnterpriseRoleSeeder::class);
+        $this->call(ReactionSeeder::class);
+        $this->call(ChannelSeeder::class);
+        $this->call(DeveloperPremiumPlanSeeder::class);
+        $this->call(WorldSeeder::class);
+        $this->call(FeatureTableSeeder::class);
 
-        $this->call([
-
-            LanguagesSeeder::class,
-            CategorySeeder::class,
-            SectionSeeder::class,
-            SettingSeeder::class,
-            // FeaturedBannerSeeder::class,
-            BlogSeeder::class,
-            SliderSeeder::class,
-            PermissionSeeder::class,
-            TutorialSeeder::class,
-            TutorialSeeder::class,
-            DeveloperSeeder::class,
-
-        ]);
+        if ( ! App::environment('production')) {
+            $this->call(UserSeeder::class);
+        }
     }
 }

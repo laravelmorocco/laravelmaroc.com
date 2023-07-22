@@ -4,32 +4,30 @@ declare(strict_types=1);
 
 namespace App\Console;
 
+use App\Console\Commands\Cleanup\DeleteOldUnverifiedUsers;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
-class Kernel extends ConsoleKernel
+final class Kernel extends ConsoleKernel
 {
-    /**
-     * Define the application's command schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     *
-     * @return void
-     */
-    protected function schedule(Schedule $schedule)
+    protected $commands = [
+        DeleteOldUnverifiedUsers::class,
+    ];
+
+    protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('lcm:delete-old-unverified-users')->daily();
+
+        if (app()->environment('production')) {
+            $schedule->command('lcm:post-article-to-twitter')->everyFourHours();
+            $schedule->command('lcm:post-article-to-telegram')->everyFourHours();
+            $schedule->command('lcm:send-unverified-mails')->weeklyOn(1, '8:00');
+            $schedule->command('sitemap:generate')->daily();
+        }
     }
 
-    /**
-     * Register the commands for the application.
-     *
-     * @return void
-     */
-    protected function commands()
+    protected function commands(): void
     {
         $this->load(__DIR__.'/Commands');
-
-        require base_path('routes/console.php');
     }
 }

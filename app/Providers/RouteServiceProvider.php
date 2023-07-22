@@ -4,51 +4,57 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
-class RouteServiceProvider extends ServiceProvider
+final class RouteServiceProvider extends ServiceProvider
 {
-    /**
-     * The path to the "home" route for your application.
-     *
-     * Typically, users are redirected here after authentication.
-     */
-    public const ADMIN_HOME = '/admin/dashboard';
+    public const HOME = '/dashboard';
 
-    public const CLIENT_HOME = '/';
-
-    /**
-     * Define your route model bindings, pattern filters, and other route configuration.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
         $this->configureRateLimiting();
 
-        $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
+        $this->routeBindings();
+
+        $this->routes(function (): void {
+            Route::prefix('api')
+                ->middleware('api')
+                ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
+                ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+        });
+
+        Route::macro('redirectMap', function (array $map, int $status = 302): void {
+            foreach ($map as $old => $new) {
+                Route::redirect($old, $new, $status)->name($old);
+            }
         });
     }
 
-    /**
-     * Configure the rate limiters for the application.
-     *
-     * @return void
-     */
-    protected function configureRateLimiting()
+    protected function configureRateLimiting(): void
     {
-        RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
-        });
+        RateLimiter::for(
+            name: 'api',
+            callback: fn (Request $request): Limit => Limit::perMinute(60)
+                ->by(
+                    (string) (optional($request->user())->id ?: $request->ip())
+                )
+        );
+    }
+
+    protected function routeBindings(): void
+    {
+        Route::bind(
+            key: 'username',
+            binder: fn (string $username): User => User::findByUsername($username)
+        );
     }
 }

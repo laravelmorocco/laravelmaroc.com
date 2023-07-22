@@ -1,38 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{ get_current_theme()}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>@yield('title')</title>
+    <title>@yield('title')</title>
 
-        <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Styles -->
+    <link href="https://fonts.cdnfonts.com/css/operator-mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}code{font-family:monospace,monospace;font-size:1em}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}code{font-family:Menlo,Monaco,Consolas,Liberation Mono,Vendor New,monospace}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-zinc-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-zinc-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-zinc-400{--border-opacity:1;border-color:#cbd5e0;border-color:rgba(203,213,224,var(--border-opacity))}.border-t{border-top-width:1px}.border-r{border-right-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-xl{max-width:36rem}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-zinc-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-zinc-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-zinc-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-zinc500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-zinc-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-zinc-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-zinc-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.uppercase{text-transform:uppercase}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.tracking-wider{letter-spacing:.05em}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@-webkit-keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@-webkit-keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@keyframes ping{0%{transform:scale(1);opacity:1}75%,to{transform:scale(2);opacity:0}}@-webkit-keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,to{opacity:1}50%{opacity:.5}}@-webkit-keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@keyframes bounce{0%,to{transform:translateY(-25%);-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:translateY(0);-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1)}}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-zinc-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-zinc-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-zinc-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-zinc-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}}
-        </style>
+    @include('layouts._favicons')
+    @include('layouts._fathom')
+</head>
+<body class="antialiased font-sans bg-skin-body">
 
-        <style>
-            body {
-                font-family: 'Nunito';
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-zinc-100 dark:bg-zinc-900 sm:items-center sm:pt-0">
-            <div class="max-w-xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex items-center pt-8 sm:justify-start sm:pt-0">
-                    <div class="px-4 text-lg text-zinc500 border-r border-zinc-400 tracking-wider">
-                        @yield('code')
-                    </div>
+    <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="shrink-0 pt-16">
+            <img class="mx-auto h-12 w-auto sm:h-16 logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="Laravel.cm">
+            <img class="mx-auto h-12 w-auto sm:h-16 logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="Laravel.cm">
+        </div>
+        <div class="max-w-xl mx-auto py-16 sm:py-24">
+            <div class="text-center">
+                <p class="text-sm font-semibold text-skin-primary uppercase tracking-wide font-sans">Erreur @yield('code')</p>
+                <h1 class="mt-2 text-4xl font-extrabold text-skin-inverted tracking-tight sm:text-5xl font-sans">@yield('message')</h1>
+                <p class="mt-2 text-lg text-skin-base font-normal">Il semble y avoir un problème en ce moment! Veuillez réessayer plus tard.</p>
+            </div>
+            <div class="mt-12">
+                <h2 class="text-sm font-semibold text-skin-base tracking-wide uppercase font-sans">Pages Populaires</h2>
+                <ul role="list" class="mt-4 border-t border-b border-skin-base divide-y divide-skin-base">
+                    <li class="relative py-6 flex items-start space-x-4">
+                        <div class="shrink-0">
+                            <span class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-50">
+                                <x-heroicon-o-book-open class="h-6 w-6 text-green-700" />
+                            </span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-base font-medium text-skin-inverted font-sans">
+                                <span class="rounded-sm focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500">
+                                    <a href="{{ route('forum.index') }}" class="focus:outline-none">
+                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                        Forum
+                                    </a>
+                                </span>
+                            </h3>
+                            <p class="text-base text-skin-base font-normal">Apprenez, découvrez, partagez dans le Forum.</p>
+                        </div>
+                        <div class="shrink-0 self-center">
+                            <x-heroicon-s-chevron-right class="h-5 w-5 text-skin-muted" />
+                        </div>
+                    </li>
 
-                    <div class="ml-4 text-lg text-zinc500 uppercase tracking-wider">
-                        @yield('message')
-                    </div>
+                    <li class="relative py-6 flex items-start space-x-4">
+                        <div class="shrink-0">
+                            <span class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-50">
+                                <x-heroicon-o-microphone class="h-6 w-6 text-green-700" />
+                            </span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-base font-medium text-skin-inverted font-sans">
+                                <span class="rounded-sm focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500">
+                                    <a href="#" class="focus:outline-none">
+                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                        Podcasts
+                                    </a>
+                                </span>
+                            </h3>
+                            <p class="text-base text-skin-base font-normal">Des émissions radios pour la culture.</p>
+                        </div>
+                        <div class="shrink-0 self-center">
+                            <x-heroicon-s-chevron-right class="h-5 w-5 text-skin-muted" />
+                        </div>
+                    </li>
+
+                    <li class="relative py-6 flex items-start space-x-4">
+                        <div class="shrink-0">
+                          <span class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-50">
+                              <x-heroicon-o-bookmark-alt class="h-6 w-6 text-green-700" />
+                          </span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-base font-medium text-skin-inverted font-sans">
+                                <span class="rounded-sm focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500">
+                                    <a href="{{ route('rules') }}" class="focus:outline-none">
+                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                        Guides
+                                    </a>
+                                </span>
+                            </h3>
+                            <p class="text-base text-skin-base font-normal">Guide d'utilisation et paramétrage du site.</p>
+                        </div>
+                        <div class="shrink-0 self-center">
+                            <x-heroicon-s-chevron-right class="h-5 w-5 text-skin-muted" />
+                        </div>
+                    </li>
+
+                    <li class="relative py-6 flex items-start space-x-4">
+                        <div class="shrink-0">
+                            <span class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-50">
+                                <x-heroicon-o-rss class="h-6 w-6 text-green-700" />
+                            </span>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-base font-medium text-skin-inverted font-sans">
+                                <span class="rounded-sm focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500">
+                                    <a href="{{ route('articles') }}" class="focus:outline-none">
+                                        <span class="absolute inset-0" aria-hidden="true"></span>
+                                        Blog
+                                    </a>
+                                </span>
+                            </h3>
+                            <p class="text-base text-skin-base font-normal">Lisez les dernières nouvelles et articles.</p>
+                        </div>
+                        <div class="shrink-0 self-center">
+                            <x-heroicon-s-chevron-right class="h-5 w-5 text-skin-muted" />
+                        </div>
+                    </li>
+                </ul>
+                <div class="mt-8">
+                    <a href="{{ url('/') }}" class="text-base font-medium text-skin-primary hover:text-skin-primary-hover">
+                        Ou retourner à l'accueil<span aria-hidden="true"> &rarr;</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </body>
+    </main>
+
+</body>
 </html>

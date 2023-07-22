@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
 
     'models' => [
@@ -95,13 +97,6 @@ return [
 
         'team_foreign_key' => 'team_id',
     ],
-
-    /*
-     * When set to true, the method for checking permissions will be registered on the gate.
-     * Set this to false, if you want to implement custom logic for checking permissions.
-     */
-
-    'register_permission_check_method' => true,
 
     /*
      * When set to true the package implements teams using the 'team_foreign_key'. If you want

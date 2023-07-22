@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Laravel\Sanctum\Sanctum;
 
 return [
@@ -46,7 +48,7 @@ return [
     |
     */
 
-    'expiration' => null,
+    'expiration' => 129600,
 
     /*
     |--------------------------------------------------------------------------

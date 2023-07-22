@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
 
     /*
@@ -18,7 +20,6 @@ return [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
-        'scheme' => 'https',
     ],
 
     'postmark' => [
@@ -31,20 +32,33 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'discord' => [
-        'token' => 'YOUR_API_TOKEN',
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => env('GITHUB_REDIRECT'),
+        'scopes' => [],
+        'with' => [],
     ],
 
-    'facebook' => [    
-        'client_id' => env('FACEBOOK_CLIENT_ID'),  
-        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),  
-        'redirect' => env('FACEBOOK_REDIRECT_URI') 
+    'twitter' => [
+        'client_id' => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect' => env('TWITTER_REDIRECT'),
+        'consumer_key' => env('TWITTER_CLIENT_ID'),
+        'consumer_secret' => env('TWITTER_CLIENT_SECRET'),
+        'access_token' => env('TWITTER_ACCESS_TOKEN'),
+        'access_secret' => env('TWITTER_ACCESS_SECRET'),
+        'scopes' => [],
+        'with' => [],
     ],
-      
-    'google' => [    
-    'client_id' => env('GOOGLE_CLIENT_ID'),  
-    'client_secret' => env('GOOGLE_CLIENT_SECRET'),  
-    'redirect' => env('GOOGLE_REDIRECT_URI') 
+
+    'unsplash' => [
+        'access_key' => env('UNSPLASH_ACCESS_KEY'),
+    ],
+
+    'telegram-bot-api' => [
+        'token' => env('TELEGRAM_BOT_TOKEN'),
+        'channel' => env('TELEGRAM_CHANNEL'),
     ],
 
 ];

@@ -2,17 +2,20 @@ includes:
     - ./vendor/nunomaduro/larastan/extension.neon
 
 parameters:
-
     paths:
-        - app/
-
-    # Level 9 is the highest level
-    level: 5
-
-#    ignoreErrors:
-#        - '#PHPDoc tag @var#'
-#
-#    excludePaths:
-#        - ./*/*/FileToBeExcluded.php
-#
-#    checkMissingIterableValueType: false
+        - app
+    level: 8
+    excludePaths:
+        - app/Http/Resources/
+        - app/Http/Middleware/
+        - app/Actions/
+        - app/Notifications/
+        - app/Http/Controllers/OAuthController.php
+        - app/Http/Controllers/Api/Auth/LoginController.php
+        - app/Markdown/MarkdownHelper.php
+    scanDirectories:
+        - ./helpers
+    ignoreErrors:
+        - "#^Cannot access property \\$transaction on array\\|object\\.$#"
+    checkGenericClassInNonGenericObjectType: false
+    checkMissingIterableValueType: false
