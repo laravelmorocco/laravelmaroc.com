@@ -6,34 +6,22 @@
     <a href="https://laravel.com">
         <img alt="Laravel v9.x" src="https://img.shields.io/badge/Laravel-v9.x-FF2D20">
     </a>
-    <a href="https://github.com/laravelcm/laravel.cm/actions">
-        <img src="https://github.com/laravelcm/laravel.cm/workflows/Tests/badge.svg" alt="Build Status" />
+    <a href="https://github.com/laravelmorocco/laravelmaroc.com/actions">
+        <img src="https://github.com/laravelmorocco/laravelmaroc.com/workflows/Tests/badge.svg" alt="Build Status" />
     </a>
-    <a href="https://github.com/laravelcm/laravel.cm/actions/workflows/coding-standards.yml">
-        <img src="https://github.com/laravelcm/laravel.cm/actions/workflows/coding-standards.yml/badge.svg" alt="Coding Standards" />
-    </a>
-    <a href="https://forge.laravel.com">
-        <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2Fb0b9e269-e85c-40eb-9b8d-cfa8197a1bb2&style=plastic" alt="Laravel Forge Site Deployment Status" />
+    <a href="https://github.com/laravelmorocco/laravelmaroc.com/actions/workflows/coding-standards.yml">
+        <img src="https://github.com/laravelmorocco/laravelmaroc.com/actions/workflows/coding-standards.yml/badge.svg" alt="Coding Standards" />
     </a>
 </p>
 
-## Laravel.cm
-Ce dépôt contient le code source du site de [Laravel.cm](https://laravel.cm). Laravel Cameroun est la plus grande communauté de 
-développeurs PHP & Laravel résidant au Cameroun.
+## laravelmaroc.com
+Ce dépôt contient le code source du site de [laravelmaroc.com](https://laravelmaroc.com). Laravel Maroc est la plus grande communauté de 
+développeurs PHP & Laravel résidant au Maroc.
 
 ## Rejoindre la communauté
 Vous pouvez rejoindre la communauté ou nous suivre via nos différentes plateformes
 
-[Site Officiel](https://laravel.cm) - [Facebook](https://www.facebook.com/laravelcm) - [Twitter](https://twitter.com/laravelcm) - [Rejoindre Slack](https://laravel.cm/slack) - [Rejoindre Discord](https://laravel.cm/discord)
-
-## Sponsors
-Nous tenons à remercier ces **entreprises extraordinaires** pour leur parrainage. Si vous souhaitez devenir sponsor, veuillez visiter <a href="https://laravel.cm/sponsors">la page Laravel.cm de Sponsoring</a>.
-
-- **[Laravel Shopper](https://laravelshopper.io)**
-- [GDG Douala](https://gdg.community.dev/gdg-douala) 
-- [NotchPay](https://notchpay.co) 
-- [Dark Code](https://dark-code.cm) 
-- [Sharuco](https://sharuco.lndev.me) 
+[Site Officiel](https://laravelmaroc.com) - [Facebook](https://www.facebook.com/groups/1538696016373740) - [Rejoindre Discord](https://discord.gg/NrzNKM8z)
 
 ## Caractéristiques Serveur
 The following tools are required in order to start the installation.
@@ -44,16 +32,16 @@ The following tools are required in order to start the installation.
 - [Valet](https://laravel.com/docs/valet#installation)
 
 ## Installation
-> Notez que vous êtes libre d'ajuster l'emplacement `~/Sites/laravel.cm` à n'importe quel répertoire de votre choix sur votre machine. Ce faisant, assurez-vous d'exécuter la commande `valet link` dans le répertoire souhaité.
+> Notez que vous êtes libre d'ajuster l'emplacement `~/Sites/laravelmaroc` à n'importe quel répertoire de votre choix sur votre machine. Ce faisant, assurez-vous d'exécuter la commande `valet link` dans le répertoire souhaité.
 
-1. Clonez ce repo avec la commande `git clone git@github.com:laravelcm/laravel.cm.git ~/Sites/laravel.cm`
+1. Clonez ce repo avec la commande `git clone git@github.com:laravelmorocco/laravelmaroc.com.git ~/Sites/laravelmaroc`
 2. Exécuter `composer install` pour installer les dépendances PHP
-3. Configurez une base de données locale appelée `laravelcm`
+3. Configurez une base de données locale appelée `laravel_maroc`
 4. Exécutez `composer setup` pour configurer l'application
 5. Configurer un pilote de messagerie fonctionnel comme [Mailtrap](https://mailtrap.io/) ou [Maildev](https://maildev.github.io/maildev/)
 6. Configurez les fonctionnalités (facultatives) ci-dessous
 
-Vous pouvez maintenant visiter l'application dans votre navigateur en visitant [http://laravel.cm.test](http://laravel.cm.test). Si vous avez amorcé la base de données, vous pouvez vous connecter à un compte de test avec ** `johndoe` ** & **` password` **.
+Vous pouvez maintenant visiter l'application dans votre navigateur en visitant [http://laravelmaroc.test](http://laravelmaroc.test). Si vous avez amorcé la base de données, vous pouvez vous connecter à un compte de test avec ** `johndoe` ** & **` password` **.
 
 Une fois que vous avez installé et configuré, pour avoir des dummy data vous devez exécuter la commande
 ```shell
@@ -61,12 +49,12 @@ php artisan db:seed --class=DummyDatabaseSeeder
 ```
 
 ### Github Authentication (optionnel)
-Pour que l'authentification Github fonctionne localement, vous devez [enregistrer une nouvelle application OAuth sur Github](https://github.com/settings/applications/new). Utilisez `http://laravel.cm.test` pour l'URL de la page d'accueil et `http://laravel.cm.test/auth/github` pour l'URL de rappel. Lorsque vous avez créé l'application, remplissez l'ID et le secret dans votre fichier `.env` dans les variables d'environnement ci-dessous. Vous devriez maintenant pouvoir vous authentifier avec Github.
+Pour que l'authentification Github fonctionne localement, vous devez [enregistrer une nouvelle application OAuth sur Github](https://github.com/settings/applications/new). Utilisez `http://laravelmaroc.test` pour l'URL de la page d'accueil et `http://laravelmaroc.test/auth/github` pour l'URL de rappel. Lorsque vous avez créé l'application, remplissez l'ID et le secret dans votre fichier `.env` dans les variables d'environnement ci-dessous. Vous devriez maintenant pouvoir vous authentifier avec Github.
 
 ```shell
 GITHUB_ID=
 GITHUB_SECRET=
-GITHUB_URL=http://laravel.cm.test/auth/github
+GITHUB_URL=http://laravelmaroc.test/auth/github
 ```
 
 ### Twitter Sharing (optionnel)
@@ -82,7 +70,7 @@ TWITTER_ACCESS_SECRET=
 Les articles approuvés sont partagés dans l'ordre dans lequel ils ont été soumis pour approbation. Les articles sont partagés deux fois par jour à 14h00 et 18h00 UTC. Une fois qu'un article a été partagé, il ne sera plus partagé.
 
 ### Notifications Telegram (optionnel)
-Laravel Cameroun peut notifier les administrateurs des nouveaux articles soumis via Telegram. Pour que cela fonctionne, vous devez configurer un [bot Telegram](https://core.telegram.org/bots) et obtenir un token. Ensuite, configurez le canal sur lequel vous souhaitez envoyer les messages relatifs aux nouveaux articles.
+Laravel Maroc peut notifier les administrateurs des nouveaux articles soumis via Telegram. Pour que cela fonctionne, vous devez configurer un [bot Telegram](https://core.telegram.org/bots) et obtenir un token. Ensuite, configurez le canal sur lequel vous souhaitez envoyer les messages relatifs aux nouveaux articles.
 
 ```shell
 TELEGRAM_BOT_TOKEN=
@@ -98,7 +86,7 @@ Command | Description
 
 ## Maintainers
 
-Le site Laravel.cm est actuellement maintenu par [Arthur Monney](https://github.com/mckenziearts). Si vous avez des questions, n'hésitez pas à créer une issue sur ce dépôt.
+Le site laravelmaroc.com est actuellement maintenu par [laravelmorocco](https://github.com/laravelmorocco). Si vous avez des questions, n'hésitez pas à créer une issue sur ce dépôt.
 
 ## Contribution
 
@@ -110,7 +98,7 @@ Veuillez lire notre [Code de conduite](CODE_OF_CONDUCT.md) avant de contribuer o
 
 ## Vulnérabilités de sécurité
 
-Si vous découvrez une faille de sécurité dans Laravel.cm, veuillez envoyer un e-mail immédiatement à [contact@arthurmonney.me](mailto:contact@arthurmonney.me). **Ne créez pas de problème pour la vulnérabilité.**
+Si vous découvrez une faille de sécurité dans laravelmaroc.com, veuillez envoyer un e-mail immédiatement à [contact@laravelmaroc.com](mailto:contact@laravelmaroc.com). **Ne créez pas de problème pour la vulnérabilité.**
 
 ## License
 
