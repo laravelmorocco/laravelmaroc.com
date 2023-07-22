@@ -358,7 +358,7 @@ final class User extends Authenticatable implements MustVerifyEmail, HasMedia, F
      */
     public function routeNotificationForSlack(Notification $notification): string
     {
-        return config('lcm.slack.web_hook');
+        return config('lma.slack.web_hook');
     }
 
     public function replies(): Collection

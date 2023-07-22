@@ -1,4 +1,4 @@
-@php($ads = Illuminate\Support\Arr::random(config('lcm.ads')))
+@php($ads = Illuminate\Support\Arr::random(config('lma.ads')))
 
 <div id="laravelcm-ads">
     <a href="{{ $ads['url'] }}" class="block">
