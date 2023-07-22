@@ -10,7 +10,7 @@ use Illuminate\Console\Command;
 
 final class UpdateUserBestRepliesPoints extends Command
 {
-    protected $signature = 'lcm:update-users-bests-replies-points';
+    protected $signature = 'lma:update-users-bests-replies-points';
 
     protected $description = 'Updating users bests replies reputation points';
 

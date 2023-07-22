@@ -12,7 +12,7 @@ use Exception;
 
 final class CreateAdminUser extends Command
 {
-    protected $signature = 'lcm:admin';
+    protected $signature = 'lma:admin';
 
     protected $description = 'Create user with admin role and all permissions.';
 

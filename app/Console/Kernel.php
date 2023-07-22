@@ -16,12 +16,12 @@ final class Kernel extends ConsoleKernel
 
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('lcm:delete-old-unverified-users')->daily();
+        $schedule->command('lma:delete-old-unverified-users')->daily();
 
         if (app()->environment('production')) {
-            $schedule->command('lcm:post-article-to-twitter')->everyFourHours();
-            $schedule->command('lcm:post-article-to-telegram')->everyFourHours();
-            $schedule->command('lcm:send-unverified-mails')->weeklyOn(1, '8:00');
+            $schedule->command('lma:post-article-to-twitter')->everyFourHours();
+            $schedule->command('lma:post-article-to-telegram')->everyFourHours();
+            $schedule->command('lma:send-unverified-mails')->weeklyOn(1, '8:00');
             $schedule->command('sitemap:generate')->daily();
         }
     }
