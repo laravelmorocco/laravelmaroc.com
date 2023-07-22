@@ -28,7 +28,6 @@ final class DeveloperPremiumPlanSeeder extends Seeder
         ]);
         $rookiePlan->features()->saveMany([
             new Feature(['name' => 'Voir les vidéos premium', 'value' => 1, 'sort_order' => 1]),
-            new Feature(['name' => 'Écouter les Podcasts premium', 'value' => 1, 'sort_order' => 2]),
             new Feature(['name' => 'Poster des tutoriels vidéo', 'value' => 1, 'sort_order' => 3]),
             new Feature(['name' => 'Badge Premium sur le profil', 'value' => 1, 'sort_order' => 4]),
             new Feature(['name' => 'Accès au code source des tutoriels', 'value' => 1, 'sort_order' => 5]),
@@ -50,7 +49,6 @@ final class DeveloperPremiumPlanSeeder extends Seeder
         ]);
         $proPlan->features()->saveMany([
             new Feature(['name' => 'Voir les vidéos premium', 'value' => 1, 'sort_order' => 1]),
-            new Feature(['name' => 'Écouter les Podcasts premium', 'value' => 1, 'sort_order' => 2]),
             new Feature(['name' => 'Poster des tutoriels vidéo', 'value' => 1, 'sort_order' => 3]),
             new Feature(['name' => 'Badge Premium sur le profil', 'value' => 1, 'sort_order' => 4]),
             new Feature(['name' => 'Accès au code source des tutoriels', 'value' => 1, 'sort_order' => 5]),

@@ -74,19 +74,7 @@
                     </p>
                 </div>
             </div>
-            <div class="bg-skin-card p-6 rounded-md mt-4">
-                <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Puis-je participer à un podcast?
-                </h3>
-                <div class="prose prose-sm leading-5">
-                    <p>Bien sûr ! Les podcasts seront ouverts à tous et tout le monde aura l'occasion de participer.</p>
-                    <p>La communauté se veut ouverte et ne pas couvrir que le sujet de la programmation.</p>
-                    <p>
-                        De ce fait plusieurs autres thématiques seront partagées pour donner la possibilité à tout le monde
-                        de partager son experience autour d'un micro.
-                    </p>
-                </div>
-            </div>
+           
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
                     Comment changer mon nom d'utilisateur Twitter/GitHub ?
@@ -229,19 +217,6 @@
                     <p>
                         Visitez la page de <a href="{{ route('sponsors') }}">Sponsoring</a> pour avoir toutes les informations
                         (par exemple comment ça marche, comment être sponsor de la communauté, pourquoi sponsoriser son contenu, etc).
-                    </p>
-                </div>
-            </div>
-            <div class="bg-skin-card p-6 rounded-md mt-4">
-                <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Puis-je participer à un podcast?
-                </h3>
-                <div class="prose prose-sm leading-5">
-                    <p>Bien sûr ! Les podcasts seront ouverts à tous et tout le monde aura l'occasion de participer.</p>
-                    <p>La communauté se veut ouverte et ne pas couvrir que le sujet de la programmation.</p>
-                    <p>
-                        De ce fait plusieurs autres thématiques seront partagées pour donner la possibilité à tout le monde
-                        de partager son experience autour d'un micro.
                     </p>
                 </div>
             </div>
@@ -407,19 +382,6 @@
                     <p>
                         Visitez la page de <a href="{{ route('sponsors') }}">Sponsoring</a> pour avoir toutes les informations
                         (par exemple comment ça marche, comment être sponsor de la communauté, pourquoi sponsoriser son contenu, etc).
-                    </p>
-                </div>
-            </div>
-            <div class="bg-skin-card p-6 rounded-md mt-4">
-                <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Puis-je participer à un podcast?
-                </h3>
-                <div class="prose prose-sm leading-5">
-                    <p>Bien sûr ! Les podcasts seront ouverts à tous et tout le monde aura l'occasion de participer.</p>
-                    <p>La communauté se veut ouverte et ne pas couvrir que le sujet de la programmation.</p>
-                    <p>
-                        De ce fait plusieurs autres thématiques seront partagées pour donner la possibilité à tout le monde
-                        de partager son experience autour d'un micro.
                     </p>
                 </div>
             </div>

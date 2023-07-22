@@ -56,28 +56,6 @@
 
                     <li class="relative py-6 flex items-start space-x-4">
                         <div class="shrink-0">
-                            <span class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-50">
-                                <x-heroicon-o-microphone class="h-6 w-6 text-green-700" />
-                            </span>
-                        </div>
-                        <div class="min-w-0 flex-1">
-                            <h3 class="text-base font-medium text-skin-inverted font-sans">
-                                <span class="rounded-sm focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500">
-                                    <a href="#" class="focus:outline-none">
-                                        <span class="absolute inset-0" aria-hidden="true"></span>
-                                        Podcasts
-                                    </a>
-                                </span>
-                            </h3>
-                            <p class="text-base text-skin-base font-normal">Des émissions radios pour la culture.</p>
-                        </div>
-                        <div class="shrink-0 self-center">
-                            <x-heroicon-s-chevron-right class="h-5 w-5 text-skin-muted" />
-                        </div>
-                    </li>
-
-                    <li class="relative py-6 flex items-start space-x-4">
-                        <div class="shrink-0">
                           <span class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-50">
                               <x-heroicon-o-bookmark-alt class="h-6 w-6 text-green-700" />
                           </span>

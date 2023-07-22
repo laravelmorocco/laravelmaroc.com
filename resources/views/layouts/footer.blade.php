@@ -9,7 +9,6 @@
                     <a href="https://github.com/caneco/laravel-country-logomarks" class="underline text-skin-inverted font-medium">
                         {{ __('Laravel Country Logomarks') }}
                     </a>
-                    <span class="ml-1.5">{{ __('par') }} Caneco</span>
                     <img class="ml-2 h-6 w-6 rounded-full" src="https://avatars.githubusercontent.com/u/502041" alt="Caneco profile">
                 </p>
             </div>
@@ -20,11 +19,9 @@
                     </h3>
                     <ul class="mt-4 space-y-4">
                         <x-footer-link :title="__('A propos')" :url="route('about')" />
-                        <x-footer-link :title="__('Podcasts')" url="#" soon />
                         <x-footer-link :title="__('Jobs')" url="#" soon />
                         <x-footer-link :title="__('Sponsors')" :url="route('sponsors')" />
                         <x-footer-link :title="__('Branding')" url="https://github.com/caneco/laravel-country-logomarks/blob/main/src/cm/README.md" />
-
                     </ul>
                 </div>
                 <div>
@@ -45,7 +42,7 @@
                         {{ __('Rejoignez nous') }}
                     </h3>
                     <p class="mt-4 text-base text-skin-base">
-                        {{ __('Rejoignez notre newsletter recevez des tutoriels, articles et podcasts sur le design et la programmation web.') }}
+                        {{ __('Rejoignez notre newsletter recevez des tutoriels, articles sur le design et la programmation web.') }}
                     </p>
                     <form aria-labelledby="newsletter-headline" action="https://laravelcm.us4.list-manage.com/subscribe/post?u=0642d391e4785535c232a8c66&id=6ff87af677" method="POST" id="mc-embedded-subscribe-form" class="mt-4 sm:flex" name="mc-embedded-subscribe-form" target="_blank" novalidate>
                         <div class="w-full">

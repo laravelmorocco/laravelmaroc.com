@@ -72,25 +72,6 @@
 
                                     <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-skin-card-muted">
                                         <div class="shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-green-500 text-white sm:h-12 sm:w-12">
-                                            <svg class="h-6 w-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                <path d="M13.656 21.714a9.954 9.954 0 0 1-3.178.022c-.334-1.438-.975-5.224-.66-6.366.28-1.02 1.894-1.161 2.246-1.161.352 0 1.966.14 2.248 1.161.313 1.136-.32 4.89-.656 6.344zM12 13.39a2.148 2.148 0 1 0 0-4.295 2.148 2.148 0 0 0 0 4.295z" />
-                                                <path d="M12 6.055A5.952 5.952 0 0 0 6.055 12a5.945 5.945 0 0 0 2.697 4.977c-.032-.575-.03-1.1.027-1.516A4.715 4.715 0 0 1 7.27 12 4.736 4.736 0 0 1 12 7.27 4.736 4.736 0 0 1 16.73 12a4.716 4.716 0 0 1-1.396 3.353c.069.409.078.943.048 1.533A5.94 5.94 0 0 0 17.945 12 5.952 5.952 0 0 0 12 6.055z" />
-                                                <path d="M12 3c-4.963 0-9 4.037-9 9 0 3.993 2.614 7.387 6.221 8.561a42.41 42.41 0 0 1-.228-1.38C6.189 18.003 4.214 15.227 4.214 12c0-4.293 3.493-7.785 7.786-7.785 4.293 0 7.785 3.492 7.785 7.785 0 3.174-1.909 5.91-4.64 7.122-.071.492-.152.968-.229 1.393C18.452 19.3 21 15.942 21 12c0-4.963-4.038-9-9-9z" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-4">
-                                            <p class="inline-flex items-center text-base font-sans font-medium text-skin-inverted">
-                                                {{ __('Podcasts') }}
-                                                <span class="inline-flex ml-2 text-xs leading-4 text-green-800 bg-green-100 py-0.5 px-1.5 rounded-full">Bientôt</span>
-                                            </p>
-                                            <p class="mt-1 text-sm text-skin-base font-normal">
-                                                {{ __('Toutes les discussions sur le développement de Laravel et PHP.') }}
-                                            </p>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-skin-card-muted">
-                                        <div class="shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-green-500 text-white sm:h-12 sm:w-12">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                                             </svg>
@@ -260,16 +241,6 @@
                 <a href="{{ route('rules') }}" class="flex items-center text-skin-base">
                     <x-heroicon-o-bookmark-alt class="h-6 w-6 mr-3 -ml-1" />
                     {{ __('Guides') }}
-                </a>
-
-                <a href="#" class="flex items-center text-skin-base">
-                    <svg class="h-6 w-6 mr-3 -ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M13.656 21.714a9.954 9.954 0 0 1-3.178.022c-.334-1.438-.975-5.224-.66-6.366.28-1.02 1.894-1.161 2.246-1.161.352 0 1.966.14 2.248 1.161.313 1.136-.32 4.89-.656 6.344zM12 13.39a2.148 2.148 0 1 0 0-4.295 2.148 2.148 0 0 0 0 4.295z" />
-                        <path d="M12 6.055A5.952 5.952 0 0 0 6.055 12a5.945 5.945 0 0 0 2.697 4.977c-.032-.575-.03-1.1.027-1.516A4.715 4.715 0 0 1 7.27 12 4.736 4.736 0 0 1 12 7.27 4.736 4.736 0 0 1 16.73 12a4.716 4.716 0 0 1-1.396 3.353c.069.409.078.943.048 1.533A5.94 5.94 0 0 0 17.945 12 5.952 5.952 0 0 0 12 6.055z" />
-                        <path d="M12 3c-4.963 0-9 4.037-9 9 0 3.993 2.614 7.387 6.221 8.561a42.41 42.41 0 0 1-.228-1.38C6.189 18.003 4.214 15.227 4.214 12c0-4.293 3.493-7.785 7.786-7.785 4.293 0 7.785 3.492 7.785 7.785 0 3.174-1.909 5.91-4.64 7.122-.071.492-.152.968-.229 1.393C18.452 19.3 21 15.942 21 12c0-4.963-4.038-9-9-9z" />
-                    </svg>
-                    {{ __('Podcasts') }}
-                    <span class="inline-flex ml-2 text-xs leading-4 text-green-800 bg-green-100 py-0.5 px-1.5 rounded-full">{{ __('Bientôt') }}</span>
                 </a>
 
                 <a href="#" class="flex items-center text-skin-base">

@@ -13,7 +13,6 @@ final class FeatureTableSeeder extends Seeder
     {
         Feature::add('premium', false);
         Feature::add('badges', false);
-        Feature::add('podcasts', false);
 
         Feature::add('job_skills', false);
         Feature::add('job_profile', false);
