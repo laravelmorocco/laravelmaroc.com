@@ -5,8 +5,8 @@
     <div class="relative flex items-top justify-center min-h-full py-12 sm:py-24 sm:items-center">
         <div>
             <div class="flex justify-center sm:justify-start">
-                <img class="h-16 w-auto sm:h-20 logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="Laravel.cm">
-                <img class="h-16 w-auto sm:h-20 logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="Laravel.cm">
+                <img class="h-16 w-auto sm:h-20 logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="laravelmaroc.com">
+                <img class="h-16 w-auto sm:h-20 logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="laravelmaroc.com">
             </div>
 
             <div class="mt-8 bg-skin-card overflow-hidden shadow rounded-lg">
@@ -47,7 +47,7 @@
 
                         <div class="ml-12">
                             <div class="mt-2 text-skin-base text-sm font-normal">
-                                {{ __("Découvrez différents sujets de discussion ouvert à tous pour un meilleur échange sur des thématiques et interrogations qui peuvent faire avancer l'ecosystème Tech au Cameroun.") }}
+                                {{ __("Découvrez différents sujets de discussion ouvert à tous pour un meilleur échange sur des thématiques et interrogations qui peuvent faire avancer l'ecosystème Tech au Maroc.") }}
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                 </div>
 
                 <div class="ml-4 text-center text-sm text-skin-base sm:text-right sm:ml-0">
-                    Laravel Cameroun 2018 - {{ date('Y') }}
+                    Laravel Maroc 2018 - {{ date('Y') }}
                 </div>
             </div>
         </div>

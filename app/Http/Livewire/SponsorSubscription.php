@@ -51,7 +51,7 @@ final class SponsorSubscription extends Component
                 'currency' => $this->currency,
                 'reference' => Auth::id().'-'.Auth::user()?->username().'-'.uniqid(),
                 'callback' => route('notchpay-callback'),
-                'description' => __('Soutien de la communauté Laravel & PHP Cameroun.'),
+                'description' => __('Soutien de la communauté Laravel & PHP Maroc.'),
             ]);
 
             Transaction::query()->create([

@@ -37,7 +37,7 @@ return [
 	'BF' => 'Burkina Faso',
 	'BI' => 'Burundi',
 	'KH' => 'Cambodge',
-	'CM' => 'Cameroun',
+	'CM' => 'Maroc',
 	'CA' => 'Canada',
 	'CV' => 'Cap-Vert',
 	'CL' => 'Chili',

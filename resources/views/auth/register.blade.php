@@ -59,7 +59,7 @@
         <div class="mx-auto max-w-md lg:mx-0 space-y-8">
             <div class="space-y-3">
                 <h2 class="text-3xl font-extrabold text-skin-inverted font-heading">
-                    {{ __('Rejoindre Laravel Cameroun') }}
+                    {{ __('Rejoindre Laravel Maroc') }}
                 </h2>
                 <x-profile-users />
                 <p class="text-base leading-6 text-skin-base">

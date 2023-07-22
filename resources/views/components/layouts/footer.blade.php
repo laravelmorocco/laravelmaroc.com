@@ -1,9 +1,9 @@
 <footer class="mx-auto mt-24 w-full max-w-7xl px-4 sm:px-6">
     <div class="border-t border-skin-base py-10">
-        <img class="mx-auto h-10 w-auto logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="Laravel.cm">
-        <img class="mx-auto h-10 w-auto logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="Laravel.cm">
+        <img class="mx-auto h-10 w-auto logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="laravelmaroc.com">
+        <img class="mx-auto h-10 w-auto logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="Laravlaravelmarocel.com">
         <p class="mt-5 text-center text-sm leading-6 text-skin-muted">
-            © 2018 - {{ date('Y') }} Laravel Cameroun. Tous droits réservés.
+            © 2018 - {{ date('Y') }} Laravel Maroc. Tous droits réservés.
         </p>
         <div class="mt-10 flex items-center justify-center space-x-4 text-sm font-medium leading-6 text-skin-base">
             <a class="hover:text-skin-inverted-muted hover:underline" href="{{ route('twitter') }}">Twitter</a>

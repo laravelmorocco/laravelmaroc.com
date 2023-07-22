@@ -162,7 +162,7 @@ final class User extends Authenticatable implements MustVerifyEmail, HasMedia, F
 
     public function canAccessFilament(): bool
     {
-        return str_ends_with($this->email, '@laravel.cm') || $this->isModerator() || $this->isAdmin();
+        return str_ends_with($this->email, '@laravelmaroc.com') || $this->isModerator() || $this->isAdmin();
     }
 
     public function getFilamentName(): string

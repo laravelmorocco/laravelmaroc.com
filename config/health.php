@@ -59,7 +59,7 @@ return [
         'throttle_notifications_for_minutes' => 60,
 
         'mail' => [
-            'to' => 'arthur@laravel.cm',
+            'to' => 'contact@laravelmaroc.com',
 
             'from' => [
                 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),

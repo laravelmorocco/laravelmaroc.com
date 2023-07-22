@@ -10,12 +10,12 @@
     <title>
         {{ isset($title) ? $title . ' | ' : '' }}
         {{ config('app.name') }}
-        {{ is_active('home') ? '- La plus grande communauté de développeurs Laravel & PHP au Cameroun' : '' }}
+        {{ is_active('home') ? '- La plus grande communauté de développeurs Laravel & PHP au Maroc' : '' }}
     </title>
-    <meta name="description" content="Laravel Cameroun est le portail de la communauté de développeurs PHP & Laravel au Cameroun, on partage, on apprend, on découvre et on construit une grande communauté.">
-    <meta property="og:site_name" content="Laravel.cm"/>
+    <meta name="description" content="Laravel Maroc est le portail de la communauté de développeurs PHP & Laravel au Maroc, on partage, on apprend, on découvre et on construit une grande communauté.">
+    <meta property="og:site_name" content="laravelmaroc.com"/>
     <meta property="og:language" content="fr"/>
-    <meta name="twitter:author" content="@laravelcm"/>
+    <meta name="twitter:author" content="@laravelmaroc"/>
     <link rel="canonical" href="{{ $canonical ?? Request::url() }}" />
 
     @include('layouts._og')

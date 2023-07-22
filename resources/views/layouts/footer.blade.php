@@ -3,8 +3,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="py-12 lg:py-16 lg:grid lg:grid-cols-3 lg:gap-8">
             <div class="space-y-4">
-                <img class="h-12 w-auto sm:h-16 logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="Laravel.cm">
-                <img class="h-12 w-auto sm:h-16 logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="Laravel.cm">
+                <img class="h-12 w-auto sm:h-16 logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="laravelmaroc.com">
+                <img class="h-12 w-auto sm:h-16 logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="laravelmaroc.com">
                 <p class="inline-flex items-center flex-wrap text-sm text-skin-base">
                     <a href="https://github.com/caneco/laravel-country-logomarks" class="underline text-skin-inverted font-medium">
                         {{ __('Laravel Country Logomarks') }}
@@ -97,7 +97,7 @@
         </div>
         <div class="border-t border-skin-base py-6 sm:flex sm:items-center sm:justify-between lg:py-8">
             <p class="text-base text-center leading-6 text-skin-muted lg:text-left">
-                {{ __('© 2018 - :date Laravel Cameroun. Tous droits réservés.', ['date' => date('Y')]) }}
+                {{ __('© 2018 - :date Laravel Maroc. Tous droits réservés.', ['date' => date('Y')]) }}
             </p>
             <div class="mt-4 flex justify-center space-x-6 sm:mt-0 lg:justify-start">
                 <a href="{{ route('twitter') }}" class="text-skin-muted hover:text-skin-base">

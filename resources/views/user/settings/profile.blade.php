@@ -30,7 +30,7 @@
                                     name="username"
                                     id="username"
                                     autocomplete="username"
-                                    leading-addon="laravel.cm/user/"
+                                    leading-addon="laravelmaroc.com/user/"
                                     container-class="flex-1"
                                     container-input-class="flex"
                                     :value="Auth::user()->username"

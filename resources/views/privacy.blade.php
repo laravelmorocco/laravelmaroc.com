@@ -8,7 +8,7 @@
 
         <h1>{{ __('Politique de confidentialité') }}</h1>
 
-        <p>{{ __("Cette page est utilisée pour informer les visiteurs du site Web de nos politiques concernant la collecte, l'utilisation et la divulgation des informations personnelles si quelqu'un décide d'utiliser notre service, le site Web de Laravel Cameroun.") }}</p>
+        <p>{{ __("Cette page est utilisée pour informer les visiteurs du site Web de nos politiques concernant la collecte, l'utilisation et la divulgation des informations personnelles si quelqu'un décide d'utiliser notre service, le site Web de Laravel Maroc.") }}</p>
 
         <p>{{ __("Si vous choisissez d'utiliser notre Service, vous acceptez la collecte et l'utilisation d'informations en relation avec cette politique. Les informations personnelles que nous collectons sont utilisées pour fournir et améliorer le service. Nous n'utiliserons ni ne partagerons vos informations avec personne, sauf comme décrit dans la présente politique de confidentialité.") }}</p>
 
@@ -40,7 +40,7 @@
 
         <h2>{{ __('Contact') }}</h2>
 
-        <p>{{ __("Si vous pensez que nous ne respectons pas cette politique de confidentialité, vous devez nous contacter immédiatement par e-mail à support@laravel.cm") }}</p>
+        <p>{{ __("Si vous pensez que nous ne respectons pas cette politique de confidentialité, vous devez nous contacter immédiatement par e-mail à support@laravelmaroc.com") }}</p>
     </div>
 
 @stop

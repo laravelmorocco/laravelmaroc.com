@@ -20,7 +20,7 @@ return [
     ],
 
     'slack' => [
-        'team' => env('SLACK_TEAM_NAME', 'Laravel Cameroun'),
+        'team' => env('SLACK_TEAM_NAME', 'Laravel Maroc'),
         'url' => env('SLACK_TEAM_URL', 'https://laravelcm.slack.com'),
         'token' => env('SLACK_API_TOKEN', null),
         'web_hook' => env('SLACK_WEBHOOK_URL', ''),

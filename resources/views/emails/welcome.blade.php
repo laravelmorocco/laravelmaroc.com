@@ -2,13 +2,13 @@
 
   Bonjour **{{ $user->name }}**,
 
-  Bienvenue sur **Laravel Cameroun** ! La plus grande communauté de développeurs Laravel & PHP au Cameroun.
+  Bienvenue sur **Laravel Maroc** ! La plus grande communauté de développeurs Laravel & PHP au Maroc.
 
   Je sais que tu as un contenu génial à partager sur les médias sociaux. Et tu veux qu'il touche davantage de personnes et de développeurs de façon simple et rapide.
   
-  [![Alt text](https://media.giphy.com/media/Sg4DwEJrCpGIU/giphy-downsized-large.gif)](https://laravel.cm/discussions/bienvenu-sur-laravel-cameroun)
+  [![Alt text](https://media.giphy.com/media/Sg4DwEJrCpGIU/giphy-downsized-large.gif)](https://laravelmaroc.com/discussions/bienvenu-sur-laravel-maroc)
 
-  Je suis très heureux de te voir rejoindre Laravel Cameroun. Pour t'aider à démarrer, je veux partager avec toi les ressources de bases
+  Je suis très heureux de te voir rejoindre Laravel Maroc. Pour t'aider à démarrer, je veux partager avec toi les ressources de bases
 
   @component('mail::subcopy')
     [Créer un article :]({{ route('articles.new') }})
@@ -29,10 +29,10 @@
 
   Ou vous pouvez simplement commencer par dire bonjour aux autres membres de la communauté et vous présentez 👋🏾
 
-  @component('mail::button', ['url' => 'https://laravel.cm/discussions/bienvenu-sur-laravel-cameroun', 'color' => 'green'])
+  @component('mail::button', ['url' => 'https://laravelmaroc.com/discussions/bienvenu-sur-laravel-maroc', 'color' => 'green'])
     Dire bonjour à la communauté
   @endcomponent
 
-  Arthur Monney et la team [Laravel Cameroun]({{ route('about') }}).
+  Arthur Monney et la team [Laravel Maroc]({{ route('about') }}).
 
 @endcomponent

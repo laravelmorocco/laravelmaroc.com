@@ -20,17 +20,17 @@
                     <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-flag-green rounded-full">
                         ⚡️ {{ __('Sponsor') }}
                     </span>
-                    <span class="ml-4 hidden text-sm sm:block">{{ __('Soutenez Laravel Cameroun aujourd\'hui en sponsorisant') }}</span>
-                    <span class="ml-4 text-sm sm:hidden">{{ __('Soutenez Laravel Cameroun') }}</span>
+                    <span class="ml-4 hidden text-sm sm:block">{{ __('Soutenez Laravel Maroc aujourd\'hui en sponsorisant') }}</span>
+                    <span class="ml-4 text-sm sm:hidden">{{ __('Soutenez Laravel Maroc') }}</span>
                     <x-heroicon-s-chevron-right class="w-5 h-5 ml-2 text-white" />
                 </a>
             </div>
             <div class="mt-10 text-center">
                 <h1 class="text-4xl font-medium tracking-tight font-heading text-skin-primary sm:leading-none lg:text-6xl">
-                    {{ __('Laravel Cameroun') }}
+                    {{ __('Laravel Maroc') }}
                 </h1>
                 <p class="mt-3 text-base text-skin-inverted sm:mt-5 sm:text-lg lg:text-xl">
-                    {{ __('Bienvenue sur le site de la communauté des développeurs PHP et Laravel du Cameroun, le plus gros rassemblement de développeurs au Cameroun.') }}
+                    {{ __('Bienvenue sur le site de la communauté des développeurs PHP et Laravel du Maroc, le plus gros rassemblement de développeurs au Maroc.') }}
                 </p>
                 <div class="mt-10 sm:flex sm:items-center sm:justify-center gap-x-6">
                     @auth
@@ -267,7 +267,7 @@
                         <span class="block text-2xl text-white font-heading">10K+</span>
                         <span class="block mt-1 text-base text-gray-400">
                             <span class="font-medium text-white">stars</span>
-                            {{ __('sur les projets réalisés par les développeurs Camerounais sur Github.') }}
+                            {{ __('sur les projets réalisés par les développeurs Marocains sur Github.') }}
                         </span>
                     </p>
                 </div>
