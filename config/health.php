@@ -73,9 +73,9 @@ return [
             /*
              * If this is set to null the default channel of the webhook will be used.
              */
-            'channel' => '#laravelcm-health',
+            'channel' => '#laravelmaroc-health',
 
-            'username' => 'laravelcm',
+            'username' => 'laravelmaroc',
 
             'icon' => '/images/favicons/mstile-150x150.png',
         ],
