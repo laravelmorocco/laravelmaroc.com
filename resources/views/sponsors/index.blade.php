@@ -134,7 +134,7 @@
                               </span>
                             </span>
                             <p class="flex-1 ml-4 text-sm leading-5 text-skin-base">
-                                {{ __('Voici le badge sur votre avatar que vous obtiendrez et qui indique que vous êtes un sponsor de @laravelcm.') }}
+                                {{ __('Voici le badge sur votre avatar que vous obtiendrez et qui indique que vous êtes un sponsor de @laravelma.') }}
                             </p>
                         </div>
                     @endauth

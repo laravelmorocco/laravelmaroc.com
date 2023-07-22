@@ -1,7 +1,7 @@
 <footer class="mx-auto mt-24 w-full max-w-7xl px-4 sm:px-6">
     <div class="border-t border-skin-base py-10">
-        <img class="mx-auto h-10 w-auto logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="laravelmaroc.com">
-        <img class="mx-auto h-10 w-auto logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="Laravlaravelmarocel.com">
+        <img class="mx-auto h-10 w-auto logo-white" src="{{ asset('/images/laravelma.svg') }}" alt="laravelmaroc.com">
+        <img class="mx-auto h-10 w-auto logo-dark" src="{{ asset('/images/laravelma-white.svg') }}" alt="Laravlaravelmarocel.com">
         <p class="mt-5 text-center text-sm leading-6 text-skin-muted">
             © 2018 - {{ date('Y') }} Laravel Maroc. Tous droits réservés.
         </p>

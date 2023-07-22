@@ -20,8 +20,8 @@
 
     <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div class="shrink-0 pt-16">
-            <img class="mx-auto h-12 w-auto sm:h-16 logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="laravelmaroc.com">
-            <img class="mx-auto h-12 w-auto sm:h-16 logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="laravelmaroc.com">
+            <img class="mx-auto h-12 w-auto sm:h-16 logo-white" src="{{ asset('/images/laravelma.svg') }}" alt="laravelmaroc.com">
+            <img class="mx-auto h-12 w-auto sm:h-16 logo-dark" src="{{ asset('/images/laravelma-white.svg') }}" alt="laravelmaroc.com">
         </div>
         <div class="max-w-xl mx-auto py-16 sm:py-24">
             <div class="text-center">

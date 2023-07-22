@@ -5,8 +5,8 @@
     <div class="relative flex items-top justify-center min-h-full py-12 sm:py-24 sm:items-center">
         <div>
             <div class="flex justify-center sm:justify-start">
-                <img class="h-16 w-auto sm:h-20 logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="laravelmaroc.com">
-                <img class="h-16 w-auto sm:h-20 logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="laravelmaroc.com">
+                <img class="h-16 w-auto sm:h-20 logo-white" src="{{ asset('/images/laravelma.svg') }}" alt="laravelmaroc.com">
+                <img class="h-16 w-auto sm:h-20 logo-dark" src="{{ asset('/images/laravelma-white.svg') }}" alt="laravelmaroc.com">
             </div>
 
             <div class="mt-8 bg-skin-card overflow-hidden shadow rounded-lg">
