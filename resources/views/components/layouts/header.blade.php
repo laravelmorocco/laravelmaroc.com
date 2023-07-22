@@ -71,42 +71,6 @@
                                     </a>
 
                                     <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-skin-card-muted">
-                                        <div class="shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-green-500 text-white sm:h-12 sm:w-12">
-                                            <svg class="h-6 w-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                <path d="M13.656 21.714a9.954 9.954 0 0 1-3.178.022c-.334-1.438-.975-5.224-.66-6.366.28-1.02 1.894-1.161 2.246-1.161.352 0 1.966.14 2.248 1.161.313 1.136-.32 4.89-.656 6.344zM12 13.39a2.148 2.148 0 1 0 0-4.295 2.148 2.148 0 0 0 0 4.295z" />
-                                                <path d="M12 6.055A5.952 5.952 0 0 0 6.055 12a5.945 5.945 0 0 0 2.697 4.977c-.032-.575-.03-1.1.027-1.516A4.715 4.715 0 0 1 7.27 12 4.736 4.736 0 0 1 12 7.27 4.736 4.736 0 0 1 16.73 12a4.716 4.716 0 0 1-1.396 3.353c.069.409.078.943.048 1.533A5.94 5.94 0 0 0 17.945 12 5.952 5.952 0 0 0 12 6.055z" />
-                                                <path d="M12 3c-4.963 0-9 4.037-9 9 0 3.993 2.614 7.387 6.221 8.561a42.41 42.41 0 0 1-.228-1.38C6.189 18.003 4.214 15.227 4.214 12c0-4.293 3.493-7.785 7.786-7.785 4.293 0 7.785 3.492 7.785 7.785 0 3.174-1.909 5.91-4.64 7.122-.071.492-.152.968-.229 1.393C18.452 19.3 21 15.942 21 12c0-4.963-4.038-9-9-9z" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-4">
-                                            <p class="inline-flex items-center text-base font-sans font-medium text-skin-inverted">
-                                                {{ __('Podcasts') }}
-                                                <span class="inline-flex ml-2 text-xs leading-4 text-green-800 bg-green-100 py-0.5 px-1.5 rounded-full">Bientôt</span>
-                                            </p>
-                                            <p class="mt-1 text-sm text-skin-base font-normal">
-                                                {{ __('Toutes les discussions sur le développement de Laravel et PHP.') }}
-                                            </p>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-skin-card-muted">
-                                        <div class="shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-green-500 text-white sm:h-12 sm:w-12">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-4">
-                                            <p class="inline-flex items-center text-base font-sans font-medium text-skin-inverted">
-                                                {{ __('Badges') }}
-                                                <span class="inline-flex ml-2 text-xs leading-4 text-green-800 bg-green-100 py-0.5 px-1.5 rounded-full">Bientôt</span>
-                                            </p>
-                                            <p class="mt-1 text-sm text-skin-base font-normal">
-                                                {{ __('Obtenez des badges et débloquez différentes fonctionnalités.') }}
-                                            </p>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-skin-card-muted">
                                         <div class="shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-br from-flag-yellow to-flag-red text-white sm:h-12 sm:w-12">
                                             <svg class="h-6 w-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                 <path d="M23 9.04c0-1.249-1.051-2.27-2.335-2.27-1.285 0-2.336 1.021-2.336 2.27 0 .703.35 1.36.888 1.77l-3.083 2.29-2.99-3.857c.724-.386 1.215-1.135 1.215-1.975C14.359 6.021 13.308 5 12.023 5 10.74 5 9.688 6.021 9.688 7.27c0 .839.467 1.588 1.191 1.974L7.633 13.1 4.76 10.832c.537-.408.91-1.066.91-1.793 0-1.248-1.05-2.269-2.335-2.269C2.051 6.77 1 7.791 1 9.04c0 1.111.817 2.042 1.915 2.223l1.121 5.696v2.36c0 .386.304.681.7.681h14.527c.397 0 .7-.295.7-.68v-2.36l1.122-5.697C22.183 11.082 23 10.151 23 9.04zm-2.335-.908c.513 0 .934.408.934.907 0 .5-.42.908-.934.908s-.935-.408-.935-.908c0-.499.42-.907.934-.907zM12 6.339c.514 0 .934.408.934.908 0 .499-.42.907-.934.907s-.934-.408-.934-.907c0-.5.42-.908.934-.908zm-4.18 8.396a.727.727 0 0 0 .467-.25l3.69-4.47 3.456 4.448c.117.136.28.25.467.272a.683.683 0 0 0 .514-.136l3.036-2.247-.77 3.858H5.32l-.747-3.79 2.733 2.156c.14.114.327.182.514.16zM2.4 9.04c0-.499.42-.907.934-.907s.935.408.935.907c0 .5-.42.908-.935.908-.513 0-.934-.408-.934-.908zm3.036 9.6v-1.067h13.126v1.066H5.437z" />
@@ -260,22 +224,6 @@
                 <a href="{{ route('rules') }}" class="flex items-center text-skin-base">
                     <x-heroicon-o-bookmark-alt class="h-6 w-6 mr-3 -ml-1" />
                     {{ __('Guides') }}
-                </a>
-
-                <a href="#" class="flex items-center text-skin-base">
-                    <svg class="h-6 w-6 mr-3 -ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M13.656 21.714a9.954 9.954 0 0 1-3.178.022c-.334-1.438-.975-5.224-.66-6.366.28-1.02 1.894-1.161 2.246-1.161.352 0 1.966.14 2.248 1.161.313 1.136-.32 4.89-.656 6.344zM12 13.39a2.148 2.148 0 1 0 0-4.295 2.148 2.148 0 0 0 0 4.295z" />
-                        <path d="M12 6.055A5.952 5.952 0 0 0 6.055 12a5.945 5.945 0 0 0 2.697 4.977c-.032-.575-.03-1.1.027-1.516A4.715 4.715 0 0 1 7.27 12 4.736 4.736 0 0 1 12 7.27 4.736 4.736 0 0 1 16.73 12a4.716 4.716 0 0 1-1.396 3.353c.069.409.078.943.048 1.533A5.94 5.94 0 0 0 17.945 12 5.952 5.952 0 0 0 12 6.055z" />
-                        <path d="M12 3c-4.963 0-9 4.037-9 9 0 3.993 2.614 7.387 6.221 8.561a42.41 42.41 0 0 1-.228-1.38C6.189 18.003 4.214 15.227 4.214 12c0-4.293 3.493-7.785 7.786-7.785 4.293 0 7.785 3.492 7.785 7.785 0 3.174-1.909 5.91-4.64 7.122-.071.492-.152.968-.229 1.393C18.452 19.3 21 15.942 21 12c0-4.963-4.038-9-9-9z" />
-                    </svg>
-                    {{ __('Podcasts') }}
-                    <span class="inline-flex ml-2 text-xs leading-4 text-green-800 bg-green-100 py-0.5 px-1.5 rounded-full">{{ __('Bientôt') }}</span>
-                </a>
-
-                <a href="#" class="flex items-center text-skin-base">
-                    <x-heroicon-o-badge-check class="h-6 w-6 mr-3 -ml-1" />
-                    {{ __('Badges') }}
-                    <span class="inline-flex ml-2 text-xs leading-4 text-green-800 bg-green-100 py-0.5 px-1.5 rounded-full">{{ __('Bientôt') }}</span>
                 </a>
 
                 <a href="#" class="flex items-center text-yellow-500 hover:text-yellow-600">
