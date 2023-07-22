@@ -59,7 +59,7 @@ return [
         'throttle_notifications_for_minutes' => 60,
 
         'mail' => [
-            'to' => 'arthur@laravel.cm',
+            'to' => 'contact@laravelmaroc.com',
 
             'from' => [
                 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
@@ -73,9 +73,9 @@ return [
             /*
              * If this is set to null the default channel of the webhook will be used.
              */
-            'channel' => '#laravelcm-health',
+            'channel' => '#laravelmaroc-health',
 
-            'username' => 'laravelcm',
+            'username' => 'laravelmaroc',
 
             'icon' => '/images/favicons/mstile-150x150.png',
         ],

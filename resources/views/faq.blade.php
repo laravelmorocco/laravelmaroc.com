@@ -14,7 +14,7 @@
     <div id="faq-questions" class="text-base flex -mx-2 -mt-4">
         <div class="flex-none px-2 w-full md:hidden">
             <div class="bg-skin-card p-6 rounded-md mt-4">
-                <h3 class="font-semibold text-skin-inverted font-heading mb-2">{{ __('Qui peut publier des articles/sujets sur Laravel.cm?') }}</h3>
+                <h3 class="font-semibold text-skin-inverted font-heading mb-2">{{ __('Qui peut publier des articles/sujets sur laravelmaroc.com?') }}</h3>
                 <div class="prose prose-sm leading-5">
                     <p>
                         Les modérateurs ! Oui, vous avez la permission de publier un nouvel article, quel qu'il soit, du moment qu'il
@@ -32,7 +32,7 @@
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Qui peut publier sur Laravel.cm?
+                    Qui peut publier sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
@@ -64,10 +64,10 @@
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Comment se passe le sponsoring sur Laravel.cm?
+                    Comment se passe le sponsoring sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
-                    <p>Le sponsoring sur Laravel.cm est une opportunité pour gagner en visibilité et de mettre votre contenu en avant sur le site.</p>
+                    <p>Le sponsoring sur laravelmaroc.com est une opportunité pour gagner en visibilité et de mettre votre contenu en avant sur le site.</p>
                     <p>
                         Visitez la page de <a href="{{ route('sponsors') }}">Sponsoring</a> pour avoir toutes les informations
                         (par exemple comment ça marche, comment être sponsor de la communauté, pourquoi sponsoriser son contenu, etc).
@@ -95,7 +95,7 @@
                     <p>
                         Vous pouvez ajouter ou supprimer des associations Twitter/GitHub de vos paramètres, mais notez que vous ne pouvez
                         le faire que si Twitter et GitHub sont connectés à votre compte. Si vous rencontrez des problèmes avec cela,
-                        envoyez un e-mail à <a href="mailto:support@laravel.cm">support@laravel.cm</a> et nous nous en occuperons.
+                        envoyez un e-mail à <a href="mailto:support@laravelmaroc.com">support@laravelmaroc.com</a> et nous nous en occuperons.
                     </p>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
-                        Devenir premium sur Laravel.cm, c'est soutenir la création de nouveaux contenus et accéder à du contenu
+                        Devenir premium sur laravelmaroc.com, c'est soutenir la création de nouveaux contenus et accéder à du contenu
                         exclusif pour apprendre et s'améliorer (comme le téléchargement des vidéos des sources, et des designs).
                     </p>
                     <p>Pour être premium, vous devez aller sur la page pour <a href="#">Devenir premium</a> et choisir un abonnement.</p>
@@ -117,7 +117,7 @@
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
-                        Oui! Laravel.cm utilise Markdown X réalisé par <a href="https://twitter.com/tnylea">Tony Lea</a> sur la plateforme
+                        Oui! laravelmaroc.com utilise Markdown X réalisé par <a href="https://twitter.com/tnylea">Tony Lea</a> sur la plateforme
                         <a href="https://devdojo.com">DevDojo</a>.
                     </p>
                     <p>
@@ -132,17 +132,17 @@
                 <div class="prose prose-sm leading-5">
                     <p>
                         Vous trouverez la possibilité de supprimer votre compte dans vos paramètres. L'auto-suppression supprimera
-                        votre profil sur Laravel.cm, ainsi que tous les articles, commentaires, discussions, sujets, etc.
+                        votre profil sur laravelmaroc.com, ainsi que tous les articles, commentaires, discussions, sujets, etc.
                     </p>
                 </div>
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Quelles technologies utilisées Laravel.cm?
+                    Quelles technologies utilisées laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
-                        Laravel.cm est basé sur le framework Laravel et implémente le <a href="https://tallstack.dev">TALL Stack</a> qui permet de
+                        laravelmaroc.com est basé sur le framework Laravel et implémente le <a href="https://tallstack.dev">TALL Stack</a> qui permet de
                         créer des applications réactives sur Laravel avec Livewire et Alpinejs.
                     </p>
                     <p>C'est un preset de développement full-stack, construite par les membres de la communauté Laravel.</p>
@@ -155,23 +155,23 @@
                 <div class="prose prose-sm leading-5">
                     <p>Pour un commentaire spécifique : accédez au commentaire et cliquez sur la flèche déroulante pour signaler un abus.</p>
                     <p>Pour un article spécifique : accédez à l'article, faites défiler vers le bas et cliquez sur signaler un abus.</p>
-                    <p>En général, vous pouvez faire un mail à <a href="mailto:support@laravel.cm">support@laravel.cm</a> </p>
+                    <p>En général, vous pouvez faire un mail à <a href="mailto:support@laravelmaroc.com">support@laravelmaroc.com</a> </p>
                 </div>
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Puis-je suivre les Flux RSS sur Laravel.cm?
+                    Puis-je suivre les Flux RSS sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
                         Oui, vous pouvez. Le lien de notre flux principal se trouve ici : <a href="{{ config('app.url') }}/feed">{{ config('app.url') }}/feed</a>.
-                        Pour les flux spécifiques aux utilisateurs, vous pouvez les trouver via https://laravel.cm/feed/username.
+                        Pour les flux spécifiques aux utilisateurs, vous pouvez les trouver via https://laravelmaroc.com/feed/username.
                     </p>
                 </div>
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Puis-je poster ou trouver un job sur Laravel.cm?
+                    Puis-je poster ou trouver un job sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
@@ -179,7 +179,7 @@
                         freelances, stagiaires pour des missions, contrats, etc.
                     </p>
                     <p>
-                        Laravel.cm veut pouvoir mettre en avant les développeurs de la zone francophones en avant sur différentes
+                        laravelmaroc.com veut pouvoir mettre en avant les développeurs de la zone francophones en avant sur différentes
                         offres qui pourront être partagé de partout l'Afrique et du monde en général.
                     </p>
                 </div>
@@ -189,7 +189,7 @@
         <div class="flex-none px-2 w-1/2 hidden md:block lg:hidden">
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Qui peut publier sur Laravel.cm?
+                    Qui peut publier sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
@@ -222,10 +222,10 @@
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Comment se passe le sponsoring sur Laravel.cm?
+                    Comment se passe le sponsoring sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
-                    <p>Le sponsoring sur Laravel.cm est une opportunité pour gagner en visibilité et de mettre votre contenu en avant sur le site.</p>
+                    <p>Le sponsoring sur laravelmaroc.com est une opportunité pour gagner en visibilité et de mettre votre contenu en avant sur le site.</p>
                     <p>
                         Visitez la page de <a href="{{ route('sponsors') }}">Sponsoring</a> pour avoir toutes les informations
                         (par exemple comment ça marche, comment être sponsor de la communauté, pourquoi sponsoriser son contenu, etc).
@@ -253,7 +253,7 @@
                     <p>
                         Vous pouvez ajouter ou supprimer des associations Twitter/GitHub de vos paramètres,
                         mais notez que vous ne pouvez le faire que si Twitter et GitHub sont connectés à votre compte.
-                        Si vous rencontrez des problèmes avec cela, envoyez un e-mail à <a href="mailto:support@laravel.cm">support@laravel.cm</a>
+                        Si vous rencontrez des problèmes avec cela, envoyez un e-mail à <a href="mailto:support@laravelmaroc.com">support@laravelmaroc.com</a>
                         et nous nous en occuperons.
                     </p>
                 </div>
@@ -264,7 +264,7 @@
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
-                        Devenir premium sur Laravel.cm, c'est soutenir la création de nouveaux contenus et accéder à du contenu exclusif
+                        Devenir premium sur laravelmaroc.com, c'est soutenir la création de nouveaux contenus et accéder à du contenu exclusif
                         pour apprendre et s'améliorer (comme le téléchargement des vidéos des sources, et des designs).
                     </p>
                     <p>Pour être premium, vous devez aller sur la page pour <a href="#">Devenir premium</a> et choisir un abonnement.</p>
@@ -276,7 +276,7 @@
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
-                        Oui! Laravel.cm utilise Markdown X réalisé par <a href="https://twitter.com/tnylea">Tony Lea</a> sur la plateforme
+                        Oui! laravelmaroc.com utilise Markdown X réalisé par <a href="https://twitter.com/tnylea">Tony Lea</a> sur la plateforme
                         <a href="https://devdojo.com">DevDojo</a>.
                     </p>
                     <p>Vous pouvez le trouver en cliquant sur le bouton Aide dans la page de l'éditeur.</p>
@@ -287,7 +287,7 @@
         <div class="flex-none px-2 w-1/2 hidden md:block lg:hidden">
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    {{ __('Qui peut publier des articles/sujets sur Laravel.cm?') }}
+                    {{ __('Qui peut publier des articles/sujets sur laravelmaroc.com?') }}
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
@@ -310,15 +310,15 @@
                 <div class="prose prose-sm leading-5">
                     <p>
                         Vous trouverez la possibilité de supprimer votre compte dans vos paramètres. L'auto-suppression supprimera
-                        votre profil sur Laravel.cm, ainsi que tous les articles, commentaires, discussions, sujets, etc.
+                        votre profil sur laravelmaroc.com, ainsi que tous les articles, commentaires, discussions, sujets, etc.
                     </p>
                 </div>
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
-                <h3 class="font-semibold text-skin-inverted font-heading mb-2">Quelles technologies utilisées Laravel.cm?</h3>
+                <h3 class="font-semibold text-skin-inverted font-heading mb-2">Quelles technologies utilisées laravelmaroc.com?</h3>
                 <div class="prose prose-sm leading-5">
                     <p>
-                        Laravel.cm est basé sur le framework Laravel et implémente le <a href="https://tallstack.dev">TALL Stack</a> qui permet
+                        laravelmaroc.com est basé sur le framework Laravel et implémente le <a href="https://tallstack.dev">TALL Stack</a> qui permet
                         de créer des applications réactives sur Laravel avec Livewire et Alpinejs.
                     </p>
                     <p>C'est un preset de développement full-stack, construite par les membres de la communauté Laravel.</p>
@@ -333,24 +333,24 @@
                     <p>Pour un article spécifique : accédez à l'article, faites défiler vers le bas et cliquez sur signaler un abus.</p>
                     <p>
                         En général, vous pouvez remplir le <a href="#">formulaire</a> de signalement d'abus, ou tout simplement faire un mail à
-                        <a href="mailto:support@laravel.cm">support@laravel.cm</a>
+                        <a href="mailto:support@laravelmaroc.com">support@laravelmaroc.com</a>
                     </p>
                 </div>
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Puis-je suivre les Flux RSS sur Laravel.cm?
+                    Puis-je suivre les Flux RSS sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
                         Oui, vous pouvez. Le lien de notre flux principal se trouve ici : <a href="{{ config('app.url') }}/feed">{{ config('app.url') }}/feed</a>.
-                        Pour les flux spécifiques aux utilisateurs, vous pouvez les trouver via https://laravel.cm/feed/username.
+                        Pour les flux spécifiques aux utilisateurs, vous pouvez les trouver via https://laravelmaroc.com/feed/username.
                     </p>
                 </div>
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Puis-je poster ou trouver un job sur Laravel.cm?
+                    Puis-je poster ou trouver un job sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
@@ -358,7 +358,7 @@
                         freelances, stagiaires pour des missions, contrats, etc.
                     </p>
                     <p>
-                        Laravel.cm veut pouvoir mettre en avant les développeurs de la zone francophones en avant sur différentes
+                        laravelmaroc.com veut pouvoir mettre en avant les développeurs de la zone francophones en avant sur différentes
                         offres qui pourront être partagé de partout l'Afrique et du monde en général.
                     </p>
                 </div>
@@ -368,7 +368,7 @@
         <div class="flex-none px-2 w-1/3 hidden lg:block">
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Qui peut publier sur Laravel.cm?
+                    Qui peut publier sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
@@ -400,10 +400,10 @@
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Comment se passe le sponsoring sur Laravel.cm?
+                    Comment se passe le sponsoring sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
-                    <p>Le sponsoring sur Laravel.cm est une opportunité pour gagner en visibilité et de mettre votre contenu en avant sur le site.</p>
+                    <p>Le sponsoring sur laravelmaroc.com est une opportunité pour gagner en visibilité et de mettre votre contenu en avant sur le site.</p>
                     <p>
                         Visitez la page de <a href="{{ route('sponsors') }}">Sponsoring</a> pour avoir toutes les informations
                         (par exemple comment ça marche, comment être sponsor de la communauté, pourquoi sponsoriser son contenu, etc).
@@ -434,7 +434,7 @@
                     <p>
                         Vous pouvez ajouter ou supprimer des associations Twitter/GitHub de vos paramètres, mais notez que vous
                         ne pouvez le faire que si Twitter et GitHub sont connectés à votre compte. Si vous rencontrez des problèmes
-                        avec cela, envoyez un e-mail à <a href="mailto:support@laravel.cm">support@laravel.cm</a> et nous nous en occuperons.
+                        avec cela, envoyez un e-mail à <a href="mailto:support@laravelmaroc.com">support@laravelmaroc.com</a> et nous nous en occuperons.
                     </p>
                 </div>
             </div>
@@ -444,7 +444,7 @@
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
-                        Devenir premium sur Laravel.cm, c'est soutenir la création de nouveaux contenus et accéder à du contenu exclusif
+                        Devenir premium sur laravelmaroc.com, c'est soutenir la création de nouveaux contenus et accéder à du contenu exclusif
                         pour apprendre et s'améliorer (comme le téléchargement des vidéos des sources, et des designs).
                     </p>
                     <p>Pour être premium, vous devez aller sur la page pour <a href="#">Devenir premium</a> et choisir un abonnement.</p>
@@ -456,7 +456,7 @@
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
-                        Oui! Laravel.cm utilise Markdown X réalisé par <a href="https://twitter.com/tnylea">Tony Lea</a> sur la plateforme
+                        Oui! laravelmaroc.com utilise Markdown X réalisé par <a href="https://twitter.com/tnylea">Tony Lea</a> sur la plateforme
                         <a href="https://devdojo.com">DevDojo</a>.
                     </p>
                     <p>Vous pouvez le trouver en cliquant sur le bouton Aide dans la page de l'éditeur.</p>
@@ -469,17 +469,17 @@
                 <div class="prose prose-sm leading-5">
                     <p>
                         Vous trouverez la possibilité de supprimer votre compte dans vos paramètres. L'auto-suppression supprimera
-                        votre profil sur Laravel.cm, ainsi que tous les articles, commentaires, discussions, sujets, etc.
+                        votre profil sur laravelmaroc.com, ainsi que tous les articles, commentaires, discussions, sujets, etc.
                     </p>
                 </div>
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Quelles technologies utilisées Laravel.cm?
+                    Quelles technologies utilisées laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
-                        Laravel.cm est basé sur le framework Laravel et implémente le <a href="https://tallstack.dev">TALL Stack</a> qui permet de créer
+                        laravelmaroc.com est basé sur le framework Laravel et implémente le <a href="https://tallstack.dev">TALL Stack</a> qui permet de créer
                         des applications réactives sur Laravel avec Livewire et Alpinejs.
                     </p>
                     <p>C'est un preset de développement full-stack, construite par les membres de la communauté Laravel.</p>
@@ -490,7 +490,7 @@
         <div class="flex-none px-2 w-1/3 hidden lg:block">
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    {{ __('Qui peut publier des articles/sujets sur Laravel.cm?') }}
+                    {{ __('Qui peut publier des articles/sujets sur laravelmaroc.com?') }}
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
@@ -514,23 +514,23 @@
                 <div class="prose prose-sm leading-5">
                     <p>Pour un commentaire spécifique : accédez au commentaire et cliquez sur la flèche déroulante pour signaler un abus.</p>
                     <p>Pour un article spécifique : accédez à l'article, faites défiler vers le bas et cliquez sur signaler un abus.</p>
-                    <p>En général, vous pouvez faire un mail à <a href="mailto:support@laravel.cm">support@laravel.cm</a> </p>
+                    <p>En général, vous pouvez faire un mail à <a href="mailto:support@laravelmaroc.com">support@laravelmaroc.com</a> </p>
                 </div>
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Puis-je suivre les Flux RSS sur Laravel.cm?
+                    Puis-je suivre les Flux RSS sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
                         Oui, vous pouvez. Le lien de notre flux principal se trouve ici : <a href="{{ config('app.url') }}/feed">{{ config('app.url') }}/feed</a>.
-                        Pour les flux spécifiques aux utilisateurs, vous pouvez les trouver via https://laravel.cm/feed/username.
+                        Pour les flux spécifiques aux utilisateurs, vous pouvez les trouver via https://laravelmaroc.com/feed/username.
                     </p>
                 </div>
             </div>
             <div class="bg-skin-card p-6 rounded-md mt-4">
                 <h3 class="font-semibold text-skin-inverted font-heading mb-2">
-                    Puis-je poster ou trouver un job sur Laravel.cm?
+                    Puis-je poster ou trouver un job sur laravelmaroc.com?
                 </h3>
                 <div class="prose prose-sm leading-5">
                     <p>
@@ -538,7 +538,7 @@
                         stagiaires pour des missions, contrats, etc.
                     </p>
                     <p>
-                        Laravel.cm veut pouvoir mettre en avant les développeurs de la zone francophones en avant sur différentes
+                        laravelmaroc.com veut pouvoir mettre en avant les développeurs de la zone francophones en avant sur différentes
                         offres qui pourront être partagé de partout l'Afrique et du monde en général.
                     </p>
                 </div>

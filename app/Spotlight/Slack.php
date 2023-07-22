@@ -11,7 +11,7 @@ final class Slack extends SpotlightCommand
 {
     protected string $name = 'Slack';
 
-    protected string $description = 'rejoindre le Slack de Laravel Cameroun';
+    protected string $description = 'rejoindre le Slack de Laravel Maroc';
 
     protected array $synonyms = [
         'community',

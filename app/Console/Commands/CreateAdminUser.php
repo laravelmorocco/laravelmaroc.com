@@ -12,7 +12,7 @@ use Exception;
 
 final class CreateAdminUser extends Command
 {
-    protected $signature = 'lcm:admin';
+    protected $signature = 'lma:admin';
 
     protected $description = 'Create user with admin role and all permissions.';
 
@@ -25,8 +25,8 @@ final class CreateAdminUser extends Command
 
     protected function createUser(): void
     {
-        $email = $this->ask('Email Address', 'admin@laravel.cm');
-        $name = $this->ask('Name', 'Laravel Cameroun');
+        $email = $this->ask('Email Address', 'admin@laravelmaroc.com');
+        $name = $this->ask('Name', 'Admin');
         $username = $this->ask('Username', 'admin');
         $password = $this->secret('Password');
         $confirmPassword = $this->secret('Confirm Password');

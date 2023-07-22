@@ -1,7 +1,7 @@
 <x-modal footerClasses="px-4 pb-5 sm:px-4 sm:flex sm:flex-row-reverse">
     <x-slot name="content">
         <p class="text-sm leading-5 text-skin-base">
-            {!! __("Vous êtes sur le point de soutenir Laravel Cameroun pour la somme de <span class='font-bold text-skin-inverted'>:amount F.CFA</span>. Nous vous remercions pour votre don.", ['amount' => $amount]) !!}
+            {!! __("Vous êtes sur le point de soutenir Laravel Maroc pour la somme de <span class='font-bold text-skin-inverted'>:amount F.CFA</span>. Nous vous remercions pour votre don.", ['amount' => $amount]) !!}
         </p>
         <div class="mt-3 grid gap-4 lg:grid-cols-2 lg:gap-6 lg:mt-5">
             <div>
@@ -10,7 +10,7 @@
             </div>
             <div>
                 <x-label for="email">{{ __('Adresse E-mail') }}</x-label>
-                <x-email container-class="mt-1" name="email" id="email" wire:model.defer="email" placeholder="etoo@laravel.cm" />
+                <x-email container-class="mt-1" name="email" id="email" wire:model.defer="email" placeholder="etoo@laravelmaroc.com" />
             </div>
         </div>
         <div class="mt-4 pt-5 border-t border-skin-base">

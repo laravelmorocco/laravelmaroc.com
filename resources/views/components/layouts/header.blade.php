@@ -38,7 +38,7 @@
                         >
                             <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                                 <div class="relative grid gap-6 bg-skin-card px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
-                                    <a href="https://snippets.laravel.cm" class="-m-3 p-3 flex items-start rounded-lg hover:bg-skin-card-muted">
+                                    <a href="https://snippets.laravelmaroc.com" class="-m-3 p-3 flex items-start rounded-lg hover:bg-skin-card-muted">
                                         <div class="shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-green-500 text-white sm:h-12 sm:w-12">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
@@ -249,7 +249,7 @@
                 {{ __('Autres') }}
             </h4>
             <div class="mt-5 space-y-6">
-                <a href="https://snippets.laravel.cm" class="flex items-center text-skin-base">
+                <a href="https://snippets.laravelmaroc.com" class="flex items-center text-skin-base">
                     <svg class="h-6 w-6 mr-3 -ml-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M20.228 5.202l-6.46-3.73a3.547 3.547 0 0 0-3.537 0l-6.46 3.73A3.555 3.555 0 0 0 2 8.273v7.454c0 1.263.679 2.44 1.772 3.07l6.46 3.73c1.09.63 2.446.63 3.537 0l6.46-3.73A3.555 3.555 0 0 0 22 15.728V8.273c0-1.263-.679-2.44-1.772-3.07zm.055 10.525c0 .65-.35 1.257-.912 1.582l-6.46 3.73a1.827 1.827 0 0 1-1.822 0l-6.46-3.73a1.831 1.831 0 0 1-.912-1.582V8.273c0-.65.35-1.257.912-1.582l6.46-3.73a1.827 1.827 0 0 1 1.822 0l6.46 3.73c.563.325.912.931.912 1.582v7.454z" />
                         <path d="M11.184 11.344L7.996 8.643a.858.858 0 0 0-1.21.1.86.86 0 0 0 .101 1.212L9.301 12l-2.414 2.045a.86.86 0 0 0-.1 1.211.858.858 0 0 0 1.21.101l3.187-2.7a.86.86 0 0 0 0-1.313zm5.374 2.498h-3.862a.859.859 0 0 0 0 1.719h3.862a.859.859 0 0 0 0-1.72z" />

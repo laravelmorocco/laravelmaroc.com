@@ -1,4 +1,4 @@
-@title(__('Soutenir Laravel Cameroun'))
+@title(__('Soutenir Laravel Maroc'))
 
 @extends('layouts.default')
 
@@ -10,14 +10,14 @@
             <x-error-message />
 
             <div class="space-y-10">
-                <h1 class="text-2xl lg:text-4xl font-heading text-skin-inverted font-bold">{{ __('Soutenir Laravel Cameroun') }}</h1>
+                <h1 class="text-2xl lg:text-4xl font-heading text-skin-inverted font-bold">{{ __('Soutenir Laravel Maroc') }}</h1>
                 <div class="relative flex items-center space-x-5">
                     <div class="shrink-0">
                         <x-application-icon class="block h-12 w-auto sm:h-14" />
                     </div>
                     <div class="min-w-0 flex-1">
                         <div class="focus:outline-none">
-                            <p class="text-sm font-medium text-skin-inverted">{{ __('Laravel Cameroun') }}</p>
+                            <p class="text-sm font-medium text-skin-inverted">{{ __('Laravel Maroc') }}</p>
                             <div class="mt-2 flex items-center space-x-4">
                                 <a href="{{ route('twitter') }}" class="text-skin-muted hover:text-skin-base">
                                     <span class="sr-only">{{ __('Twitter') }}</span>
@@ -49,8 +49,8 @@
                 </div>
                 <div class="prose prose-green text-skin-base mx-auto overflow-x-hidden lg:max-w-4xl">
                     <p>
-                        Bienvenue sur la page de sponsoring de Laravel Cameroun. À travers cette page, vous pouvez aider à soutenir le
-                        développement de la plateforme. Laravel.cm est le portail de la communauté Laravel Cameroun, un endroit pour la communauté,
+                        Bienvenue sur la page de sponsoring de Laravel Maroc. À travers cette page, vous pouvez aider à soutenir le
+                        développement de la plateforme. laravelmaroc.com est le portail de la communauté Laravel Maroc, un endroit pour la communauté,
                         par la communauté. Son code est entièrement <a href="https://github.com/laravelcm/laravel/cm">ouvert (open source)</a>
                         et constitue une ressource d'apprentissage pour les développeurs. Les développeurs sont libres de poser des
                         <a href="https://github.com/laravelcm/issues">questions</a>, de contribuer au code source ou de s'inspirer pour leurs propres projets.
@@ -61,16 +61,16 @@
                         Et depuis lors d'autres projets sont sur le point de voir le jour grâce à ce travail fourni depuis des années.
                     </p>
                     <p>
-                        Avec les fonds que nous gagnerons grâce à cette page, nous voulons amener Laravel Cameroun à un niveau supérieur.
+                        Avec les fonds que nous gagnerons grâce à cette page, nous voulons amener Laravel Maroc à un niveau supérieur.
                         Nous prévoyons d'étendre la plateforme avec de nombreuses nouvelles fonctionnalités et de créer le meilleur portail
-                        possible pour la communauté Laravel au Cameroun. Pour ce faire, nous avons besoin de soutien.
+                        possible pour la communauté Laravel au Maroc. Pour ce faire, nous avons besoin de soutien.
                     </p>
                     <p>
                         Grâce aux plans de parrainage présentés sur cette page, vous pouvez nous aider. Qu'elle soit petite ou grande,
                         chaque contribution nous aidera à couvrir les coûts des prochaines étapes.
                     </p>
                     <p>
-                        Merci d'envisager de sponsoriser Laravel Cameroun ! Votre aide permettra à la plateforme de continuer à fonctionner et à s'améliorer.
+                        Merci d'envisager de sponsoriser Laravel Maroc ! Votre aide permettra à la plateforme de continuer à fonctionner et à s'améliorer.
                     </p>
                 </div>
                 <div class="pt-12 border-t border-skin-base">
@@ -134,7 +134,7 @@
                               </span>
                             </span>
                             <p class="flex-1 ml-4 text-sm leading-5 text-skin-base">
-                                {{ __('Voici le badge sur votre avatar que vous obtiendrez et qui indique que vous êtes un sponsor de @laravelcm.') }}
+                                {{ __('Voici le badge sur votre avatar que vous obtiendrez et qui indique que vous êtes un sponsor de @laravelma.') }}
                             </p>
                         </div>
                     @endauth

@@ -22,7 +22,7 @@
                 </div>
                 <h2 class="mt-4 text-xl font-medium font-heading text-skin-inverted">{{ __('Rejoindre le groupe Slack') }}</h2>
                 <p class="mt-3 leading-6 text-skin-base">
-                    {{ __('Rejoignez notre slack pour discuter a propos de Laravel, Javascript, Design, comment démarrer et mener un projet de bout en bout, et découvrez l\'univers du développement au Cameroun.') }}
+                    {{ __('Rejoignez notre slack pour discuter a propos de Laravel, Javascript, Design, comment démarrer et mener un projet de bout en bout, et découvrez l\'univers du développement au Maroc.') }}
                 </p>
             </div>
 
@@ -41,7 +41,7 @@
         <section class="text-center max-w-3xl mx-auto">
             <h2 class="mb-3 text-2xl leading-7 font-heading text-center tracking-tight text-skin-inverted font-bold">{{ __('Les autres groupes') }}</h2>
             <p class="leading-6 text-skin-base mx-auto max-w-3xl text-center">
-                {{ __('Que vous soyez un débutant ou un développeur expérimenté, vous impliquer dans la communauté Laravel Cameroun est un excellent moyen d\'entrer en contact avec des personnes partageant les mêmes idées et qui construisent des choses géniales avec le framework.') }}
+                {{ __('Que vous soyez un débutant ou un développeur expérimenté, vous impliquer dans la communauté Laravel Maroc est un excellent moyen d\'entrer en contact avec des personnes partageant les mêmes idées et qui construisent des choses géniales avec le framework.') }}
             </p>
         </section>
         <ul class="mt-12 grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-8 items-start">
@@ -66,7 +66,7 @@
                 <div class="order-1 sm:ml-6 xl:ml-0">
                     <h3 class="mb-1 text-skin-inverted font-medium">
                         <span class="mb-1 block leading-6 text-[#27A7E7]">Telegram</span>
-                        {{ __('La plus grosse communauté de Laravel Cameroun') }}
+                        {{ __('La plus grosse communauté de Laravel Maroc') }}
                     </h3>
                     <p class="text-sm leading-5 text-skin-inverted-muted/60">
                         {{ __('Avec le plus grand nombre de membres c\'est la plateforme qui nous affectionne le plus alors n\'hésitez surtout pas à nous rejoindre.') }}

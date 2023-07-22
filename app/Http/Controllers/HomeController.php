@@ -50,8 +50,8 @@ final class HomeController extends Controller
 
         // @phpstan-ignore-next-line
         seo()
-            ->description('Laravel Cameroun est le portail de la communauté de développeurs PHP & Laravel au Cameroun, On partage, on apprend, on découvre et on construit une grande communauté.')
-            ->twitterDescription('Laravel Cameroun est le portail de la communauté de développeurs PHP & Laravel au Cameroun, On partage, on apprend, on découvre et on construit une grande communauté.')
+            ->description('Laravel Maroc est le portail de la communauté de développeurs PHP & Laravel au Maroc, On partage, on apprend, on découvre et on construit une grande communauté.')
+            ->twitterDescription('Laravel Maroc est le portail de la communauté de développeurs PHP & Laravel au Maroc, On partage, on apprend, on découvre et on construit une grande communauté.')
             ->image(asset('/images/socialcard.png'))
             ->twitterSite('laravelcm')
             ->withUrl();

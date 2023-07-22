@@ -46,7 +46,7 @@ final class NewSponsorPaymentNotification extends Notification implements Should
         $content .= 'Montant: '.$this->transaction->amount;
 
         if ($this->transaction->getMetadata('merchant')['laravel_cm_id']) {
-            $content .= 'Profil Laravel Cameroun: [@'.$this->transaction->user?->username.']('.route('profile', $this->transaction->user?->username).')';
+            $content .= 'Profil Laravel Maroc: [@'.$this->transaction->user?->username.']('.route('profile', $this->transaction->user?->username).')';
         }
 
         return $content;

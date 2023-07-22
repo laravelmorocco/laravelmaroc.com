@@ -28,8 +28,8 @@ final class SendApprovedArticle extends Notification implements ShouldQueue
         return (new MailMessage())
             ->subject(__('Article Approuvé 🎉.'))
             ->greeting(__('Article Approuvé 🎉.'))
-            ->line(__('Merci d\'avoir soumis votre article pour créer du contenu au sein de Laravel Cameroun.'))
+            ->line(__('Merci d\'avoir soumis votre article pour créer du contenu au sein de Laravel Maroc.'))
             ->action(__('Voir mon article'), route('articles.show', $this->article))
-            ->line(__('Merci d\'avoir utilisé Laravel Cameroun.!'));
+            ->line(__('Merci d\'avoir utilisé Laravel Maroc.!'));
     }
 }

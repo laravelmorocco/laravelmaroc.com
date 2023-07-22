@@ -52,7 +52,7 @@ final class AnonymousSponsors extends ModalComponent
         );
 
         $adminUser = User::findByEmailAddress(
-            emailAddress: app()->environment('production') ? 'support@laravel.cm' : 'user@laravel.cm'
+            emailAddress: app()->environment('production') ? 'support@laravelmaroc.com' : 'user@laravelmaroc.com'
         );
 
         NotchPay::setApiKey(
@@ -67,7 +67,7 @@ final class AnonymousSponsors extends ModalComponent
                 'currency' => $this->currency,
                 'reference' => $adminUser->id.'-'.$adminUser->username().'-'.uniqid(),
                 'callback' => route('notchpay-callback'),
-                'description' => __('Soutien de la communauté Laravel & PHP Cameroun.'),
+                'description' => __('Soutien de la communauté Laravel & PHP Maroc.'),
             ]);
 
             Transaction::query()->create([

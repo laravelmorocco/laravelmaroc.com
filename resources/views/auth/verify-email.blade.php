@@ -6,8 +6,8 @@
 
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
         <div>
-            <img class="h-12 w-auto sm:h-16 logo-white" src="{{ asset('/images/laravelcm.svg') }}" alt="Laravel.cm">
-            <img class="h-12 w-auto sm:h-16 logo-dark" src="{{ asset('/images/laravelcm-white.svg') }}" alt="Laravel.cm">
+            <img class="h-12 w-auto sm:h-16 logo-white" src="{{ asset('/images/laravelma.svg') }}" alt="laravelmaroc.com">
+            <img class="h-12 w-auto sm:h-16 logo-dark" src="{{ asset('/images/laravelma-white.svg') }}" alt="laravelmaroc.com">
         </div>
 
         <div class="w-full sm:max-w-md lg:max-w-xl mt-6 lg:mt-10">

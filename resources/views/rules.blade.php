@@ -8,7 +8,7 @@
 
         <h1>{{ __('Code de conduite') }}</h1>
 
-        <p>{{ __("Tous les participants de la communauté Laravel Cameroun doivent respecter notre code de conduite, à la fois en ligne et lors d'événements en personne hébergés et/ou associés à la communauté Laravel Cameroun.") }}</p>
+        <p>{{ __("Tous les participants de la communauté Laravel Maroc doivent respecter notre code de conduite, à la fois en ligne et lors d'événements en personne hébergés et/ou associés à la communauté Laravel Maroc.") }}</p>
 
         <h2>{{ __('Notre Engagement') }}</h2>
 
@@ -44,7 +44,7 @@
 
         <h2>{{ __('Mise en vigueur') }}</h2>
 
-        <p>{!! __("Les cas de comportement abusif, harcelant ou autrement inacceptable peuvent être signalés en contactant le responsable du projet via l'adresse <a href='mailto:arthur@laravel.cm'>arthur@laravel.cm</a>. L'équipe du projet examinera et enquêtera sur toutes les plaintes, et répondra de manière à ce qu'elle juge approprié aux circonstances. L'équipe de projet est tenue de maintenir la confidentialité en ce qui concerne les journalistes d'un incident. De plus amples détails sur les politiques d'application spécifiques peuvent être publiés séparément.") !!}</p>
+        <p>{!! __("Les cas de comportement abusif, harcelant ou autrement inacceptable peuvent être signalés en contactant le responsable du projet via l'adresse <a href='mailto:contact@laravelmaroc.com'>contact@laravelmaroc.com</a>. L'équipe du projet examinera et enquêtera sur toutes les plaintes, et répondra de manière à ce qu'elle juge approprié aux circonstances. L'équipe de projet est tenue de maintenir la confidentialité en ce qui concerne les journalistes d'un incident. De plus amples détails sur les politiques d'application spécifiques peuvent être publiés séparément.") !!}</p>
 
         <p>{{ __("Les responsables du projet qui ne respectent pas ou n'appliquent pas le Code de conduite de bonne foi peuvent être confrontés à  des répercussions déterminées par les autres membres de la direction du projet.") }}</p>
 

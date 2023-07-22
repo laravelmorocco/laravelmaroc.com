@@ -1,4 +1,4 @@
-@title(__('A propos de Laravel Cameroun'))
+@title(__('A propos de Laravel Maroc'))
 
 @extends('layouts.default')
 
@@ -70,7 +70,7 @@
                     </p>
                     <ul class="font-normal">
                         <li>L'incubateur <a href="http://activspaces.com">ActivSpaces</a> qui a hébergé le meetup.</li>
-                        <li>L'entreprise <span class="text-skin-primary font-medium">Kerawa Cameroun</span> qui a été l'un de nos sponsors.</li>
+                        <li>L'entreprise <span class="text-skin-primary font-medium">Kerawa Maroc</span> qui a été l'un de nos sponsors.</li>
                         <li>La StartUp <a href="https://johns-corporation.com">John's Corporation</a> qui a été un sponsor et nous a soutenu dans la communication.</li>
                         <li>La StartUp <a href="https://twitter.com/DarkCodeCompany">Dark Code</a> qui nous a apporté son soutien dans la mise en place des supports de communication.</li>
                         <li>L'entreprise <a href="https://diool.com">Diool</a> sponsor du Meetup.</li>
@@ -87,8 +87,8 @@
                 </div>
             </div>
             <p>
-                Laravel Cameroun est une communauté de développeurs et de designers qui se réunissent pour s'entraider. L'industrie du logiciel reposant sur la collaboration et l'apprentissage en réseau.
-                Nous nous sommes donnés comme objectif de pouvoir rassembler le maximum de développeurs et designers évoluant au Cameroun et dans l'Afrique Francophone pour organiser des grands événements et Meetup de part le Cameroun et l'Afrique Francophone.
+                Laravel Maroc est une communauté de développeurs et de designers qui se réunissent pour s'entraider. L'industrie du logiciel reposant sur la collaboration et l'apprentissage en réseau.
+                Nous nous sommes donnés comme objectif de pouvoir rassembler le maximum de développeurs et designers évoluant au Maroc et dans l'Afrique Francophone pour organiser des grands événements et Meetup de part le Maroc et l'Afrique Francophone.
             </p>
         </div>
 
@@ -97,7 +97,7 @@
                 <div class="font-sans">
                     <span class="text-sm leading-5 text-skin-primary font-semibold tracking-wide uppercase">Notre équipe</span>
                     <h2 class="mt-2 text-2xl font-extrabold font-heading text-skin-inverted tracking-tight sm:text-3xl">Équipe de direction</h2>
-                    <p class="mt-5 text-lg text-skin-base">Laravel Cameroun est une idée qui a été initiée puis transformée en une communauté par 2 développeurs parmi les plus influents au Cameroun.</p>
+                    <p class="mt-5 text-lg text-skin-base">Laravel Maroc est une idée qui a été initiée puis transformée en une communauté par 2 développeurs parmi les plus influents au Maroc.</p>
                 </div>
                 <div class="lg:col-span-2">
                     <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
