@@ -12,8 +12,6 @@ final class FeatureTableSeeder extends Seeder
     public function run(): void
     {
         Feature::add('premium', false);
-        Feature::add('badges', false);
-        Feature::add('podcasts', false);
 
         Feature::add('job_skills', false);
         Feature::add('job_profile', false);
