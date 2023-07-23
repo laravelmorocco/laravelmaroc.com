@@ -28,10 +28,9 @@ final class DeveloperPremiumPlanSeeder extends Seeder
         ]);
         $rookiePlan->features()->saveMany([
             new Feature(['name' => 'Voir les vidéos premium', 'value' => 1, 'sort_order' => 1]),
-            new Feature(['name' => 'Poster des tutoriels vidéo', 'value' => 1, 'sort_order' => 3]),
-            new Feature(['name' => 'Badge Premium sur le profil', 'value' => 1, 'sort_order' => 4]),
-            new Feature(['name' => 'Accès au code source des tutoriels', 'value' => 1, 'sort_order' => 5]),
-            new Feature(['name' => 'Invitation sur le Github du projet', 'value' => 1, 'sort_order' => 6]),
+            new Feature(['name' => 'Poster des tutoriels vidéo', 'value' => 1, 'sort_order' => 2]),
+            new Feature(['name' => 'Accès au code source des tutoriels', 'value' => 1, 'sort_order' => 3]),
+            new Feature(['name' => 'Invitation sur le Github du projet', 'value' => 1, 'sort_order' => 4]),
         ]);
 
         $proPlan = Plan::create([
@@ -49,13 +48,12 @@ final class DeveloperPremiumPlanSeeder extends Seeder
         ]);
         $proPlan->features()->saveMany([
             new Feature(['name' => 'Voir les vidéos premium', 'value' => 1, 'sort_order' => 1]),
-            new Feature(['name' => 'Poster des tutoriels vidéo', 'value' => 1, 'sort_order' => 3]),
-            new Feature(['name' => 'Badge Premium sur le profil', 'value' => 1, 'sort_order' => 4]),
-            new Feature(['name' => 'Accès au code source des tutoriels', 'value' => 1, 'sort_order' => 5]),
-            new Feature(['name' => 'Invitation sur le Github du projet', 'value' => 1, 'sort_order' => 6]),
-            new Feature(['name' => 'Invitation channel privé sur Discord', 'value' => 1, 'sort_order' => 7]),
-            new Feature(['name' => 'E-Books Laravel, Design UI/UX, etc', 'value' => 1, 'sort_order' => 8]),
-            new Feature(['name' => '2 heures (2 séances) de consultation mensuelle gratuite', 'value' => 1, 'sort_order' => 9]),
+            new Feature(['name' => 'Poster des tutoriels vidéo', 'value' => 1, 'sort_order' => 2]),
+            new Feature(['name' => 'Accès au code source des tutoriels', 'value' => 1, 'sort_order' => 3]),
+            new Feature(['name' => 'Invitation sur le Github du projet', 'value' => 1, 'sort_order' => 4]),
+            new Feature(['name' => 'Invitation channel privé sur Discord', 'value' => 1, 'sort_order' => 5]),
+            new Feature(['name' => 'E-Books Laravel, Design UI/UX, etc', 'value' => 1, 'sort_order' => 6]),
+            new Feature(['name' => '2 heures (2 séances) de consultation mensuelle gratuite', 'value' => 1, 'sort_order' => 7]),
         ]);
     }
 }
