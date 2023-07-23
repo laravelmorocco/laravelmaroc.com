@@ -22,6 +22,7 @@ use Filament\Facades\Filament;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
@@ -90,7 +91,7 @@ final class AppServiceProvider extends ServiceProvider
     {
         Filament::serving(function (): void {
             Filament::registerTheme(
-                mix('css/filament.css'),
+                Vite::asset('resources/css/filament.css'),
             );
         });
 
