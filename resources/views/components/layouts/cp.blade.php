@@ -21,7 +21,6 @@
 
     <!-- Styles -->
     @googlefonts
-    {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
     @vite('resources/css/app.css')
     @livewireStyles
 
@@ -41,7 +40,6 @@
 
     <!-- Scripts -->
     @livewireScripts
-    {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
     @vite('resources/js/app.js')
     @include('layouts._favicons')
 </head>
