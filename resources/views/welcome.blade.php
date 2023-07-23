@@ -90,7 +90,7 @@
                     <div class="flex items-center">
                         <x-heroicon-o-heart class="w-5 h-5 text-skin-muted" />
 
-                        <a href="https://github.com/sponsors/sense" class="ml-1 underline">
+                        <a href="#" class="ml-1 underline">
                             {{ __('Devenir Sponsor') }}
                         </a>
                     </div>

@@ -6,10 +6,9 @@
                 <img class="h-12 w-auto sm:h-16 logo-white" src="{{ asset('/images/laravelma.svg') }}" alt="laravelmaroc.com">
                 <img class="h-12 w-auto sm:h-16 logo-dark" src="{{ asset('/images/laravelma-white.svg') }}" alt="laravelmaroc.com">
                 <p class="inline-flex items-center flex-wrap text-sm text-skin-base">
-                    <a href="https://github.com/caneco/laravel-country-logomarks" class="underline text-skin-inverted font-medium">
+                    <a href="#" class="underline text-skin-inverted font-medium">
                         {{ __('Laravel Country Logomarks') }}
                     </a>
-                    <img class="ml-2 h-6 w-6 rounded-full" src="https://avatars.githubusercontent.com/u/502041" alt="Caneco profile">
                 </p>
             </div>
             <div class="mt-12 grid grid-cols-2 gap-8 lg:mt-0">
@@ -21,7 +20,7 @@
                         <x-footer-link :title="__('A propos')" :url="route('about')" />
                         <x-footer-link :title="__('Jobs')" url="#" soon />
                         <x-footer-link :title="__('Sponsors')" :url="route('sponsors')" />
-                        <x-footer-link :title="__('Branding')" url="https://github.com/caneco/laravel-country-logomarks/blob/main/src/cm/README.md" />
+                        <x-footer-link :title="__('Branding')" url="#" />
                     </ul>
                 </div>
                 <div>

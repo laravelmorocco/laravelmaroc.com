@@ -76,23 +76,11 @@
                 <div class="pt-12 border-t border-skin-base">
                     <h4 class="text-skin-inverted text-lg lg:text-xl font-medium font-heading">{{ __('Sponsors') }}</h4>
                     <div class="mt-4 flex items-center flex-wrap gap-6">
-                        <a href="https://laravelshopper.io" target="_blank" class="flex items-center">
-                            <img class="h-10 logo-white" src="{{ asset('/images/sponsors/shopper-logo.svg') }}" alt="Laravel Shopper">
-                            <img class="h-10 logo-dark" src="{{ asset('/images/sponsors/shopper-logo-light.svg') }}" alt="Laravel Shopper">
-                        </a>
-                        <a href="https://gdg.community.dev/gdg-douala" target="_blank" class="flex items-center">
-                            <x-icon.gdg class="h-6 text-skin-inverted" />
-                        </a>
-                        <a href="https://notchpay.co" class="flex items-center">
-                            <x-icon.notchpay class="w-auto h-6 text-skin-inverted"/>
-                        </a>
-                        <a href="https://dark-code.cm" class="flex items-center">
-                            <x-icon.darkcode class="w-auto h-5 text-skin-inverted"/>
-                        </a>
-                        <a href="https://sharuco.lndev.me" class="flex items-center">
+                       
+                        {{-- <a href="#" class="flex items-center">
                             <x-icon.sharuco class="w-auto h-5 text-skin-inverted"/>
                             <span class="ml-1 text-xl text-skin-inverted font-bold">Sharuco</span>
-                        </a>
+                        </a> --}}
                     </div>
                     <div class="mt-10 flex items-center flex-wrap">
                         <ul role="list" class="grid grid-cols-6 gap-1 sm:grid-cols-12 lg:grid-cols-20">
