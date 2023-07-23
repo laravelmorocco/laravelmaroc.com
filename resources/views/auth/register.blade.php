@@ -12,17 +12,6 @@
             <dl class="mt-6 space-y-4">
                 <div class="relative">
                     <dt>
-                        <x-icon.podcast class="absolute h-6 w-6"/>
-                    </dt>
-                    <dd class="mt-2 ml-9 text-base text-skin-base">
-                        <span class="text-skin-inverted font-medium">{{ __('Podcast') }}.</span>
-                        <span>
-                            {{ __('Suivez des podcasts sur différentes thématiques avec des freelances, développeurs, entrepreneurs etc.') }}
-                        </span>
-                    </dd>
-                </div>
-                <div class="relative">
-                    <dt>
                         <x-icon.discussion class="absolute h-6 w-6"/>
                     </dt>
                     <dd class="mt-2 ml-9 text-base text-skin-base">
