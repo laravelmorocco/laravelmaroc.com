@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full scroll-smooth {{ get_current_theme() }}">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,10 +13,11 @@
         {{ config('app.name') }}
         {{ is_active('home') ? '- La plus grande communauté de développeurs Laravel & PHP au Maroc' : '' }}
     </title>
-    <meta name="description" content="Laravel Maroc est le portail de la communauté de développeurs PHP & Laravel au Maroc, on partage, on apprend, on découvre et on construit une grande communauté.">
-    <meta property="og:site_name" content="laravelmaroc.com"/>
-    <meta property="og:language" content="fr"/>
-    <meta name="twitter:author" content="@laravelmaroc"/>
+    <meta name="description"
+        content="Laravel Maroc est le portail de la communauté de développeurs PHP & Laravel au Maroc, on partage, on apprend, on découvre et on construit une grande communauté.">
+    <meta property="og:site_name" content="laravelmaroc.com" />
+    <meta property="og:language" content="fr" />
+    <meta name="twitter:author" content="@laravelmaroc" />
     <link rel="canonical" href="{{ $canonical ?? Request::url() }}" />
 
     @include('layouts._og')
@@ -23,7 +25,8 @@
 
     <!-- Styles -->
     @googlefonts
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
+    @vite('resources/css/app.css')
     @include('layouts._favicons')
     <livewire:styles />
 
@@ -31,18 +34,24 @@
         window.csrfToken = {!! json_encode(['csrfToken' => csrf_token()]) !!};
         window.laravel = {
             ...(window.laravel || {}),
-            isModerator: {{ auth()->check() && auth()->user()->hasAnyRole('admin', 'moderator') ? 'true' : 'false' }},
+            isModerator: {{ auth()->check() &&auth()->user()->hasAnyRole('admin', 'moderator')? 'true': 'false' }},
             user: {{ auth()->check() ? auth()->id() : 'null' }},
-            currentUser: {!! auth()->check() ? json_encode(auth()->user()->profile()) : 'null'  !!}
+            currentUser: {!! auth()->check()
+                ? json_encode(
+                    auth()->user()->profile(),
+                )
+                : 'null' !!}
         }
     </script>
 
     <!-- Scripts -->
     <livewire:scripts />
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
+    @vite('resources/js/app.js')
 
     @include('layouts._fathom')
 </head>
+
 <body class="h-full font-sans antialiased bg-skin-body text-skin-base">
 
     <div class="min-h-screen flex flex-col justify-between">
@@ -56,4 +65,5 @@
 
     @stack('scripts')
 </body>
+
 </html>
