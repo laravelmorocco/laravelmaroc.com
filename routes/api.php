@@ -31,7 +31,7 @@ Route::prefix('password')->group(function (): void {
 /* Authenticated Routes */
 Route::middleware('auth:sanctum')->group(function (): void {
     Route::post('logout', [LoginController::class, 'logout']);
-    Route::get('email/verify/resend', [VerifyEmailController::class, 'resend'])
+    Route::post('email/verify/resend', [VerifyEmailController::class, 'resend'])
         ->middleware('throttle:6,1')
         ->name('verification.send');
 
