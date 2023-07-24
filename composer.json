@@ -1,8 +1,8 @@
 {
-  "name": "laravel/laravel",
+  "name": "laravelmorocco/laravelmaroc.com",
   "type": "project",
-  "description": "The Laravel Framework.",
-  "keywords": ["framework", "laravel"],
+  "description": "The source code for the laravelmaroc.com community portal.",
+  "keywords": ["laravel", "morocco", "community"],
   "license": "MIT",
   "require": {
     "php": "^8.2",
