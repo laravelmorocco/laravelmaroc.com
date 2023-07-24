@@ -287,8 +287,6 @@
                     </div>
                 @endif
 
-                <x-ads />
-
                 <x-discord />
             </x-sticky-content>
         </div>
