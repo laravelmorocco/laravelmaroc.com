@@ -64,8 +64,6 @@
 
         <div class="hidden lg:block lg:col-span-2">
             <x-sticky-content class="space-y-12">
-                <x-sponsors />
-                <x-ads />
                 <x-discord />
             </x-sticky-content>
         </div>
