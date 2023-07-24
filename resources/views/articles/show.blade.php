@@ -278,7 +278,6 @@
         </div>
         <div class="hidden relative lg:block lg:col-span-2">
             <x-sticky-content class="space-y-10">
-                <x-sponsors />
 
                 @if($article->showToc())
                     <div class="bg-skin-card px-4 py-6 rounded-lg shadow-lg">
