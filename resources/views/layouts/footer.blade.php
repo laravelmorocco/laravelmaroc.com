@@ -93,7 +93,7 @@
         </div>
         <div class="border-t border-skin-base py-6 sm:flex sm:items-center sm:justify-between lg:py-8">
             <p class="text-base text-center leading-6 text-skin-muted lg:text-left">
-                {{ __('© 2018 - :date Laravel Maroc. Tous droits réservés.', ['date' => date('Y')]) }}
+                {{ __('© 2023 - :date Laravel Maroc. Tous droits réservés.', ['date' => date('Y')]) }}
             </p>
             <div class="mt-4 flex justify-center space-x-6 sm:mt-0 lg:justify-start">
                 <a href="{{ route('twitter') }}" class="text-skin-muted hover:text-skin-base">
