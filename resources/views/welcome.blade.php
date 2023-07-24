@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="ml-4 text-center text-sm text-skin-base sm:text-right sm:ml-0">
-                    Laravel Maroc 2018 - {{ date('Y') }}
+                    Laravel Maroc 2023 - {{ date('Y') }}
                 </div>
             </div>
         </div>

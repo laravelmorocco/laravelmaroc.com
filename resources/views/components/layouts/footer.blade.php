@@ -3,7 +3,7 @@
         <img class="mx-auto h-10 w-auto logo-white" src="{{ asset('/images/laravelma.svg') }}" alt="laravelmaroc.com">
         <img class="mx-auto h-10 w-auto logo-dark" src="{{ asset('/images/laravelma-white.svg') }}" alt="Laravlaravelmarocel.com">
         <p class="mt-5 text-center text-sm leading-6 text-skin-muted">
-            © 2018 - {{ date('Y') }} Laravel Maroc. Tous droits réservés.
+            © 2023 - {{ date('Y') }} Laravel Maroc. Tous droits réservés.
         </p>
         <div class="mt-10 flex items-center justify-center space-x-4 text-sm font-medium leading-6 text-skin-base">
             <a class="hover:text-skin-inverted-muted hover:underline" href="{{ route('twitter') }}">Twitter</a>
