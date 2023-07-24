@@ -26,7 +26,7 @@ final class PostArticleToTelegram extends Notification
     public function toTelegram(): TelegramMessage
     {
         return TelegramMessage::create()
-            ->to('@laravelmaroc')
+            ->to(config('services.telegram-bot-api.channel'))
             ->content("{$this->article->title} ".route('articles.show', $this->article->slug()));
     }
 }
