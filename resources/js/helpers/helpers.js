@@ -15,7 +15,7 @@ window.highlightCode = (element) => {
 }
 
 window.formatMoney = (amount) => {
-  return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'XAF' }).format(amount)
+  return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'MAD' }).format(amount)
 }
 
 const share = function () {
