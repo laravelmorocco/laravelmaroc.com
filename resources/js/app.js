@@ -3,7 +3,7 @@ import intersect from "@alpinejs/intersect";
 import AlpineFloatingUI from "@awcodes/alpine-floating-ui";
 import Tooltip from "@ryangjchandler/alpine-tooltip";
 
-import NotificationsAlpinePlugin from "../../vendor/filament/notifications/dist/module.esm";
+import NotificationsAlpinePlugin from "./utils/module.esm";
 import internationalNumber from "./plugins/internationalNumber";
 import datepicker from "./plugins/datepicker";
 import { registerHeader } from "@helpers/header";
