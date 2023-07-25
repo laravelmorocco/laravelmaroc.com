@@ -127,7 +127,7 @@ function toVdom (element, nodeName) {
   let i = 0
   const a = element.attributes
   const cn = element.childNodes
-  for (i = a.length; i--; ) {
+  for (i = a.length; i--;) {
     if (a[i].name !== 'slot') {
       props[a[i].name] = a[i].value
       props[toCamelCase(a[i].name)] = a[i].value
@@ -135,7 +135,7 @@ function toVdom (element, nodeName) {
   }
   props.parent = element
 
-  for (i = cn.length; i--; ) {
+  for (i = cn.length; i--;) {
     const vnode = toVdom(cn[i], null)
     // Move slots correctly
     const name = cn[i].slot

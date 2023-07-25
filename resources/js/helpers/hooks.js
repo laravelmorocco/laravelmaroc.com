@@ -64,4 +64,3 @@ export function useVisibility (node, once = true, options = {}) {
 
   return visible
 }
-
