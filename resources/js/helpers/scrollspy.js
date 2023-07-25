@@ -8,7 +8,7 @@ if (tableOfContents) {
 
 	highlightLink(headers[headers.length - 1].id)
 
-	window.addEventListener('scroll', event => {
+	window.addEventListener('scroll', _event => {
 		let position = (document.documentElement.scrollTop || document.body.scrollTop) + 34
 		let current = headers.filter(header => header.position < position)[0] || headers[headers.length - 1]
 		let active = document.querySelector('.toc .active')

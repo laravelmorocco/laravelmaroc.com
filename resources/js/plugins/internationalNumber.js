@@ -7,7 +7,7 @@ export default (element) => ({
     const phoneNumber = document.querySelector(this.input);
     let iti = intlTelInput(phoneNumber, {
       nationalMode: true,
-      geoIpLookup: function(success, failure) {
+      geoIpLookup: function(success, _failure) {
         fetch('https://ipinfo.io').then(response => {
           let countryCode = (response && response.country) ? response.country : 'CM'
           success(countryCode)
