@@ -6,11 +6,11 @@
 export async function jsonFetch (url, params = {}) {
   // Si on reçoit un FormData, on le convertit en objet
   if (params.body instanceof FormData) {
-    params.body = Object.fromEntries(params.body)
+    params.body = Object.fromEntries(params.body);
   }
   // Si on reçoit un objet, on le convertit en chaine JSON
   if (params.body && typeof params.body === 'object') {
-    params.body = JSON.stringify(params.body)
+    params.body = JSON.stringify(params.body);
   }
   params = {
     headers: {
@@ -19,17 +19,17 @@ export async function jsonFetch (url, params = {}) {
       'X-Requested-With': 'XMLHttpRequest'
     },
     ...params
-  }
+  };
 
-  const response = await fetch(url, params)
+  const response = await fetch(url, params);
   if (response.status === 204) {
-    return null
+    return null;
   }
-  const data = await response.json()
+  const data = await response.json();
   if (response.ok) {
-    return data
+    return data;
   }
-  throw new ApiError(data, response.status)
+  throw new ApiError(data, response.status);
 }
 
 /**
@@ -39,16 +39,16 @@ export async function jsonFetch (url, params = {}) {
  */
 export async function jsonFetchOrFlash (url, params = {}) {
   try {
-    return await jsonFetch(url, params)
+    return await jsonFetch(url, params);
   } catch (e) {
     /* eslint-disable no-console */
     if (e instanceof ApiError) {
-      console.log(e)
+      console.log(e);
     } else {
-      console.log('error')
+      console.log('error');
     }
     /* eslint-enable no-console */
-    return null
+    return null;
   }
 }
 
@@ -59,12 +59,12 @@ export async function jsonFetchOrFlash (url, params = {}) {
  */
 export async function catchViolations (p) {
   try {
-    return [await p, null]
+    return [await p, null];
   } catch (e) {
     if (e instanceof ApiError) {
-      return [null, e.violations]
+      return [null, e.violations];
     }
-    throw e
+    throw e;
   }
 }
 
@@ -76,17 +76,17 @@ export async function catchViolations (p) {
  */
 export class ApiError {
   constructor (data, status) {
-    this.data = data
-    this.status = status
+    this.data = data;
+    this.status = status;
   }
 
   // Récupère la liste de violation pour un champ donnée
   violationsFor (field) {
-    return this.data.violations.filter(v => v.propertyPath === field).map(v => v.message)
+    return this.data.violations.filter(v => v.propertyPath === field).map(v => v.message);
   }
 
   get name () {
-    return `${this.data.title} ${this.data.detail || ''}`
+    return `${this.data.title} ${this.data.detail || ''}`;
   }
 
   // Renvoie les violations indexées par propertyPath
@@ -94,15 +94,15 @@ export class ApiError {
     if (!this.data.violations) {
       return {
         main: `${this.data.title} ${this.data.detail || ''}`
-      }
+      };
     }
     return this.data.violations.reduce((acc, violation) => {
       if (acc[violation.propertyPath]) {
-        acc[violation.propertyPath].push(violation.message)
+        acc[violation.propertyPath].push(violation.message);
       } else {
-        acc[violation.propertyPath] = [violation.message]
+        acc[violation.propertyPath] = [violation.message];
       }
-      return acc
-    }, {})
+      return acc;
+    }, {});
   }
 }
