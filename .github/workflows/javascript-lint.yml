@@ -9,6 +9,8 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v3
@@ -21,5 +23,10 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Lint
+      - name: Fix code style linting errors
         run: yarn lint:fix
+
+      - name: Commit fixed linting errors
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Fix code styling
