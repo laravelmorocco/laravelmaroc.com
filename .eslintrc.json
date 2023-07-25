@@ -11,6 +11,7 @@
     "ignorePatterns": ["resources/js/utils/*"],
     "rules": {
         "no-console": ["error", {"allow": ["warn", "error"]}],
+        "semi": ["error", "always"],
         "no-unused-vars": ["error", { "args": "after-used", "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }]
     }
 }
