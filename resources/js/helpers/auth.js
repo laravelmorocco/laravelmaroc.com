@@ -4,7 +4,7 @@
  * @return {boolean}
  */
 export function isAdmin () {
-  return window.laravel.isModerator === true
+  return window.laravel.isModerator === true;
 }
 
 /**
@@ -13,7 +13,7 @@ export function isAdmin () {
  * @return {boolean}
  */
 export function isAuthenticated () {
-  return window.laravel.user !== null
+  return window.laravel.user !== null;
 }
 
 /**
@@ -22,7 +22,7 @@ export function isAuthenticated () {
  * @returns {*}
  */
 export function currentUser () {
-  return window.laravel.currentUser
+  return window.laravel.currentUser;
 }
 
 /**
@@ -31,7 +31,7 @@ export function currentUser () {
  * @return {boolean}
  */
 export function lastNotificationRead () {
-  return window.laravel.notification
+  return window.laravel.notification;
 }
 
 /**
@@ -40,7 +40,7 @@ export function lastNotificationRead () {
  * @return {number|null}
  */
 export function getUserId () {
-  return window.laravel.user
+  return window.laravel.user;
 }
 
 /**
@@ -51,12 +51,12 @@ export function getUserId () {
  */
 export function canManage (userId) {
   if (isAdmin()) {
-    return true
+    return true;
   }
 
   if (!userId) {
-    return false
+    return false;
   }
 
-  return window.laravel.user === parseInt(userId, 10)
+  return window.laravel.user === parseInt(userId, 10);
 }

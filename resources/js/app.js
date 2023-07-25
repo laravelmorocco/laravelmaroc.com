@@ -1,28 +1,28 @@
-import Alpine from 'alpinejs'
-import intersect from '@alpinejs/intersect'
-import AlpineFloatingUI from '@awcodes/alpine-floating-ui'
-import Tooltip from '@ryangjchandler/alpine-tooltip'
+import Alpine from 'alpinejs';
+import intersect from '@alpinejs/intersect';
+import AlpineFloatingUI from '@awcodes/alpine-floating-ui';
+import Tooltip from '@ryangjchandler/alpine-tooltip';
 
-import NotificationsAlpinePlugin from './utils/module.esm'
-import internationalNumber from './plugins/internationalNumber'
-import datepicker from './plugins/datepicker'
-import { registerHeader } from '@helpers/header'
-import '@helpers/helpers'
-import '@helpers/scrollspy'
-import './elements'
-import './utils/editor'
-import './utils/filepond'
-import './utils/clipboard'
+import NotificationsAlpinePlugin from './utils/module.esm';
+import internationalNumber from './plugins/internationalNumber';
+import datepicker from './plugins/datepicker';
+import { registerHeader } from '@helpers/header';
+import '@helpers/helpers';
+import '@helpers/scrollspy';
+import './elements';
+import './utils/editor';
+import './utils/filepond';
+import './utils/clipboard';
 
-registerHeader()
+registerHeader();
 
-Alpine.plugin(AlpineFloatingUI)
-Alpine.plugin(intersect)
-Alpine.plugin(NotificationsAlpinePlugin)
-Alpine.plugin(Tooltip)
-Alpine.data('internationalNumber', internationalNumber)
-Alpine.data('datepicker', datepicker)
+Alpine.plugin(AlpineFloatingUI);
+Alpine.plugin(intersect);
+Alpine.plugin(NotificationsAlpinePlugin);
+Alpine.plugin(Tooltip);
+Alpine.data('internationalNumber', internationalNumber);
+Alpine.data('datepicker', datepicker);
 
-window.Alpine = Alpine
+window.Alpine = Alpine;
 
-Alpine.start()
+Alpine.start();

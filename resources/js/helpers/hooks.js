@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'preact/hooks'
+import { useEffect, useState, useRef } from 'preact/hooks';
 
 /**
  * Focus le premier champ dans l'élément correspondant à la ref
@@ -8,12 +8,12 @@ import { useEffect, useState, useRef } from 'preact/hooks'
 export function useAutofocus (ref, focus) {
   useEffect(() => {
     if (focus && ref.current) {
-      const input = ref.current.querySelector('input, textarea')
+      const input = ref.current.querySelector('input, textarea');
       if (input) {
-        input.focus()
+        input.focus();
       }
     }
-  }, [focus, ref])
+  }, [focus, ref]);
 }
 
 export function useAsyncEffect (fn, deps = []) {
@@ -34,33 +34,33 @@ export function useAsyncEffect (fn, deps = []) {
  * @returns {object} visibility
  */
 export function useVisibility (node, once = true, options = {}) {
-  const [visible, setVisibilty] = useState(false)
-  const isIntersecting = useRef()
+  const [visible, setVisibilty] = useState(false);
+  const isIntersecting = useRef();
 
   const handleObserverUpdate = entries => {
-    const ent = entries[0]
+    const ent = entries[0];
 
     if (isIntersecting.current !== ent.isIntersecting) {
-      setVisibilty(ent.isIntersecting)
-      isIntersecting.current = ent.isIntersecting
+      setVisibilty(ent.isIntersecting);
+      isIntersecting.current = ent.isIntersecting;
     }
-  }
+  };
 
-  const observer = once && visible ? null : new IntersectionObserver(handleObserverUpdate, options)
+  const observer = once && visible ? null : new IntersectionObserver(handleObserverUpdate, options);
 
   useEffect(() => {
-    const element = node instanceof HTMLElement ? node : node.current
+    const element = node instanceof HTMLElement ? node : node.current;
 
     if (!element || observer === null) {
-      return
+      return;
     }
 
-    observer.observe(element)
+    observer.observe(element);
 
     return function cleanup () {
-      observer.unobserve(element)
-    }
-  })
+      observer.unobserve(element);
+    };
+  });
 
-  return visible
+  return visible;
 }

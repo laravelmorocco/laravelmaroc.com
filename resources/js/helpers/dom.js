@@ -1,4 +1,4 @@
-import htm from 'htm/mini'
+import htm from 'htm/mini';
 
 /**
  * Trouve la position de l'élément par rapport au haut de la page de manière recursive
@@ -7,14 +7,14 @@ import htm from 'htm/mini'
  * @param {HTMLElement|null} parent
  */
 export function offsetTop (element, parent = null) {
-  let top = element.offsetTop
+  let top = element.offsetTop;
   while ((element = element.offsetParent)) {
     if (parent === element) {
-      return top
+      return top;
     }
-    top += element.offsetTop
+    top += element.offsetTop;
   }
-  return top
+  return top;
 }
 
 /**
@@ -29,49 +29,49 @@ export function offsetTop (element, parent = null) {
  */
 export function createElement (tagName, attributes = {}, ...children) {
   if (typeof tagName === 'function') {
-    return tagName(attributes)
+    return tagName(attributes);
   }
 
-  const svgTags = ['svg', 'use', 'path', 'circle', 'g']
+  const svgTags = ['svg', 'use', 'path', 'circle', 'g'];
   // On construit l'élément
   const e = !svgTags.includes(tagName)
     ? document.createElement(tagName)
-    : document.createElementNS('http://www.w3.org/2000/svg', tagName)
+    : document.createElementNS('http://www.w3.org/2000/svg', tagName);
 
   // On lui associe les bons attributs
   for (const k of Object.keys(attributes || {})) {
     if (typeof attributes[k] === 'function' && k.startsWith('on')) {
-      e.addEventListener(k.substr(2).toLowerCase(), attributes[k])
+      e.addEventListener(k.substr(2).toLowerCase(), attributes[k]);
     } else if (k === 'xlink:href') {
-      e.setAttributeNS('http://www.w3.org/1999/xlink', 'href', attributes[k])
+      e.setAttributeNS('http://www.w3.org/1999/xlink', 'href', attributes[k]);
     } else {
-      e.setAttribute(k, attributes[k])
+      e.setAttribute(k, attributes[k]);
     }
   }
 
   // On aplatit les enfants
   children = children.reduce((acc, child) => {
-    return Array.isArray(child) ? [...acc, ...child] : [...acc, child]
-  }, [])
+    return Array.isArray(child) ? [...acc, ...child] : [...acc, child];
+  }, []);
 
   // On ajoute les enfants à l'élément
   for (const child of children) {
     if (typeof child === 'string' || typeof child === 'number') {
-      e.appendChild(document.createTextNode(child))
+      e.appendChild(document.createTextNode(child));
     } else if (child instanceof HTMLElement || child instanceof SVGElement) {
-      e.appendChild(child)
+      e.appendChild(child);
     } else {
-      console.error("Impossible d'ajouter l'élément", child, typeof child)
+      console.error("Impossible d'ajouter l'élément", child, typeof child);
     }
   }
-  return e
+  return e;
 }
 
 /**
  * CreateElement version Tagged templates
  * @type {(strings: TemplateStringsArray, ...values: any[]) => (HTMLElement[] | HTMLElement)}
  */
-export const html = htm.bind(createElement)
+export const html = htm.bind(createElement);
 
 /**
  * Génère une classe à partir de différentes variables
@@ -79,5 +79,5 @@ export const html = htm.bind(createElement)
  * @param  {...string|null} classnames
  */
 export function classNames (...classnames) {
-  return classnames.filter((classname) => classname !== null && classname !== false).join(' ')
+  return classnames.filter((classname) => classname !== null && classname !== false).join(' ');
 }

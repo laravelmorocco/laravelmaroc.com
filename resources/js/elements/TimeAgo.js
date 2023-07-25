@@ -54,7 +54,7 @@ const terms = [
     divide: 24 * 60 * 60 * 365,
     text: '%d ans'
   }
-]
+];
 
 /**
  * Custom element permettant d'afficher une date de manière relative
@@ -63,40 +63,40 @@ const terms = [
  */
 export class TimeAgo extends HTMLElement {
   connectedCallback () {
-    const timestamp = parseInt(this.getAttribute('time'), 10) * 1000
-    const date = new Date(timestamp)
-    this.updateText(date)
+    const timestamp = parseInt(this.getAttribute('time'), 10) * 1000;
+    const date = new Date(timestamp);
+    this.updateText(date);
   }
 
   disconnectedCallback () {
-    window.clearTimeout(this.timer)
+    window.clearTimeout(this.timer);
   }
 
   updateText (date) {
-    const seconds = (new Date().getTime() - date.getTime()) / 1000
-    let term = null
-    const prefix = this.getAttribute('prefix')
+    const seconds = (new Date().getTime() - date.getTime()) / 1000;
+    let term = null;
+    const prefix = this.getAttribute('prefix');
     for (term of terms) {
       if (Math.abs(seconds) < term.time) {
-        break
+        break;
       }
     }
     if (seconds >= 0) {
-      this.innerHTML = `${prefix || 'il y a'} ${term.text.replace('%d', Math.round(seconds / term.divide))}`
+      this.innerHTML = `${prefix || 'il y a'} ${term.text.replace('%d', Math.round(seconds / term.divide))}`;
     } else {
-      this.innerHTML = `${prefix || 'dans'} ${term.text.replace('%d', Math.round(Math.abs(seconds) / term.divide))}`
+      this.innerHTML = `${prefix || 'dans'} ${term.text.replace('%d', Math.round(Math.abs(seconds) / term.divide))}`;
     }
-    let nextTick = Math.abs(seconds) % term.divide
+    let nextTick = Math.abs(seconds) % term.divide;
     if (nextTick === 0) {
-      nextTick = term.divide
+      nextTick = term.divide;
     }
     if (nextTick > 2147482) {
-      return
+      return;
     }
     this.timer = window.setTimeout(() => {
       window.requestAnimationFrame(() => {
-        this.updateText(date)
-      })
-    }, 1000 * nextTick)
+        this.updateText(date);
+      });
+    }, 1000 * nextTick);
   }
 }
