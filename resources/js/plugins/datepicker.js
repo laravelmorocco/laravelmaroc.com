@@ -11,8 +11,8 @@ export default () => ({
   datePickerMonthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
   datePickerDays: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
 
-  datePickerDayClicked(day) {
-    let selectedDate = new Date(Date.UTC(this.datePickerYear, this.datePickerMonth, day))
+  datePickerDayClicked (day) {
+    const selectedDate = new Date(Date.UTC(this.datePickerYear, this.datePickerMonth, day))
     this.datePickerDay = day
     this.datePickerValue = this.datePickerFormatDate(selectedDate, this.datePickerFormat)
     this.datePickerRealValue = selectedDate
@@ -20,7 +20,7 @@ export default () => ({
     this.datePickerOpen = false
   },
 
-  datePickerPreviousMonth() {
+  datePickerPreviousMonth () {
     if (this.datePickerMonth === 0) {
       this.datePickerYear--
       this.datePickerMonth = 12
@@ -29,7 +29,7 @@ export default () => ({
     this.datePickerCalculateDays()
   },
 
-  datePickerNextMonth() {
+  datePickerNextMonth () {
     if (this.datePickerMonth === 11) {
       this.datePickerMonth = 0
       this.datePickerYear++
@@ -39,40 +39,40 @@ export default () => ({
     this.datePickerCalculateDays()
   },
 
-  datePickerIsSelectedDate(day) {
+  datePickerIsSelectedDate (day) {
     const d = new Date(Date.UTC(this.datePickerYear, this.datePickerMonth, day))
     return this.datePickerValue === this.datePickerFormatDate(d, this.datePickerFormat)
   },
 
-  datePickerIsToday(day) {
+  datePickerIsToday (day) {
     const today = new Date()
     const d = new Date(Date.UTC(this.datePickerYear, this.datePickerMonth, day))
     return today.toDateString() === d.toDateString()
   },
 
-  datePickerCalculateDays() {
-    let daysInMonth = new Date(Date.UTC(this.datePickerYear, this.datePickerMonth + 1, 0)).getUTCDate();
+  datePickerCalculateDays () {
+    const daysInMonth = new Date(Date.UTC(this.datePickerYear, this.datePickerMonth + 1, 0)).getUTCDate()
     // find where to start calendar day of week
-    let dayOfWeek = new Date(Date.UTC(this.datePickerYear, this.datePickerMonth)).getUTCDay();
-    let blankDaysArray = [];
+    const dayOfWeek = new Date(Date.UTC(this.datePickerYear, this.datePickerMonth)).getUTCDay()
+    const blankDaysArray = []
     for (let i = 1; i <= dayOfWeek; i++) {
-      blankDaysArray.push(i);
+      blankDaysArray.push(i)
     }
-    let daysArray = [];
+    const daysArray = []
     for (let i = 1; i <= daysInMonth; i++) {
-      daysArray.push(i);
+      daysArray.push(i)
     }
-    this.datePickerBlankDaysInMonth = blankDaysArray;
-    this.datePickerDaysInMonth = daysArray;
+    this.datePickerBlankDaysInMonth = blankDaysArray
+    this.datePickerDaysInMonth = daysArray
   },
 
-  datePickerFormatDate(date, format = null) {
-    let formattedDay = this.datePickerDays[date.getUTCDay()];
-    let formattedDate = ('0' + date.getUTCDate()).slice(-2); // appends 0 (zero) in single digit date
-    let formattedMonth = this.datePickerMonthNames[date.getUTCMonth()];
-    let formattedMonthShortName = this.datePickerMonthNames[date.getUTCMonth()].substring(0, 3);
-    let formattedMonthInNumber = ('0' + (parseInt(date.getUTCMonth()) + 1)).slice(-2);
-    let formattedYear = date.getUTCFullYear();
+  datePickerFormatDate (date, format = null) {
+    const formattedDay = this.datePickerDays[date.getUTCDay()]
+    const formattedDate = ('0' + date.getUTCDate()).slice(-2) // appends 0 (zero) in single digit date
+    const formattedMonth = this.datePickerMonthNames[date.getUTCMonth()]
+    const formattedMonthShortName = this.datePickerMonthNames[date.getUTCMonth()].substring(0, 3)
+    const formattedMonthInNumber = ('0' + (parseInt(date.getUTCMonth()) + 1)).slice(-2)
+    const formattedYear = date.getUTCFullYear()
 
     if (format && format === 'd M, Y') {
       return `${formattedDate} ${formattedMonthShortName}, ${formattedYear}`
@@ -97,7 +97,7 @@ export default () => ({
     return `${formattedMonth} ${formattedDate}, ${formattedYear}`
   },
 
-  init() {
+  init () {
     let currentDate = new Date()
 
     if (this.datePickerValue) {

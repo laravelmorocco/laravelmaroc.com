@@ -41,11 +41,13 @@ export async function jsonFetchOrFlash (url, params = {}) {
   try {
     return await jsonFetch(url, params)
   } catch (e) {
+    /* eslint-disable no-console */
     if (e instanceof ApiError) {
       console.log(e)
     } else {
       console.log('error')
     }
+    /* eslint-enable no-console */
     return null
   }
 }

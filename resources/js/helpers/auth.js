@@ -54,7 +54,7 @@ export function canManage (userId) {
     return true
   }
 
-  if (! userId) {
+  if (!userId) {
     return false
   }
 

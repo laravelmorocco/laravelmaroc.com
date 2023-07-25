@@ -1,11 +1,11 @@
 import { throttle } from '@helpers/timers'
 
-let $header = document.querySelector('.header')
+const $header = document.querySelector('.header')
 let currentTop = 0
 let previousTop = 0
 let scrolling = false
 const scrollDelta = 20
-let scrollOffset = $header ? $header.offsetHeight : 0
+const scrollOffset = $header ? $header.offsetHeight : 0
 
 // Les différents états possibles du header
 const FIXED = 0
@@ -53,8 +53,8 @@ const autoHideHeader = function () {
     setState(DEFAULT)
   }
 
-   // Masquage / affichage
-   if (previousTop - currentTop > scrollDelta) {
+  // Masquage / affichage
+  if (previousTop - currentTop > scrollDelta) {
     $header.classList.remove('is-hidden')
   } else if (currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
     $header.classList.add('is-hidden')

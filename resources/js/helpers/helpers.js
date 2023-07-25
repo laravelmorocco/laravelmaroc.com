@@ -20,43 +20,43 @@ window.formatMoney = (amount) => {
 
 const share = function () {
   function popupCenter (url, title, width, height) {
-    let popupWidth = width || 640
-    let popupHeight = height || 440
-    let windowLeft = window.screenLeft || window.screenX
-    let windowTop = window.screenTop || window.screenY
-    let windowWidth = window.innerWidth || document.documentElement.clientWidth
-    let windowHeight = window.innerHeight || document.documentElement.clientHeight
-    let popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2
-    let popupTop = windowTop + windowHeight / 2 - popupHeight / 2
+    const popupWidth = width || 640
+    const popupHeight = height || 440
+    const windowLeft = window.screenLeft || window.screenX
+    const windowTop = window.screenTop || window.screenY
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight
+    const popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2
+    const popupTop = windowTop + windowHeight / 2 - popupHeight / 2
     window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft)
   }
 
-  let twitter = document.querySelector('.share_twitter')
+  const twitter = document.querySelector('.share_twitter')
   if (twitter) {
     twitter.addEventListener('click', function (e) {
       e.preventDefault()
-      let url = this.getAttribute('data-url')
-      let shareUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + '&via=laravelcm' + '&url=' + encodeURIComponent(url)
+      const url = this.getAttribute('data-url')
+      const shareUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + '&via=laravelcm' + '&url=' + encodeURIComponent(url)
       popupCenter(shareUrl, 'Partager sur Twitter')
     })
   }
 
-  let facebook = document.querySelector('.share_facebook')
+  const facebook = document.querySelector('.share_facebook')
   if (facebook) {
     facebook.addEventListener('click', function (e) {
       e.preventDefault()
-      let url = this.getAttribute('data-url')
-      let shareUrl = 'https://facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url)
+      const url = this.getAttribute('data-url')
+      const shareUrl = 'https://facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url)
       popupCenter(shareUrl, 'Partager sur Facebook')
     })
   }
 
-  let linkedin = document.querySelector('.share_linkedin')
+  const linkedin = document.querySelector('.share_linkedin')
   if (linkedin) {
     linkedin.addEventListener('click', function (e) {
       e.preventDefault()
-      let url = this.getAttribute('data-url')
-      let shareUrl = 'https://www.linkedin.com/shareArticle?url=' + encodeURIComponent(url)
+      const url = this.getAttribute('data-url')
+      const shareUrl = 'https://www.linkedin.com/shareArticle?url=' + encodeURIComponent(url)
       popupCenter(shareUrl, 'Partager sur LinkedIn')
     })
   }
@@ -65,17 +65,17 @@ const share = function () {
 share()
 
 const addAffiliateLink = function () {
-  let articleContent = document.getElementById('content')
+  const articleContent = document.getElementById('content')
 
-  if (! articleContent) {
+  if (!articleContent) {
     return
   }
 
-  let pTags = document.getElementById('content').querySelectorAll('p')
+  const pTags = document.getElementById('content').querySelectorAll('p')
   let i = 0
   pTags.forEach((p) => {
     if (i === 7) {
-      let a = document.createElement('a')
+      const a = document.createElement('a')
       a.setAttribute('href', 'https://www.digitalocean.com/?refcode=d6dca1691fb4&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge')
       a.setAttribute('target', '_blank')
       a.classList.add('relative', 'affiliate', 'block', 'w-full', 'mb-6', 'overflow-hidden', 'rounded-lg', 'cursor-pointer')
