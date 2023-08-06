@@ -8,6 +8,9 @@
             <a href="{{ route('cpanel.analytics') }}" class="inline-flex text-sm font-medium rounded-md py-2 px-3 inline-flex items-center {{ active(['cpanel.analytics*'], 'bg-green-50 text-green-800', 'text-skin-base hover:bg-skin-card-muted hover:text-skin-inverted') }}">
                 {{ __('Analytics') }}
             </a>
+            <a href="{{ route('cpanel.analytics') }}" class="inline-flex text-sm font-medium rounded-md py-2 px-3 inline-flex items-center {{ active(['cpanel.analytics*'], 'bg-green-50 text-green-800', 'text-skin-base hover:bg-skin-card-muted hover:text-skin-inverted') }}">
+                {{ __('Analytics') }}
+            </a>
             <a href="{{ route('cpanel.users.browse') }}" class="text-sm font-medium rounded-md py-2 px-3 inline-flex items-center {{ active(['cpanel.users*'], 'bg-green-50 text-green-800', 'text-skin-base hover:bg-skin-card-muted hover:text-skin-inverted') }}">
                 {{ __('Utilisateurs') }}
             </a>
