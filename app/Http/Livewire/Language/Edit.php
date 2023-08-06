@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Livewire\Admin\Language;
+namespace App\Http\Livewire\Language;
 
 use Livewire\Component;
 use File;

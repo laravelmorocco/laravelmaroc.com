@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Cpanel;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Admin\Project\Index as ProjectIndex;
-use App\Http\Livewire\Admin\Menu\Index as MenuIndex;
-use App\Http\Livewire\Admin\Language\Index as LanguageIndex;
-use App\Http\Livewire\Admin\Redirect\Index as RedirectIndex;
-use App\Http\Livewire\Admin\Language\EditTranslation;
+use App\Http\Livewire\Project\Index as ProjectIndex;
+use App\Http\Livewire\Menu\Index as MenuIndex;
+use App\Http\Livewire\Language\Index as LanguageIndex;
+use App\Http\Livewire\Redirect\Index as RedirectIndex;
+use App\Http\Livewire\Language\EditTranslation;
 
 
 Route::redirect('/', 'cpanel/home');

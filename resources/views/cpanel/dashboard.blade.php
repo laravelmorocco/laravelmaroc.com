@@ -1,4 +1,4 @@
-<x-layouts.cp title="Tableau de bord">
+<x-layouts.admin title="Tableau de bord">
     <x-container class="max-w-7xl mx-auto px-4 sm:px-6">
         <div>
             <h3 class="text-3xl leading-8 font-semibold text-skin-inverted font-heading">{{ __('Shalom, :name', ['name' => auth()->user()->name]) }}</h3>
@@ -65,4 +65,4 @@
             </div>
         </div>
     </x-container>
-</x-layouts.cp>
+</x-layouts.admin>

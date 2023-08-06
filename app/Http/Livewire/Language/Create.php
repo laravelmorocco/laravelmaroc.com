@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Livewire\Admin\Language;
+namespace App\Http\Livewire\Language;
 
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;

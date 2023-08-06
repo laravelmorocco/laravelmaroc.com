@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Livewire\Admin\Settings;
+namespace App\Http\Livewire\;
 
 use App\Http\Livewire\Utils\WithSorting;
 use App\Models\Redirect;
@@ -118,6 +118,6 @@ class Redirects extends Component
 
         $redirects = $query->paginate($this->perPage);
 
-        return view('livewire.admin.settings.redirects', compact('redirects'));
+        return view('livewire.redirects', compact('redirects'));
     }
 }

@@ -19,7 +19,7 @@
     @include('layouts._og')
     <x-seo::meta />
 
-    <!-- Styles -->
+    <!-- Styles --> 
     @googlefonts
     @vite('resources/css/app.css')
     @livewireStyles

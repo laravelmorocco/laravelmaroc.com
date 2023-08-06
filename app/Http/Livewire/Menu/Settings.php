@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Livewire\Admin\Page;
+namespace App\Http\Livewire\Page;
 
 use Livewire\Component;
 

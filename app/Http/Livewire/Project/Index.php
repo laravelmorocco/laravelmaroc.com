@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Livewire\Admin\Project;
+namespace App\Http\Livewire\Project;
 
 use App\Http\Livewire\Utils\WithSorting;
 use App\Models\Project;
