@@ -134,7 +134,7 @@ final class Thread extends Model implements Feedable, ReactableInterface, ReplyI
     {
         $thread = $reply->replyAble;
 
-        if (!$thread instanceof self) {
+        if ( ! $thread instanceof self) {
             throw CouldNotMarkReplyAsSolution::replyAbleIsNotAThread($reply);
         }
 
