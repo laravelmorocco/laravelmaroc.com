@@ -10,7 +10,6 @@ use App\Http\Livewire\Language\Index as LanguageIndex;
 use App\Http\Livewire\Redirects as RedirectIndex;
 use App\Http\Livewire\Language\EditTranslation;
 
-
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (): void {
     Route::get('/', Cpanel\DashboardController::class)->name('dashboard');
     Route::get('/dashboard', Cpanel\DashboardController::class)->name('dashboard');
