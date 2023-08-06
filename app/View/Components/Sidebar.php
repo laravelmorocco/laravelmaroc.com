@@ -7,7 +7,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\View\Component;
 
-class Sidebar extends Component
+final class Sidebar extends Component
 {
     /**
      * Create a new component instance.

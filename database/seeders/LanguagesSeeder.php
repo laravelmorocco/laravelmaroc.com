@@ -7,14 +7,14 @@ namespace Database\Seeders;
 use App\Models\Language;
 use Illuminate\Database\Seeder;
 
-class LanguagesSeeder extends Seeder
+final class LanguagesSeeder extends Seeder
 {
     /**
      * Run the database seeders.
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         Language::insert([
             [

@@ -7,7 +7,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\View\Component;
 
-class ToggleButton extends Component
+final class ToggleButton extends Component
 {
     /** Create a new component instance. */
     public function __construct()

@@ -7,14 +7,14 @@ namespace Database\Seeders;
 use App\Models\Project;
 use Illuminate\Database\Seeder;
 
-class ProjectSeeder extends Seeder
+final class ProjectSeeder extends Seeder
 {
     /**
      * Run the database seeders.
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         Project::factory(10)->create();
     }

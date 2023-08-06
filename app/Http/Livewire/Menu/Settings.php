@@ -6,7 +6,7 @@ namespace App\Http\Livewire\Page;
 
 use Livewire\Component;
 
-class Settings extends Component
+final class Settings extends Component
 {
     public function render()
     {

@@ -7,7 +7,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\View\Component;
 
-class Card extends Component
+final class Card extends Component
 {
     /**
      * Create a new component instance.

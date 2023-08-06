@@ -7,7 +7,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\View\Component;
 
-class Content extends Component
+final class Content extends Component
 {
     /**
      * Create a new component instance.

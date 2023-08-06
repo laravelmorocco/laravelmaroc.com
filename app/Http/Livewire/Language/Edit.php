@@ -10,7 +10,7 @@ use App;
 use App\Models\Language;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-class Edit extends Component
+final class Edit extends Component
 {
     use LivewireAlert;
 
@@ -30,14 +30,14 @@ class Edit extends Component
         'language.code' => 'required',
     ];
 
-    public function editLanguage($id)
+    public function editLanguage($id): void
     {
         $this->language = Language::findOrFail($id);
 
         $this->editLanguage = true;
     }
 
-    public function update()
+    public function update(): void
     {
         $this->validate();
 

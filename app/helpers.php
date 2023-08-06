@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
-if (! function_exists('settings')) {
+if ( ! function_exists('settings')) {
     /**
      * Fetch Cached settings from database
      *
@@ -23,13 +23,11 @@ if (! function_exists('settings')) {
      */
     function settings($key)
     {
-        return Cache::rememberForever('settings', function () {
-            return Settings::pluck('value', 'key');
-        })->get($key);
+        return Cache::rememberForever('settings', fn () => Settings::pluck('value', 'key'))->get($key);
     }
 }
 
-if (! function_exists('getActiveCategories')) {
+if ( ! function_exists('getActiveCategories')) {
     function getActiveCategories()
     {
         return Category::active()
@@ -38,7 +36,7 @@ if (! function_exists('getActiveCategories')) {
     }
 }
 
-if (! function_exists('getActivePages')) {
+if ( ! function_exists('getActivePages')) {
     function getActivePages()
     {
         return Page::active()
@@ -48,14 +46,14 @@ if (! function_exists('getActivePages')) {
     }
 }
 
-if (! function_exists('categoryName')) {
+if ( ! function_exists('categoryName')) {
     function categoryName($category_id)
     {
         return Category::find($category_id)->name;
     }
 }
 
-if (! function_exists('uploadImage')) {
+if ( ! function_exists('uploadImage')) {
     /**
      * @param mixed $image
      *
@@ -69,15 +67,15 @@ if (! function_exists('uploadImage')) {
         }
 
         $image = file_get_contents($image);
-        $name = Str::random(10) . '.jpg';
-        $path = public_path() . '/images/products/' . $name;
+        $name = Str::random(10).'.jpg';
+        $path = public_path().'/images/products/'.$name;
         file_put_contents($path, $image);
 
         return $name;
     }
 }
 
-if (! function_exists('uploadGallery')) {
+if ( ! function_exists('uploadGallery')) {
     /**
      * @param mixed $gallery
      *
@@ -94,8 +92,8 @@ if (! function_exists('uploadGallery')) {
 
         return array_map(function ($image) {
             $image = file_get_contents($image);
-            $name = Str::random(10) . '.jpg';
-            $path = public_path() . '/images/products/' . $name;
+            $name = Str::random(10).'.jpg';
+            $path = public_path().'/images/products/'.$name;
             file_put_contents($path, $image);
 
             return $name;
@@ -103,7 +101,7 @@ if (! function_exists('uploadGallery')) {
     }
 }
 
-if (! function_exists('handleUpload')) {
+if ( ! function_exists('handleUpload')) {
     /**
      * @param mixed $input
      *
@@ -116,13 +114,13 @@ if (! function_exists('handleUpload')) {
             $galleryArray = [];
 
             foreach ($input as $key => $value) {
-                $img = Image::make($value->getRealPath())->encode('webp', 85)->resize(1000, 1000, function ($constraint) {
+                $img = Image::make($value->getRealPath())->encode('webp', 85)->resize(1000, 1000, function ($constraint): void {
                     $constraint->aspectRatio();
                     $constraint->upsize();
                 });
 
                 $img->stream();
-                Storage::disk('local_files')->put('products/' . $value->getClientOriginalName(), $img, 'public');
+                Storage::disk('local_files')->put('products/'.$value->getClientOriginalName(), $img, 'public');
                 $galleryArray[] = $value->getClientOriginalName();
             }
 
@@ -130,13 +128,13 @@ if (! function_exists('handleUpload')) {
         }
         // handle single image
 
-        $img = Image::make($input->getRealPath())->encode('webp', 85)->resize(1000, 1000, function ($constraint) {
+        $img = Image::make($input->getRealPath())->encode('webp', 85)->resize(1000, 1000, function ($constraint): void {
             $constraint->aspectRatio();
             $constraint->upsize();
         });
         $img->stream();
 
-        Storage::disk('local_files')->put('products/' . $input->getClientOriginalName(), $img, 'public');
+        Storage::disk('local_files')->put('products/'.$input->getClientOriginalName(), $img, 'public');
     }
 }
 

@@ -12,7 +12,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Str;
 
-class Edit extends Component
+final class Edit extends Component
 {
     use LivewireAlert;
     use WithFileUploads;
@@ -22,7 +22,7 @@ class Edit extends Component
     public $images;
 
     public $image;
-    
+
     public $description;
 
     public array $listsForFields = [];
@@ -44,12 +44,12 @@ class Edit extends Component
         'project.language_id'      => 'required',
     ];
 
-    public function updatedDescription($value)
+    public function updatedDescription($value): void
     {
         $this->description = $value;
     }
 
-    public function editModal($project)
+    public function editModal($project): void
     {
         // abort_if(Gate::denies('project_update'), 403);
 
@@ -64,7 +64,7 @@ class Edit extends Component
         $this->editModal = true;
     }
 
-    public function submit()
+    public function submit(): void
     {
         $this->project->slug = Str::slug($this->project->title);
 

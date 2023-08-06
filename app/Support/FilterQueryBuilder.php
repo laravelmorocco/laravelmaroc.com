@@ -7,11 +7,11 @@ namespace App\Support;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
 
-class FilterQueryBuilder
+final class FilterQueryBuilder
 {
-    protected $model;
+    private $model;
 
-    protected $table;
+    private $table;
 
     public function apply($query, $data)
     {
@@ -37,7 +37,7 @@ class FilterQueryBuilder
         return $query->where($filter['column'], 'like', '%'.$filter['query_1'].'%', $filter['match']);
     }
 
-    protected function makeOrder($query, $data)
+    private function makeOrder($query, $data): void
     {
         if ($this->isNestedColumn($data['order_column'])) {
             [$relationship, $column] = explode('.', $data['order_column']);
@@ -67,14 +67,14 @@ class FilterQueryBuilder
             ->select("{$this->table}.*");
     }
 
-    protected function makeFilter($query, $filter)
+    private function makeFilter($query, $filter): void
     {
         if ($this->isNestedColumn($filter['column'])) {
             [$relation, $filter['column']] = explode('.', $filter['column']);
             $callable = Str::camel($relation);
             $filter['match'] = 'and';
 
-            $query->orWhereHas(Str::camel($callable), function ($q) use ($filter) {
+            $query->orWhereHas(Str::camel($callable), function ($q) use ($filter): void {
                 $this->{Str::camel($filter['operator'])}(
                     $filter,
                     $q
@@ -89,8 +89,8 @@ class FilterQueryBuilder
         }
     }
 
-    protected function isNestedColumn($column)
+    private function isNestedColumn($column)
     {
-        return strpos($column, '.') !== false;
+        return str_contains($column, '.')  ;
     }
 }

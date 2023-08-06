@@ -26,27 +26,21 @@ if ( ! function_exists('getLanguages')) {
 if ( ! function_exists('getCategories')) {
     function getCategories()
     {
-        return cache()->rememberForever('categories', function () {
-            return Category::pluck('name', 'id')->toArray();
-        });
+        return cache()->rememberForever('categories', fn () => Category::pluck('name', 'id')->toArray());
     }
 }
 
 if ( ! function_exists('getBlogCategories')) {
     function getBlogCategories()
     {
-        return cache()->rememberForever('blogCategories', function () {
-            return BlogCategory::pluck('title', 'id')->toArray();
-        });
+        return cache()->rememberForever('blogCategories', fn () => BlogCategory::pluck('title', 'id')->toArray());
     }
 }
 
 if ( ! function_exists('settings')) {
     function settings()
     {
-        return cache()->rememberForever('settings', function () {
-            return \App\Models\Settings::firstOrFail();
-        });
+        return cache()->rememberForever('settings', fn () => \App\Models\Settings::firstOrFail());
     }
 }
 

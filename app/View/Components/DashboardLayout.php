@@ -6,7 +6,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class DashboardLayout extends Component
+final class DashboardLayout extends Component
 {
     public function render()
     {
