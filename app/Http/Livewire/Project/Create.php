@@ -12,7 +12,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
 
-class Create extends Component
+final class Create extends Component
 {
     use LivewireAlert;
     use WithFileUploads;
@@ -22,7 +22,7 @@ class Create extends Component
     public $image;
 
     public $images;
-    
+
     public $description;
 
     public $createModal = false;
@@ -42,12 +42,12 @@ class Create extends Component
         'project.language_id'      => 'required',
     ];
 
-    public function updatedDescription($value)
+    public function updatedDescription($value): void
     {
         $this->description = $value;
     }
 
-    public function createModal()
+    public function createModal(): void
     {
         $this->resetErrorBag();
 
@@ -60,7 +60,7 @@ class Create extends Component
         $this->createModal = true;
     }
 
-    public function submit()
+    public function submit(): void
     {
         $this->project->slug = Str::slug($this->project->title);
 

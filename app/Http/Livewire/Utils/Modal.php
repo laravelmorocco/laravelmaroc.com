@@ -6,7 +6,7 @@ namespace App\Http\Livewire\Utils;
 
 use Livewire\Component;
 
-class Modal extends Component
+final class Modal extends Component
 {
     public $show = false;
 
@@ -19,7 +19,7 @@ class Modal extends Component
      *  Set Modal
      * -------------------------------------------------------------------------------
      */
-    public function show()
+    public function show(): void
     {
         $this->show = true;
     }

@@ -6,24 +6,22 @@ namespace App\Http\Livewire\Admin\Menu;
 
 use App\Http\Livewire\Utils\WithSorting;
 use App\Models\Menu;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
-class Index extends Component
+
+final class Index extends Component
 {
+    use LivewireAlert;
     use WithPagination;
     use WithSorting;
-    use LivewireAlert;
-    
+
     public string $perPage = '100';
 
     protected $listeners = [
         'refreshIndex' => '$refresh'
     ];
-    public $links = []; 
+    public $links = [];
     public $menu;
     public $menus;
     public $name;
@@ -44,12 +42,12 @@ class Index extends Component
         'menus.*.new_window' => 'boolean',
     ];
 
-    public function mount()
+    public function mount(): void
     {
-        $this->menus = Menu::when($this->placement, function ($query) {
+        $this->menus = Menu::when($this->placement, function ($query): void {
             $query->where('placement', $this->placement);
         })->orderBy('sort_order')
-        ->get()->toArray();
+            ->get()->toArray();
 
         $this->links = [
             'Link 1',
@@ -57,12 +55,12 @@ class Index extends Component
             'Link 3',
             // Add more links as needed
         ];
-        
+
         $this->resetErrorBag();
         $this->resetValidation();
     }
 
-    public function filterByPlacement($value)
+    public function filterByPlacement($value): void
     {
         $this->placement = $value;
         $this->mount();
@@ -70,7 +68,7 @@ class Index extends Component
 
     public function render()
     {
-        $menus = Menu::when($this->placement, function ($query) {
+        $menus = Menu::when($this->placement, function ($query): void {
             $query->where('placement', $this->placement);
         })->paginate($this->perPage);
 
@@ -78,10 +76,10 @@ class Index extends Component
     }
 
 
-    public function update($id)
+    public function update($id): void
     {
         $this->menu = Menu::find($id);
-        
+
         $this->validate();
 
         foreach ($this->menus as $menu) {
@@ -98,11 +96,11 @@ class Index extends Component
 
         }
         $this->alert('success', __('Menu updated successfully.'));
-    
+
         $this->reset(['name', 'label', 'url', 'type', 'placement', 'parent_id', 'new_window']);
     }
-    
-    public function store()
+
+    public function store(): void
     {
         $this->validate([
             'name' => 'required',
@@ -113,7 +111,7 @@ class Index extends Component
             'parent_id' => 'nullable|exists:menus,id',
             'new_window' => 'boolean',
         ]);
-    
+
         $menu = new Menu();
         $menu->name = $this->name;
         $menu->label = $this->label;
@@ -123,15 +121,15 @@ class Index extends Component
         $menu->parent_id = $this->parent_id ?? null;
         $menu->new_window = $this->new_window ?? false;
         // Add any additional fields you have in your menu model
-    
+
         $menu->save();
-    
+
         $this->alert('success', __('Menu created successfully.'));
-    
+
         $this->mount();
     }
 
-    public function updateMenuOrder($ids)
+    public function updateMenuOrder($ids): void
     {
         foreach ($ids as $index => $id) {
             $menu = Menu::find($id);
@@ -141,7 +139,7 @@ class Index extends Component
         $this->mount();
         $this->alert('success', __('Menu order updated successfully.'));
     }
-    
+
     public function predefinedMenu(): void
     {
         $this->menus = [
@@ -194,7 +192,7 @@ class Index extends Component
         $this->alert('success', __('Predefined menus created successfully.'));
     }
 
-    public function delete(Menu $menu)
+    public function delete(Menu $menu): void
     {
         // abort_if(Gate::denies('menu_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
@@ -203,5 +201,5 @@ class Index extends Component
         $this->alert('success', __('Menu deleted successfully.'));
     }
 
-    
+
 }

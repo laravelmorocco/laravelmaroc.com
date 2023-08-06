@@ -10,7 +10,6 @@ use App\Http\Livewire\Admin\Language\Index as LanguageIndex;
 use App\Http\Livewire\Admin\Redirect\Index as RedirectIndex;
 use App\Http\Livewire\Admin\Language\EditTranslation;
 
-
 Route::redirect('/', 'cpanel/home');
 Route::get('/home', Cpanel\DashboardController::class)->name('home');
 Route::get('/analytics', Cpanel\AnalyticsController::class)->name('analytics');

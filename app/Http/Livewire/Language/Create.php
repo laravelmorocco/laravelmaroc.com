@@ -9,7 +9,7 @@ use Livewire\Component;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
 
-class Create extends Component
+final class Create extends Component
 {
     use LivewireAlert;
 
@@ -29,12 +29,12 @@ class Create extends Component
         'code' => 'required',
     ];
 
-    public function createLanguage()
+    public function createLanguage(): void
     {
         $this->createLanguage = true;
     }
 
-    public function create()
+    public function create(): void
     {
         $this->validate();
 

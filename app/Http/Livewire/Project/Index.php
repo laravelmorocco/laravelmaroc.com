@@ -12,11 +12,11 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Illuminate\Support\Facades\Gate;
 use Str;
 
-class Index extends Component
+final class Index extends Component
 {
+    use LivewireAlert;
     use WithPagination;
     use WithSorting;
-    use LivewireAlert;
 
     public int $perPage;
 
@@ -54,7 +54,7 @@ class Index extends Component
         ],
     ];
 
-    public function confirmed()
+    public function confirmed(): void
     {
         $this->emit('delete');
     }
@@ -64,22 +64,22 @@ class Index extends Component
         return count($this->selected);
     }
 
-    public function updatingSearch()
+    public function updatingSearch(): void
     {
         $this->resetPage();
     }
 
-    public function updatingPerPage()
+    public function updatingPerPage(): void
     {
         $this->resetPage();
     }
 
-    public function resetSelected()
+    public function resetSelected(): void
     {
         $this->selected = [];
     }
 
-    public function mount()
+    public function mount(): void
     {
         $this->sortBy = 'id';
         $this->sortDirection = 'desc';
@@ -90,9 +90,7 @@ class Index extends Component
 
     public function render()
     {
-        $query = Project::when($this->language_id, function ($query) {
-            return $query->where('language_id', $this->language_id);
-        })->advancedFilter([
+        $query = Project::when($this->language_id, fn ($query) => $query->where('language_id', $this->language_id))->advancedFilter([
             's'               => $this->search ?: null,
             'order_column'    => $this->sortBy,
             'order_direction' => $this->sortDirection,
@@ -103,7 +101,7 @@ class Index extends Component
         return view('livewire.admin.project.index', compact('projects'))->extends('layouts.dashboard');
     }
 
-    public function showModal(Project $project)
+    public function showModal(Project $project): void
     {
         // abort_if(Gate::denies('project_show'), 403);
 
@@ -116,7 +114,7 @@ class Index extends Component
         $this->showModal = true;
     }
 
-    public function deleteModal($project)
+    public function deleteModal($project): void
     {
         $this->confirm(__('Are you sure you want to delete this?'), [
             'toast'             => false,
@@ -128,7 +126,7 @@ class Index extends Component
         $this->project = $project;
     }
 
-    public function deleteSelected()
+    public function deleteSelected(): void
     {
         abort_if(Gate::denies('project_delete'), 403);
 
@@ -137,7 +135,7 @@ class Index extends Component
         $this->resetSelected();
     }
 
-    public function delete()
+    public function delete(): void
     {
         abort_if(Gate::denies('project_delete'), 403);
 
@@ -146,8 +144,8 @@ class Index extends Component
         $this->alert('success', __('Project deleted successfully.'));
     }
 
-      // Project  Clone
-    public function clone(Project $project)
+    // Project  Clone
+    public function clone(Project $project): void
     {
         $portfolio_details = Project::find($project->id);
         // dd($portfolio_details);

@@ -6,7 +6,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Select2 extends Component
+final class Select2 extends Component
 {
     public $name;
     public $id;

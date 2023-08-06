@@ -8,7 +8,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Dropzone extends Component
+final class Dropzone extends Component
 {
     /** Create a new component instance. */
     public function __construct()

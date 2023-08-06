@@ -7,7 +7,7 @@ namespace App\Http\Livewire\Utils;
 use Carbon\Carbon;
 use Livewire\Component;
 
-class Notifications extends Component
+final class Notifications extends Component
 {
     public $notifications;
 
@@ -16,16 +16,16 @@ class Notifications extends Component
         return view('livewire.notifications');
     }
 
-    public function mount()
+    public function mount(): void
     {
         $this->notifications = auth()->user()->notifications->take(10);
     }
 
-    public function toggleReadStatus($key)
+    public function toggleReadStatus($key): void
     {
         $notification = $this->notifications[$key];
 
-        $notification->read_at === null ? $notification->read_at = Carbon::now()->toTimeString() : $notification->read_at = null;
+        null === $notification->read_at ? $notification->read_at = Carbon::now()->toTimeString() : $notification->read_at = null;
         $notification->save();
     }
 }

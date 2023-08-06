@@ -8,7 +8,7 @@ use Livewire\Component;
 use App\Models\Language;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-class EditTranslation extends Component
+final class EditTranslation extends Component
 {
     use LivewireAlert;
     public $language;
@@ -18,7 +18,7 @@ class EditTranslation extends Component
         'translations.*.value' => 'required',
     ];
 
-    public function mount($language)
+    public function mount($language): void
     {
         $this->language = Language::where('id', $language)->firstOrFail();
         // dd($this->all());
@@ -39,7 +39,7 @@ class EditTranslation extends Component
         return json_decode($content, true);
     }
 
-    public function updateTranslation()
+    public function updateTranslation(): void
     {
         $this->validate();
 

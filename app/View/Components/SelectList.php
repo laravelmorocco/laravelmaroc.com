@@ -6,7 +6,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class SelectList extends Component
+final class SelectList extends Component
 {
     public $options;
 

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
-class ToggleButton extends Component
+final class ToggleButton extends Component
 {
     use LivewireAlert;
     public Model $model;
@@ -19,13 +19,13 @@ class ToggleButton extends Component
 
     protected $listeners = ['updating'];
 
-    public function mount()
+    public function mount(): void
     {
         $this->status = (bool) $this->model->getAttribute($this->field);
         $this->uniqueId = uniqid();
     }
 
-    public function updating($field, $value)
+    public function updating($field, $value): void
     {
         $this->model->setAttribute($this->field, $value)->save();
 
