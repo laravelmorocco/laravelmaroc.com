@@ -26,9 +26,7 @@ final class DashboardController extends Controller
     {
         return view('user.threads', [
             'user' => $user = User::scopes('withCounts')->find(Auth::id()),
-            'threads' => $user->threads()
-                ->recent()
-                ->paginate(5),
+            'threads' => $user->threads()->paginate(5),
         ]);
     }
 
