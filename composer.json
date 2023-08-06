@@ -5,7 +5,7 @@
   "keywords": ["laravel", "morocco", "community"],
   "license": "MIT",
   "require": {
-    "php": "^8.2",
+    "php": "^8.1",
     "ext-fileinfo": "*",
     "ext-json": "*",
     "archtechx/laravel-seo": "^0.5.1",
@@ -20,6 +20,7 @@
     "francescomalatesta/laravel-feature": "^3.0",
     "graham-campbell/markdown": "^14.0",
     "guzzlehttp/guzzle": "^7.7.0",
+    "jantinnerezo/livewire-alert": "*",
     "jenssegers/agent": "^2.6.4",
     "laravel-notification-channels/telegram": "^2.1",
     "laravel-notification-channels/twitter": "^6.2",

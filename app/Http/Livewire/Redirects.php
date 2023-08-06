@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Livewire\;
+namespace App\Http\Livewire;
 
 use App\Http\Livewire\Utils\WithSorting;
 use App\Models\Redirect;

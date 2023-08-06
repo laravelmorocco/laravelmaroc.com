@@ -109,4 +109,4 @@ Route::feeds();
 Route::get('sponsors', [SponsoringController::class, 'sponsors'])->name('sponsors');
 Route::get('callback-payment', NotchPayCallBackController::class)->name('notchpay-callback');
 
-require __DIR__.'/cpanel.php';
+require __DIR__.'/admin.php';
