@@ -27,6 +27,6 @@ jobs:
         run: yarn lint:fix
 
       - name: Commit fixed linting errors
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Fix code styling
