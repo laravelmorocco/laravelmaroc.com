@@ -5,7 +5,7 @@
   "keywords": ["laravel", "morocco", "community"],
   "license": "MIT",
   "require": {
-    "php": "^8.2",
+    "php": "^8.1|^8.2",
     "ext-fileinfo": "*",
     "ext-json": "*",
     "archtechx/laravel-seo": "^0.5.1",

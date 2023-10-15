@@ -20,7 +20,7 @@ final class CreateArticlesTable extends Migration
             $table->boolean('is_pinned')->default(false);
             $table->boolean('is_sponsored')->default(false);
             $table->unsignedBigInteger('tweet_id')->nullable();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamp('submitted_at')->nullable();
             $table->timestamp('approved_at')->nullable();
             $table->timestamp('shared_at')->nullable();
