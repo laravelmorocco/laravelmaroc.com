@@ -81,7 +81,8 @@
       "Database\\Seeders\\": "database/seeders/",
       "Watson\\Validating\\": "packages/tmp-watson-validating/src",
       "Rinvex\\Subscriptions\\": "packages/laravel-subscriptions/src",
-      "Rinvex\\Support\\": "packages/laravel-support/src"
+      "Rinvex\\Support\\": "packages/laravel-support/src",
+      "LaravelFeature\\": "packages/laravel-feature/src"
     }
   },
   "autoload-dev": {
