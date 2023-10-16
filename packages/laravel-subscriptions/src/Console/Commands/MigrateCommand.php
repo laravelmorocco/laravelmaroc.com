@@ -32,7 +32,7 @@ class MigrateCommand extends Command
         $this->alert($this->description);
 
         $path = config('rinvex.subscriptions.autoload_migrations') ?
-            'vendor/rinvex/laravel-subscriptions/database/migrations' :
+            'packages/laravel-subscriptions/database/migrations' :
             'database/migrations/rinvex/laravel-subscriptions';
 
         if (file_exists($path)) {
