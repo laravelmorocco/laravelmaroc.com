@@ -1,0 +1,85 @@
+{
+    "name": "rinvex/laravel-support",
+    "description": "Rinvex common support helpers, contracts, and traits required by various Rinvex packages. Validator functionality, and basic controller included out-of-the-box.",
+    "type": "library",
+    "keywords": [
+        "rinvex",
+        "laravel",
+        "contract",
+        "validator",
+        "timezones",
+        "mimetype",
+        "support",
+        "helper",
+        "trait"
+    ],
+    "license": "MIT",
+    "homepage": "https://rinvex.com/marketplace/rinvex-support/",
+    "support": {
+        "email": "help@rinvex.com",
+        "issues": "https://github.com/rinvex/laravel-support/issues",
+        "source": "https://github.com/rinvex/laravel-support",
+        "docs": "https://github.com/rinvex/laravel-support/blob/master/README.md"
+    },
+    "authors": [
+        {
+            "name": "Rinvex LLC",
+            "homepage": "https://rinvex.com",
+            "email": "help@rinvex.com"
+        },
+        {
+            "name": "Abdelrahman Omran",
+            "homepage": "https://omranic.com",
+            "email": "me@omranic.com",
+            "role": "Project Lead"
+        },
+        {
+            "name": "The Generous Laravel Community",
+            "homepage": "https://github.com/rinvex/laravel-support/contributors"
+        }
+    ],
+    "require": {
+        "php": "^8.1.0",
+        "illuminate/database": "^10.0.0 || ^11.0.0",
+        "illuminate/support": "^10.0.0 || ^11.0.0",
+        "spatie/laravel-sluggable": "^3.4.0",
+        "spatie/laravel-schemaless-attributes": "^2.4.0",
+        "spatie/laravel-translatable": "^6.0.0",
+        "vinkla/hashids": "^11.0.0",
+        "watson/validating": "^8.0.0"
+    },
+    "require-dev": {
+        "codedungeon/phpunit-result-printer": "^0.32.0",
+        "phpunit/phpunit": "^10.1.0"
+    },
+    "autoload": {
+        "files": [
+            "src/Support/helpers.php"
+        ],
+        "psr-4": {
+            "Rinvex\\Support\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rinvex\\Support\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rinvex\\Support\\Providers\\SupportServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
