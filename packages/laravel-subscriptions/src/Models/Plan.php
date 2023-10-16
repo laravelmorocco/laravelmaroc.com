@@ -82,6 +82,7 @@ class Plan extends Model implements Sortable
      */
     protected $fillable = [
         'slug',
+        'uuid',
         'name',
         'description',
         'is_active',
