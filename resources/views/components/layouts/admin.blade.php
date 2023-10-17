@@ -19,7 +19,7 @@
     @include('layouts._og')
     <x-seo::meta />
 
-    <!-- Styles -->
+    <!-- Styles --> 
     @googlefonts
     @vite('resources/css/app.css')
     @livewireStyles
@@ -41,6 +41,11 @@
     <!-- Scripts -->
     @livewireScripts
     @vite('resources/js/app.js')
+    @livewireScripts
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <x-livewire-alert::scripts />
     @include('layouts._favicons')
 </head>
 

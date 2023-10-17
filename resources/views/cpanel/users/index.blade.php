@@ -1,4 +1,4 @@
-<x-layouts.cp title="Tableau de bord">
+<x-layouts.admin title="Tableau de bord">
     <x-container class="max-w-7xl mx-auto px-4 sm:px-6">
         <div>
             <div class="sm:flex sm:items-center">
@@ -70,4 +70,4 @@
         </div>
 
     </x-container>
-</x-layouts.cp>
+</x-layouts.admin>
