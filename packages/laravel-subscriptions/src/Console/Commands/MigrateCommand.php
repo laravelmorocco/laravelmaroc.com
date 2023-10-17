@@ -6,7 +6,7 @@ namespace Rinvex\Subscriptions\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class MigrateCommand extends Command
+final class MigrateCommand extends Command
 {
     /**
      * The name and signature of the console command.

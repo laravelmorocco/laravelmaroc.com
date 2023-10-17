@@ -1,13 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Watson\Validating\Tests;
 
 use Mockery;
-use Watson\Validating\ValidatingModel;
 
-class ValidatingModelTest extends TestCase
+final class ValidatingModelTest extends TestCase
 {
-    public function testGetMessageBagCallsGetErrors()
+    public function testGetMessageBagCallsGetErrors(): void
     {
         $mock = Mockery::mock('Watson\Validating\ValidatingModel[getErrors]');
 

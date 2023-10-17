@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-if (! function_exists('mimetypes')) {
+if ( ! function_exists('mimetypes')) {
     /**
      * Get valid mime types.
      *
@@ -17,7 +17,7 @@ if (! function_exists('mimetypes')) {
     }
 }
 
-if (! function_exists('timezones')) {
+if ( ! function_exists('timezones')) {
     /**
      * Get valid timezones.
      *
@@ -29,7 +29,7 @@ if (! function_exists('timezones')) {
     }
 }
 
-if (! function_exists('timeoffsets')) {
+if ( ! function_exists('timeoffsets')) {
     /**
      * Get valid time offsets.
      *
@@ -80,7 +80,7 @@ if (! function_exists('timeoffsets')) {
     }
 }
 
-if (! function_exists('array_search_recursive')) {
+if ( ! function_exists('array_search_recursive')) {
     /**
      * Recursively searches the array for a given value and returns the corresponding key if successful.
      *
@@ -93,7 +93,7 @@ if (! function_exists('array_search_recursive')) {
     {
         foreach ($haystack as $key => $value) {
             $current_key = $key;
-            if ($needle === $value || (is_array($value) && array_search_recursive($needle, $value) !== false)) {
+            if ($needle === $value || (is_array($value) && false !== array_search_recursive($needle, $value))) {
                 return $current_key;
             }
         }
@@ -102,7 +102,7 @@ if (! function_exists('array_search_recursive')) {
     }
 }
 
-if (! function_exists('array_trim_recursive')) {
+if ( ! function_exists('array_trim_recursive')) {
     /**
      * Recursively trim elements of the given array.
      *
@@ -121,7 +121,7 @@ if (! function_exists('array_trim_recursive')) {
     }
 }
 
-if (! function_exists('array_diff_assoc_recursive')) {
+if ( ! function_exists('array_diff_assoc_recursive')) {
     /**
      * Computes the recursive difference of arrays with additional index check.
      *
@@ -137,12 +137,12 @@ if (! function_exists('array_diff_assoc_recursive')) {
 
         foreach ($array1 as $key => $value) {
             if (is_array($value)) {
-                if (! isset($array2[$key]) || ! is_array($array2[$key])) {
+                if ( ! isset($array2[$key]) || ! is_array($array2[$key])) {
                     $difference[$key] = $value;
-                } elseif (! empty($subDiff = array_diff_assoc_recursive($value, $array2[$key]))) {
+                } elseif ( ! empty($subDiff = array_diff_assoc_recursive($value, $array2[$key]))) {
                     $difference[$key] = $onlyDiff ? $subDiff : array_merge($array2[$key], $subDiff);
                 }
-            } elseif (! array_key_exists($key, $array2) || $array2[$key] !== $value) {
+            } elseif ( ! array_key_exists($key, $array2) || $array2[$key] !== $value) {
                 $difference[$key] = $value;
             }
         }
@@ -151,7 +151,7 @@ if (! function_exists('array_diff_assoc_recursive')) {
     }
 }
 
-if (! function_exists('get_str_contains')) {
+if ( ! function_exists('get_str_contains')) {
     /**
      * Get str contains the given string.
      *
@@ -163,7 +163,7 @@ if (! function_exists('get_str_contains')) {
     function get_str_contains($haystack, $needles)
     {
         foreach ((array) $needles as $needle) {
-            if (! empty($needle) && mb_strpos($haystack, $needle) !== false) {
+            if ( ! empty($needle) && false !== mb_strpos($haystack, $needle)) {
                 return $needle;
             }
         }
@@ -172,7 +172,7 @@ if (! function_exists('get_str_contains')) {
     }
 }
 
-if (! function_exists('get_str_endswith')) {
+if ( ! function_exists('get_str_endswith')) {
     /**
      * Get str ends with the given string.
      *
@@ -184,7 +184,7 @@ if (! function_exists('get_str_endswith')) {
     function get_str_endswith($haystack, $needles)
     {
         foreach ((array) $needles as $needle) {
-            if (! empty($needle) && mb_substr($haystack, -mb_strlen($needle)) === (string) $needle) {
+            if ( ! empty($needle) && mb_substr($haystack, -mb_strlen($needle)) === (string) $needle) {
                 return $needle;
             }
         }

@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Service;
 
 use Illuminate\Support\Str;
 use Illuminate\Config\Repository;
 use LaravelFeature\Domain\FeatureManager;
 
-class FeaturesViewScanner
+final class FeaturesViewScanner
 {
     /** @var FeatureManager */
     private $featureManager;
@@ -28,7 +30,7 @@ class FeaturesViewScanner
 
     public function scan()
     {
-        $pathsToBeScanned = $this->config->get('features.scanned_paths', [ 'resources/views' ]);
+        $pathsToBeScanned = $this->config->get('features.scanned_paths', ['resources/views']);
 
         $foundDirectives = [];
 
@@ -57,7 +59,7 @@ class FeaturesViewScanner
         $bladeViews = [];
 
         foreach ($files as $file) {
-            $itemPath = $path . DIRECTORY_SEPARATOR . $file;
+            $itemPath = $path.DIRECTORY_SEPARATOR.$file;
 
             if (is_dir($itemPath)) {
                 $bladeViews = array_merge($bladeViews, $this->getAllBladeViewsInPath($itemPath));

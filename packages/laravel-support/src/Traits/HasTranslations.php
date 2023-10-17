@@ -20,7 +20,7 @@ trait HasTranslations
      */
     public function getAttributeValue($key)
     {
-        if (! $this->isTranslatableAttribute($key)) {
+        if ( ! $this->isTranslatableAttribute($key)) {
             return parent::getAttributeValue($key);
         }
 
@@ -38,16 +38,16 @@ trait HasTranslations
      */
     public function getTranslations(string $key = null): array
     {
-        if ($key !== null) {
+        if (null !== $key) {
             $this->guardAgainstNonTranslatableAttribute($key);
 
             $value = array_filter(
                 json_decode($this->getAttributes()[$key] ?? '' ?: '{}', true) ?: [],
-                fn ($value) => $value !== null && $value !== ''
+                fn ($value) => null !== $value && '' !== $value
             );
 
             // Inject default translation if none supplied
-            if (! is_array($value)) {
+            if ( ! is_array($value)) {
                 $oldValue = $value;
 
                 if ($this->hasSetMutator($key)) {
@@ -78,9 +78,7 @@ trait HasTranslations
      */
     public function attributesToArray()
     {
-        $values = array_map(function ($attribute) {
-            return $this->getTranslation($attribute, config('app.locale')) ?: null;
-        }, $keys = $this->getTranslatableAttributes());
+        $values = array_map(fn ($attribute) => $this->getTranslation($attribute, config('app.locale')) ?: null, $keys = $this->getTranslatableAttributes());
 
         return array_replace(parent::attributesToArray(), array_combine($keys, $values));
     }
@@ -92,7 +90,7 @@ trait HasTranslations
      *
      * @return void
      */
-    public function mergeTranslatable($translatable)
+    public function mergeTranslatable($translatable): void
     {
         $this->translatable = array_merge($this->translatable, $translatable);
     }

@@ -52,14 +52,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|\Rinvex\Subscriptions\Models\PlanFeature whereValue($value)
  * @mixin \Eloquent
  */
-class PlanFeature extends Model implements Sortable
+final class PlanFeature extends Model implements Sortable
 {
-    use HasSlug;
-    use HasFactory;
-    use SoftDeletes;
     use BelongsToPlan;
-    use SortableTrait;
+    use HasFactory;
+    use HasSlug;
     use HasTranslations;
+    use SoftDeletes;
+    use SortableTrait;
     use ValidatingTrait;
 
     /**
@@ -156,11 +156,11 @@ class PlanFeature extends Model implements Sortable
     /**
      * {@inheritdoc}
      */
-    protected static function boot()
+    protected static function boot(): void
     {
         parent::boot();
 
-        static::deleted(function ($plan_feature) {
+        static::deleted(function ($plan_feature): void {
             $plan_feature->usage()->delete();
         });
     }
@@ -173,9 +173,9 @@ class PlanFeature extends Model implements Sortable
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
-                          ->doNotGenerateSlugsOnUpdate()
-                          ->generateSlugsFrom('name')
-                          ->saveSlugsTo('slug');
+            ->doNotGenerateSlugsOnUpdate()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
     }
 
     /**

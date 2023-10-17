@@ -14,13 +14,13 @@ trait HasSlug
     /**
      * Boot the trait.
      */
-    protected static function bootHasSlug()
+    protected static function bootHasSlug(): void
     {
         // Auto generate slugs early before validation
-        static::validating(function (Model $model) {
+        static::validating(function (Model $model): void {
             if ($model->exists && $model->getSlugOptions()->generateSlugsOnUpdate) {
                 $model->generateSlugOnUpdate();
-            } elseif (! $model->exists && $model->getSlugOptions()->generateSlugsOnCreate) {
+            } elseif ( ! $model->exists && $model->getSlugOptions()->generateSlugsOnCreate) {
                 $model->generateSlugOnCreate();
             }
         });

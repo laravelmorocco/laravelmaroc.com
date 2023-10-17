@@ -28,7 +28,7 @@ final class Kernel extends ConsoleKernel
 
     protected function commands(): void
     {
-        $this->load([__DIR__ . '/Commands']);
+        $this->load([__DIR__.'/Commands']);
         // $this->load([__DIR__.'/Commands',__DIR__.'/packages/laravel-subscriptions/src/Console/Commands']);
 
 

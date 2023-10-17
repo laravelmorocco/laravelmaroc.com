@@ -14,7 +14,7 @@ use Rinvex\Subscriptions\Console\Commands\MigrateCommand;
 use Rinvex\Subscriptions\Console\Commands\PublishCommand;
 use Rinvex\Subscriptions\Console\Commands\RollbackCommand;
 
-class SubscriptionsServiceProvider extends ServiceProvider
+final class SubscriptionsServiceProvider extends ServiceProvider
 {
     use ConsoleTools;
 

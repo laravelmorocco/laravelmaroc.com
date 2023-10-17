@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Watson\Validating;
 
 use Illuminate\Database\Eloquent\Model;
@@ -7,7 +9,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Contracts\Support\MessageProvider;
 use Illuminate\Validation\ValidationException as BaseValidationException;
 
-class ValidationException extends BaseValidationException implements MessageProvider
+final class ValidationException extends BaseValidationException implements MessageProvider
 {
     /**
      * The model with validation errors.

@@ -21,9 +21,7 @@ trait HasTimezones
         $datetime = $value;
         $timezone = request()->user()?->timezone;
 
-        $thisIsUpdateRequest = Arr::first(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 30), function ($trace) {
-            return $trace['function'] === 'setAttribute';
-        });
+        $thisIsUpdateRequest = Arr::first(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 30), fn ($trace) => 'setAttribute' === $trace['function']);
 
         if ($thisIsUpdateRequest) {
             if (is_string($datetime)) {
@@ -35,7 +33,7 @@ trait HasTimezones
 
         $datetime = parent::asDateTime($datetime);
 
-        if (! $timezone || $timezone === config('app.timezone')) {
+        if ( ! $timezone || $timezone === config('app.timezone')) {
             return $datetime;
         }
 
@@ -53,6 +51,6 @@ trait HasTimezones
 
         $timezone = request()->user()?->timezone;
 
-        return (! $timezone || $timezone === config('app.timezone')) ? $now : $now->setTimezone($timezone);
+        return ( ! $timezone || $timezone === config('app.timezone')) ? $now : $now->setTimezone($timezone);
     }
 }

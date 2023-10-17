@@ -6,7 +6,7 @@ namespace Rinvex\Subscriptions\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class RollbackCommand extends Command
+final class RollbackCommand extends Command
 {
     /**
      * The name and signature of the console command.

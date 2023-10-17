@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Watson\Validating\Tests;
 
 use Mockery;
 use Watson\Validating\ValidationException;
 
-class ValidationExceptionTest extends TestCase
+final class ValidationExceptionTest extends TestCase
 {
     public $validator;
 
@@ -16,17 +18,17 @@ class ValidationExceptionTest extends TestCase
     public function setUp(): void
     {
         //$this->validator = Mockery::mock(\Illuminate\Contracts\Validation\Validator::class);
-        $this->validator = Mockery::mock(\Illuminate\Contracts\Validation\Validator::class, function ($mock) {
+        $this->validator = Mockery::mock(\Illuminate\Contracts\Validation\Validator::class, function ($mock): void {
             $mock
                 ->shouldReceive('errors')
                 ->once()
                 ->andReturn();
         });
-        
+
 
         //$this->model = Mockery::mock('Illuminate\Database\Eloquent\Model');
 
-        $this->model = Mockery::mock(\Illuminate\Database\Eloquent\Model::class, function ($mock) {
+        $this->model = Mockery::mock(\Illuminate\Database\Eloquent\Model::class, function ($mock): void {
             $mock
                 ->shouldReceive([])
                 ->andReturn($this);
@@ -38,26 +40,26 @@ class ValidationExceptionTest extends TestCase
         );
     }
 
-    public function testModel()
+    public function testModel(): void
     {
         $this->assertEquals($this->model, $this->exception->model());
     }
 
-    public function testGetModel()
+    public function testGetModel(): void
     {
         $this->assertEquals($this->model, $this->exception->getModel());
     }
 
-    public function testGetErrors()
+    public function testGetErrors(): void
     {
-       $this->validator->shouldReceive('errors')
-           ->once()
-           ->andReturn('errors');
+        $this->validator->shouldReceive('errors')
+            ->once()
+            ->andReturn('errors');
 
-       $this->assertEquals('errors', $this->exception->getErrors());
+        $this->assertEquals('errors', $this->exception->getErrors());
     }
 
-    public function testGetsMessageBag()
+    public function testGetsMessageBag(): void
     {
         $this->validator->shouldReceive('errors')
             ->once()

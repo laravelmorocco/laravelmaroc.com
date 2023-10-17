@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Facade;
 
 use LaravelFeature\Domain\FeatureManager;
@@ -16,7 +18,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static void disableFor($featureName, \LaravelFeature\Featurable\FeaturableInterface $featurable)
  * @method static bool isEnabledFor($featureName, \LaravelFeature\Featurable\FeaturableInterface $featurable)
  */
-class Feature extends Facade
+final class Feature extends Facade
 {
     /**
      * Get the registered name of the component.

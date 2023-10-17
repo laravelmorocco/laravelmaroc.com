@@ -37,7 +37,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|\Rinvex\Subscriptions\Models\PlanSubscriptionUsage whereValidUntil($value)
  * @mixin \Eloquent
  */
-class PlanSubscriptionUsage extends Model
+final class PlanSubscriptionUsage extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -147,7 +147,7 @@ class PlanSubscriptionUsage extends Model
      */
     public function expired(): bool
     {
-        if (is_null($this->valid_until)) {
+        if (null === $this->valid_until) {
             return false;
         }
 

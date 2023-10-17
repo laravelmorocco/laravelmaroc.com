@@ -6,13 +6,14 @@ namespace Rinvex\Support\Traits;
 
 use Vinkla\Hashids\Facades\Hashids;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Exception;
 
 trait HashidsTrait
 {
     /**
      * Get the value of the model's route key.
      *
-     * @throws \Exception
+     * @throws Exception
      *
      * @return mixed
      */
@@ -58,7 +59,7 @@ trait HashidsTrait
      */
     protected function shouldBeHashed(): bool
     {
-        $accessareas = app('accessareas')->active()->obscured()->keys()->when($this->obscure, fn($collection) => $collection->merge(collect($this->obscure)->intersect(app('accessareas')->active()->keys()))->unique())->toArray();
+        $accessareas = app('accessareas')->active()->obscured()->keys()->when($this->obscure, fn ($collection) => $collection->merge(collect($this->obscure)->intersect(app('accessareas')->active()->keys()))->unique())->toArray();
 
         return in_array(request()->accessarea(), $accessareas) && in_array($this->getRouteKeyName(), config('cortex.foundation.obscure.hashed_keys'));
     }

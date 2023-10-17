@@ -6,7 +6,7 @@ namespace Rinvex\Subscriptions\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class PublishCommand extends Command
+final class PublishCommand extends Command
 {
     /**
      * The name and signature of the console command.
@@ -31,7 +31,7 @@ class PublishCommand extends Command
     {
         $this->alert($this->description);
 
-        collect($this->option('resource') ?: ['config', 'migrations'])->each(function ($resource) {
+        collect($this->option('resource') ?: ['config', 'migrations'])->each(function ($resource): void {
             $this->call('vendor:publish', ['--tag' => "rinvex/subscriptions::{$resource}", '--force' => $this->option('force')]);
         });
 

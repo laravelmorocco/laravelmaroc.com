@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Domain\Repository;
 
 use LaravelFeature\Domain\Model\Feature;

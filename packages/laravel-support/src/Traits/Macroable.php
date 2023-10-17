@@ -42,7 +42,7 @@ trait Macroable
 
             return $this->forwardCallTo($this->newQuery(), $method, $parameters);
         } catch (Error|BadMethodCallException $e) {
-            if ($method !== 'macroableCall') {
+            if ('macroableCall' !== $method) {
                 return $this->macroableCall($method, $parameters);
             }
         }
@@ -62,7 +62,7 @@ trait Macroable
             // Catch static calls for non-static methods
             return (new static())->{$method}(...$parameters);
         } catch (Exception $e) {
-            if ($method !== 'macroableCallStatic') {
+            if ('macroableCallStatic' !== $method) {
                 return (new static())::macroableCallStatic($method, $parameters);
             }
         }

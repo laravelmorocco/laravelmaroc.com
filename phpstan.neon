@@ -4,7 +4,7 @@ includes:
 parameters:
     paths:
         - app
-    level: 8
+    level: 5
     excludePaths:
         - app/Http/Resources/
         - app/Http/Middleware/

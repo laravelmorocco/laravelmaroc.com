@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Watson\Validating;
 
 use Illuminate\Support\MessageBag;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Factory;
 
@@ -17,13 +18,13 @@ interface ValidatingInterface
      */
     public function getValidating();
 
-     /**
+    /**
      * Set whether the model should attempt validation on saving.
      *
      * @param  bool $value
      * @return void
      */
-    public function setValidating($value);
+    public function setValidating($value): void;
 
     /**
      * Returns whether the model will raise an exception or
@@ -41,7 +42,7 @@ interface ValidatingInterface
      * @return void
      * @throws InvalidArgumentException
      */
-    public function setThrowValidationExceptions($value);
+    public function setThrowValidationExceptions($value): void;
 
     /**
      * Returns whether or not the model will add it's unique
@@ -59,7 +60,7 @@ interface ValidatingInterface
      * @return void
      * @throws InvalidArgumentException
      */
-    public function setInjectUniqueIdentifier($value);
+    public function setInjectUniqueIdentifier($value): void;
 
     /**
      * Get the model.
@@ -88,7 +89,7 @@ interface ValidatingInterface
      * @param  array $rules
      * @return void
      */
-    public function setRules(array $rules = null);
+    public function setRules(array $rules = null): void;
 
     /**
      * Get the validation error messages from the model.
@@ -103,7 +104,7 @@ interface ValidatingInterface
      * @param  \Illuminate\Support\MessageBag $validationErrors
      * @return void
      */
-    public function setErrors(MessageBag $validationErrors);
+    public function setErrors(MessageBag $validationErrors): void;
 
     /**
      * Returns whether the model is valid or not.
@@ -141,7 +142,7 @@ interface ValidatingInterface
      * @return void
      * @throws \Watson\Validating\ValidatingException
      */
-    public function saveOrFail();
+    public function saveOrFail(): void;
 
     /**
      * Perform a one-off save that will return a boolean on
@@ -169,7 +170,7 @@ interface ValidatingInterface
      * Throw a validation exception.
      *
      * @throws \Watson\Validating\ValidationException
-    */
+     */
     public function throwValidationException();
 
     /**
@@ -178,5 +179,5 @@ interface ValidatingInterface
      *
      * @return void
      */
-    public function updateRulesUniques();
+    public function updateRulesUniques(): void;
 }

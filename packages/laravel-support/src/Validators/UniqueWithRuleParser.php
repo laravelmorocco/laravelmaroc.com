@@ -8,31 +8,31 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
-class UniqueWithRuleParser
+final class UniqueWithRuleParser
 {
-    protected $table;
+    private $table;
 
-    protected $connection;
+    private $connection;
 
-    protected $primaryField;
+    private $primaryField;
 
-    protected $primaryValue;
+    private $primaryValue;
 
-    protected $additionalFields;
+    private $additionalFields;
 
-    protected $parsed = false;
+    private $parsed = false;
 
-    protected $ignoreColumn;
+    private $ignoreColumn;
 
-    protected $ignoreValue;
+    private $ignoreValue;
 
-    protected $dataFields;
+    private $dataFields;
 
-    protected $parameters;
+    private $parameters;
 
-    protected $attribute;
+    private $attribute;
 
-    protected $data;
+    private $data;
 
     public function __construct($attribute = null, $value = null, array $parameters = [], array $data = [])
     {
@@ -42,7 +42,7 @@ class UniqueWithRuleParser
         $this->data = $data;
     }
 
-    protected function parse()
+    private function parse(): void
     {
         if ($this->parsed) {
             return;
@@ -65,7 +65,7 @@ class UniqueWithRuleParser
         $this->parseFieldData();
     }
 
-    protected function parseFieldData()
+    private function parseFieldData(): void
     {
         $this->additionalFields = [];
         $this->dataFields = [$this->primaryField];
@@ -90,7 +90,7 @@ class UniqueWithRuleParser
                 continue;
             }
 
-            if (! Arr::has($this->data, $fieldName)) {
+            if ( ! Arr::has($this->data, $fieldName)) {
                 continue;
             }
 
@@ -129,7 +129,7 @@ class UniqueWithRuleParser
      *
      * @return bool
      */
-    protected function isValidationScoped(Model $model): bool
+    private function isValidationScoped(Model $model): bool
     {
         return $model->isValidationScoped ?? true;
     }
@@ -176,11 +176,11 @@ class UniqueWithRuleParser
         return $this->dataFields;
     }
 
-    protected function parseIgnore()
+    private function parseIgnore(): void
     {
         // Ignore has to be specified as the last parameter
         $lastParameter = end($this->parameters);
-        if (! $this->isIgnore($lastParameter)) {
+        if ( ! $this->isIgnore($lastParameter)) {
             return;
         }
 
@@ -193,10 +193,10 @@ class UniqueWithRuleParser
         array_pop($this->parameters);
     }
 
-    protected function isIgnore($parameter)
+    private function isIgnore($parameter)
     {
         // An ignore_id can be specified by prefixing with 'ignore:'
-        if (mb_strpos($parameter, 'ignore:') !== false) {
+        if (false !== mb_strpos($parameter, 'ignore:')) {
             return true;
         }
 
@@ -207,7 +207,7 @@ class UniqueWithRuleParser
         return preg_match('/^[1-9][0-9]*$/', $parts[0]);
     }
 
-    protected function parseFieldName($field)
+    private function parseFieldName($field)
     {
         if (preg_match('/^\*\.|\.\*\./', $field)) {
             // This rule validates multiple times, because a wildcard * was used

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Repository;
 
 use LaravelFeature\Domain\Exception\FeatureException;
@@ -7,15 +9,16 @@ use LaravelFeature\Domain\Repository\FeatureRepositoryInterface;
 use LaravelFeature\Domain\Model\Feature;
 use LaravelFeature\Featurable\FeaturableInterface;
 use LaravelFeature\Model\Feature as Model;
+use Exception;
 
-class EloquentFeatureRepository implements FeatureRepositoryInterface
+final class EloquentFeatureRepository implements FeatureRepositoryInterface
 {
-    public function save(Feature $feature)
+    public function save(Feature $feature): void
     {
         /** @var Model $model */
         $model = Model::where('name', '=', $feature->getName())->first();
 
-        if (!$model) {
+        if ( ! $model) {
             $model = new Model();
         }
 
@@ -24,16 +27,16 @@ class EloquentFeatureRepository implements FeatureRepositoryInterface
 
         try {
             $model->save();
-        } catch (\Exception $e) {
-            throw new FeatureException('Unable to save the feature: ' . $e->getMessage());
+        } catch (Exception $e) {
+            throw new FeatureException('Unable to save the feature: '.$e->getMessage());
         }
     }
 
-    public function remove(Feature $feature)
+    public function remove(Feature $feature): void
     {
         /** @var Model $model */
         $model = Model::where('name', '=', $feature->getName())->first();
-        if (!$model) {
+        if ( ! $model) {
             throw new FeatureException('Unable to find the feature.');
         }
 
@@ -44,7 +47,7 @@ class EloquentFeatureRepository implements FeatureRepositoryInterface
     {
         /** @var Model $model */
         $model = Model::where('name', '=', $featureName)->first();
-        if (!$model) {
+        if ( ! $model) {
             throw new FeatureException('Unable to find the feature.');
         }
 
@@ -54,30 +57,30 @@ class EloquentFeatureRepository implements FeatureRepositoryInterface
         );
     }
 
-    public function enableFor($featureName, FeaturableInterface $featurable)
+    public function enableFor($featureName, FeaturableInterface $featurable): void
     {
         /** @var Model $model */
         $model = Model::where('name', '=', $featureName)->first();
-        if (!$model) {
+        if ( ! $model) {
             throw new FeatureException('Unable to find the feature.');
         }
 
-        if ((bool) $model->is_enabled === true || $featurable->hasFeature($featureName) === true) {
+        if (true === (bool) $model->is_enabled || true === $featurable->hasFeature($featureName)) {
             return;
         }
 
         $featurable->features()->attach($model->id);
     }
 
-    public function disableFor($featureName, FeaturableInterface $featurable)
+    public function disableFor($featureName, FeaturableInterface $featurable): void
     {
         /** @var Model $model */
         $model = Model::where('name', '=', $featureName)->first();
-        if (!$model) {
+        if ( ! $model) {
             throw new FeatureException('Unable to find the feature.');
         }
 
-        if ((bool) $model->is_enabled === true || $featurable->hasFeature($featureName) === false) {
+        if (true === (bool) $model->is_enabled || false === $featurable->hasFeature($featureName)) {
             return;
         }
 
@@ -88,7 +91,7 @@ class EloquentFeatureRepository implements FeatureRepositoryInterface
     {
         /** @var Model $model */
         $model = Model::where('name', '=', $featureName)->first();
-        if (!$model) {
+        if ( ! $model) {
             throw new FeatureException('Unable to find the feature.');
         }
 

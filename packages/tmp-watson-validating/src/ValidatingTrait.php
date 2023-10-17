@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Watson\Validating;
 
 use Illuminate\Support\Str;
@@ -7,6 +9,7 @@ use Illuminate\Support\MessageBag;
 use Illuminate\Validation\Factory;
 use Illuminate\Support\Facades\Validator;
 use Watson\Validating\Injectors\UniqueInjector;
+use Throwable;
 
 trait ValidatingTrait
 {
@@ -38,9 +41,9 @@ trait ValidatingTrait
      *
      * @return void
      */
-    public static function bootValidatingTrait()
+    public static function bootValidatingTrait(): void
     {
-        static::observe(new ValidatingObserver);
+        static::observe(new ValidatingObserver());
     }
 
     /**
@@ -54,15 +57,15 @@ trait ValidatingTrait
         return $this->validating;
     }
 
-     /**
+    /**
      * Set whether the model should attempt validation on saving.
      *
      * @param  bool $value
      * @return void
      */
-    public function setValidating($value)
+    public function setValidating($value): void
     {
-        $this->validating = (boolean) $value;
+        $this->validating = (bool) $value;
     }
 
     /**
@@ -73,7 +76,7 @@ trait ValidatingTrait
      */
     public function getThrowValidationExceptions()
     {
-        return isset($this->throwValidationExceptions) ? $this->throwValidationExceptions : false;
+        return $this->throwValidationExceptions ?? false;
     }
 
     /**
@@ -84,9 +87,9 @@ trait ValidatingTrait
      * @return void
      * @throws InvalidArgumentException
      */
-    public function setThrowValidationExceptions($value)
+    public function setThrowValidationExceptions($value): void
     {
-        $this->throwValidationExceptions = (boolean) $value;
+        $this->throwValidationExceptions = (bool) $value;
     }
 
     /**
@@ -97,7 +100,7 @@ trait ValidatingTrait
      */
     public function getInjectUniqueIdentifier()
     {
-        return isset($this->injectUniqueIdentifier) ? $this->injectUniqueIdentifier : true;
+        return $this->injectUniqueIdentifier ?? true;
     }
 
     /**
@@ -108,9 +111,9 @@ trait ValidatingTrait
      * @return void
      * @throws InvalidArgumentException
      */
-    public function setInjectUniqueIdentifier($value)
+    public function setInjectUniqueIdentifier($value): void
     {
-        $this->injectUniqueIdentifier = (boolean) $value;
+        $this->injectUniqueIdentifier = (bool) $value;
     }
 
     /**
@@ -153,7 +156,7 @@ trait ValidatingTrait
      */
     public function getValidationMessages()
     {
-        return isset($this->validationMessages) ? $this->validationMessages : [];
+        return $this->validationMessages ?? [];
     }
 
     /**
@@ -164,7 +167,7 @@ trait ValidatingTrait
      */
     protected function modelValidationMessages()
     {
-        return (new static)->getValidationMessages();
+        return (new static())->getValidationMessages();
     }
 
     /**
@@ -174,7 +177,7 @@ trait ValidatingTrait
      */
     public function getValidationAttributeNames()
     {
-        return isset($this->validationAttributeNames) ? $this->validationAttributeNames : [];
+        return $this->validationAttributeNames ?? [];
     }
 
     /**
@@ -185,7 +188,7 @@ trait ValidatingTrait
      */
     protected function modelValidationAttributeNames()
     {
-        return (new static)->getValidationAttributeNames();
+        return (new static())->getValidationAttributeNames();
     }
 
     /**
@@ -194,7 +197,7 @@ trait ValidatingTrait
      * @param  array  $attributeNames
      * @return void
      */
-    public function setValidationAttributeNames(array $attributeNames = null)
+    public function setValidationAttributeNames(array $attributeNames = null): void
     {
         $this->validationAttributeNames = $attributeNames;
     }
@@ -206,7 +209,7 @@ trait ValidatingTrait
      */
     public function getRules()
     {
-        return isset($this->rules) ? $this->rules : [];
+        return $this->rules ?? [];
     }
 
     /**
@@ -236,7 +239,7 @@ trait ValidatingTrait
      * @param  array $rules
      * @return void
      */
-    public function setRules(array $rules = null)
+    public function setRules(array $rules = null): void
     {
         $this->rules = $rules;
     }
@@ -248,7 +251,7 @@ trait ValidatingTrait
      */
     public function getErrors()
     {
-        return $this->validationErrors ?: new MessageBag;
+        return $this->validationErrors ?: new MessageBag();
     }
 
     /**
@@ -257,7 +260,7 @@ trait ValidatingTrait
      * @param  \Illuminate\Support\MessageBag $validationErrors
      * @return void
      */
-    public function setErrors(MessageBag $validationErrors)
+    public function setErrors(MessageBag $validationErrors): void
     {
         $this->validationErrors = $validationErrors;
     }
@@ -324,7 +327,7 @@ trait ValidatingTrait
      *
      * @param  array  $options
      * @return bool
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function saveOrFail(array $options = [])
     {
@@ -340,7 +343,7 @@ trait ValidatingTrait
      *
      * @param  array  $options
      * @return bool
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function parentSaveOrFail($options)
     {
@@ -374,7 +377,7 @@ trait ValidatingTrait
      *
      * @param \Illuminate\Validation\Factory $validator
      */
-    public function setValidator(Factory $validator)
+    public function setValidator(Factory $validator): void
     {
         $this->validator = $validator;
     }
@@ -430,7 +433,7 @@ trait ValidatingTrait
      *
      * @throws \Watson\Validating\ValidationException
      */
-    public function throwValidationException()
+    public function throwValidationException(): void
     {
         $validator = $this->makeValidator($this->getRules());
 
@@ -443,7 +446,7 @@ trait ValidatingTrait
      *
      * @return void
      */
-    public function updateRulesUniques()
+    public function updateRulesUniques(): void
     {
         $rules = $this->getRules();
 
@@ -469,18 +472,18 @@ trait ValidatingTrait
             $ruleset = is_string($ruleset) ? explode('|', $ruleset) : $ruleset;
 
             foreach ($ruleset as &$rule) {
-            	// Only treat stringy definitions and leave Rule classes and Closures as-is.
-            	if (is_string($rule)) {
-            		$parameters = explode(':', $rule);
-	                $validationRule = array_shift($parameters);
+                // Only treat stringy definitions and leave Rule classes and Closures as-is.
+                if (is_string($rule)) {
+                    $parameters = explode(':', $rule);
+                    $validationRule = array_shift($parameters);
 
-	                if ($method = $this->getUniqueIdentifierInjectorMethod($validationRule)) {
-	                    $rule = call_user_func_array(
-	                        [$this, $method],
-	                        [explode(',', head($parameters)), $field]
-	                    );
-	                }
-            	}
+                    if ($method = $this->getUniqueIdentifierInjectorMethod($validationRule)) {
+                        $rule = call_user_func_array(
+                            [$this, $method],
+                            [explode(',', head($parameters)), $field]
+                        );
+                    }
+                }
             }
         }
 
@@ -496,7 +499,7 @@ trait ValidatingTrait
      */
     protected function getUniqueIdentifierInjectorMethod($validationRule)
     {
-        $method = 'prepare' . Str::studly($validationRule) . 'Rule';
+        $method = 'prepare'.Str::studly($validationRule).'Rule';
 
         return method_exists($this, $method) ? $method : false;
     }

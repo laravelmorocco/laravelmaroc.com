@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Provider;
 
 use Illuminate\Support\Facades\Blade;
@@ -7,14 +9,14 @@ use Illuminate\Support\ServiceProvider;
 use LaravelFeature\Domain\Repository\FeatureRepositoryInterface;
 use LaravelFeature\Console\Command\ScanViewsForFeaturesCommand;
 
-class FeatureServiceProvider extends ServiceProvider
+final class FeatureServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../Migration');
 
@@ -30,48 +32,38 @@ class FeatureServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../Config/features.php', 'features');
 
         $config = $this->app->make('config');
 
-        $this->app->bind(FeatureRepositoryInterface::class, function () use ($config) {
-            return app()->make($config->get('features.repository'));
-        });
+        $this->app->bind(FeatureRepositoryInterface::class, fn () => app()->make($config->get('features.repository')));
 
         $this->registerConsoleCommand();
     }
 
-    private function registerBladeDirectives()
+    private function registerBladeDirectives(): void
     {
         $this->registerBladeFeatureDirective();
         $this->registerBladeFeatureForDirective();
     }
 
-    private function registerBladeFeatureDirective()
+    private function registerBladeFeatureDirective(): void
     {
-        Blade::directive('feature', function ($featureName) {
-            return "<?php if (app(\\LaravelFeature\\Domain\\FeatureManager::class)->isEnabled($featureName)): ?>";
-        });
+        Blade::directive('feature', fn ($featureName) => "<?php if (app(\\LaravelFeature\\Domain\\FeatureManager::class)->isEnabled({$featureName})): ?>");
 
-        Blade::directive('endfeature', function () {
-            return '<?php endif; ?>';
-        });
+        Blade::directive('endfeature', fn () => '<?php endif; ?>');
     }
 
-    private function registerBladeFeatureForDirective()
+    private function registerBladeFeatureForDirective(): void
     {
-        Blade::directive('featurefor', function ($args) {
-            return "<?php if (app(\\LaravelFeature\\Domain\\FeatureManager::class)->isEnabledFor($args)): ?>";
-        });
+        Blade::directive('featurefor', fn ($args) => "<?php if (app(\\LaravelFeature\\Domain\\FeatureManager::class)->isEnabledFor({$args})): ?>");
 
-        Blade::directive('endfeaturefor', function () {
-            return '<?php endif; ?>';
-        });
+        Blade::directive('endfeaturefor', fn () => '<?php endif; ?>');
     }
 
-    private function registerConsoleCommand()
+    private function registerConsoleCommand(): void
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
