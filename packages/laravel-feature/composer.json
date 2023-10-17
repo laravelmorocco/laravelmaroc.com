@@ -1,0 +1,56 @@
+{
+    "name": "francescomalatesta/laravel-feature",
+    "type": "library",
+    "description": "A simple package to manage feature flagging in a Laravel project.",
+    "keywords": ["laravel", "feature", "flag"],
+    "homepage": "https://github.com/francescomalatesta/laravel-feature",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Francesco Malatesta",
+            "email": "hellofrancesco@gmail.com",
+            "homepage": "https://github.com/francescomalatesta",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^8.1|^8.2",
+        "illuminate/database": "^9.0|^10.0",
+        "illuminate/support": "^9.0|^10.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "orchestra/testbench": "^8.0|^7.0",
+        "phpunit/phpunit": "^9.0|^10.0",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelFeature\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelFeature\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src/Config src/Console src/Domain src/Facade src/Facade src/Featurable src/Model src/Provider src/Service",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src/Config src/Console src/Domain src/Facade src/Facade src/Featurable src/Model src/Provider src/Service"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelFeature\\Provider\\FeatureServiceProvider"
+            ],
+            "aliases": {
+                "Feature": "LaravelFeature\\Facade\\Feature"
+            }
+        }
+    }
+}

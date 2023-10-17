@@ -163,8 +163,7 @@ final class Thread extends Model implements Feedable, ReactableInterface, ReplyI
 
     public function scopeRecent(Builder $query): Builder
     {
-        // @phpstan-ignore-next-line
-        return $query->feedQuery()->orderByDesc('last_posted_at');
+        return $query->orderByDesc('last_posted_at');
     }
 
     /**

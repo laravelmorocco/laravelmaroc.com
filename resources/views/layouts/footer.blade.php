@@ -3,13 +3,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="py-12 lg:py-16 lg:grid lg:grid-cols-3 lg:gap-8">
             <div class="space-y-4">
-                <img class="h-12 w-auto sm:h-16 logo-white" src="{{ asset('/images/laravelma.svg') }}" alt="laravelmaroc.com">
-                <img class="h-12 w-auto sm:h-16 logo-dark" src="{{ asset('/images/laravelma-white.svg') }}" alt="laravelmaroc.com">
-                <p class="inline-flex items-center flex-wrap text-sm text-skin-base">
-                    <a href="#" class="underline text-skin-inverted font-medium">
-                        {{ __('Laravel Country Logomarks') }}
-                    </a>
-                </p>
+                <img class="h-16 w-auto sm:h-32 logo-white" src="{{ asset('/images/laravelma.svg') }}" alt="laravelmaroc.com">
+                <img class="h-16 w-auto sm:h-32 logo-dark" src="{{ asset('/images/laravelma-white.svg') }}" alt="laravelmaroc.com">
             </div>
             <div class="mt-12 grid grid-cols-2 gap-8 lg:mt-0">
                 <div>

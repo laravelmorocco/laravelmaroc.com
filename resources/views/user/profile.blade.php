@@ -7,7 +7,7 @@
 
     <div>
         <div>
-            <img class="h-32 w-full object-cover lg:h-48" src="{{ asset('images/profile-banner.png') }}" alt="Profile Banner">
+            <img class="h-32 w-full object-cover lg:h-48" src="{{ asset('images/profile-banner.svg') }}" alt="Profile Banner">
         </div>
         <x-container class="max-w-7xl mx-auto px-4">
             <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
