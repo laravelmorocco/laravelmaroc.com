@@ -68,7 +68,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|\Rinvex\Subscriptions\Models\Plan whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-final class Plan extends Model implements Sortable
+class Plan extends Model implements Sortable
 {
     use HasFactory;
     use HasSlug;

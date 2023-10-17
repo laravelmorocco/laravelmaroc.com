@@ -24,9 +24,9 @@ final class SubscriptionsServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
-        MigrateCommand::class => 'command.rinvex.subscriptions.migrate',
-        PublishCommand::class => 'command.rinvex.subscriptions.publish',
-        RollbackCommand::class => 'command.rinvex.subscriptions.rollback',
+        MigrateCommand::class,
+        PublishCommand::class,
+        RollbackCommand::class,
     ];
 
     /**
@@ -36,7 +36,7 @@ final class SubscriptionsServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(realpath(__DIR__.'/../../config/config.php'), 'rinvex.subscriptions');
+        $this->mergeConfigFrom(realpath(__DIR__ . '/../../config/config.php'), 'rinvex.subscriptions');
 
         // Bind eloquent models to IoC container
         $this->registerModels([
@@ -47,7 +47,7 @@ final class SubscriptionsServiceProvider extends ServiceProvider
         ]);
 
         // Register console commands
-        $this->registerCommands($this->commands);
+        $this->commands($this->commands);
     }
 
     /**
@@ -58,8 +58,15 @@ final class SubscriptionsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Publish Resources
-        $this->publishesConfig('rinvex/laravel-subscriptions');
-        $this->publishesMigrations('rinvex/laravel-subscriptions');
-        ! $this->autoloadMigrations('rinvex/laravel-subscriptions') || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
+        $this->publishes([
+            __DIR__ . '/../config/config.php' => config_path('rinvex.subscriptions.php')
+        ], 'rinvex.subscriptions-config');
+
+        $this->publishes([
+            __DIR__ . '/../database/migrations/' => database_path('migrations/rinvex')
+        ], 'rinvex.subscriptions-migrations');
+
+        //$this->publishesMigrations('rinvex/laravel-subscriptions');
+        //! $this->autoloadMigrations('rinvex/laravel-subscriptions') || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
     }
 }
