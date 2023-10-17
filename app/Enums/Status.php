@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace App\Enums;
 
-enum Status: string
+enum Status: int
 {
-    case INACTIVE = '0';
+    case INACTIVE = 0;
 
-    case ACTIVE = '1';
+    case ACTIVE = 1;
 
-    // case COMPLETED = '2';
+    // case COMPLETED = 2;
 
-    // case CANCELED = '5';
+    // case CANCELED = 5;
 
     public static function values(): array
     {
