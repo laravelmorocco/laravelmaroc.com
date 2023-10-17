@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-final class CreateArticlesTable extends Migration
+return new class extends Migration
 {
     public function up(): void
     {
@@ -20,7 +20,7 @@ final class CreateArticlesTable extends Migration
             $table->boolean('is_pinned')->default(false);
             $table->boolean('is_sponsored')->default(false);
             $table->unsignedBigInteger('tweet_id')->nullable();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamp('submitted_at')->nullable();
             $table->timestamp('approved_at')->nullable();
             $table->timestamp('shared_at')->nullable();
@@ -34,4 +34,4 @@ final class CreateArticlesTable extends Migration
     {
         Schema::dropIfExists('articles');
     }
-}
+};

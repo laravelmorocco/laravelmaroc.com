@@ -95,9 +95,9 @@ final class AppServiceProvider extends ServiceProvider
             );
         });
 
-        Filament::registerRenderHook(
+        /*Filament::renderHook(
             'body.start',
             fn (): string => Blade::render('@livewire(\'livewire-ui-modal\')'),
-        );
+        );*/
     }
 }

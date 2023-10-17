@@ -1,0 +1,80 @@
+{
+    "name": "rinvex/laravel-subscriptions",
+    "description": "Rinvex Subscriptions is a flexible plans and subscription management system for Laravel, with the required tools to run your SAAS like services efficiently. It's simple architecture, accompanied by powerful underlying to afford solid platform for your business.",
+    "type": "library",
+    "keywords": [
+        "plan",
+        "value",
+        "laravel",
+        "feature",
+        "database",
+        "recurring",
+        "subscription"
+    ],
+    "license": "MIT",
+    "homepage": "https://rinvex.com",
+    "support": {
+        "email": "help@rinvex.com",
+        "issues": "https://github.com/rinvex/laravel-subscriptions/issues",
+        "source": "https://github.com/rinvex/laravel-subscriptions",
+        "docs": "https://github.com/rinvex/laravel-subscriptions/blob/master/README.md"
+    },
+    "authors": [
+        {
+            "name": "Rinvex LLC",
+            "homepage": "https://rinvex.com",
+            "email": "help@rinvex.com"
+        },
+        {
+            "name": "Abdelrahman Omran",
+            "homepage": "https://omranic.com",
+            "email": "me@omranic.com",
+            "role": "Project Lead"
+        },
+        {
+            "name": "The Generous Laravel Community",
+            "homepage": "https://github.com/rinvex/laravel-subscriptions/contributors"
+        }
+    ],
+    "require": {
+        "php": "^8.1||^8.2",
+        "illuminate/console": "^9.0||^10.0",
+        "illuminate/database": "^9.0||^10.0",
+        "illuminate/support": "^9.0||^10.0",
+        "rinvex/laravel-support": "^7.3.1",
+        "spatie/eloquent-sortable": "^4.0.0",
+        "spatie/laravel-sluggable": "^3.5.0",
+        "spatie/laravel-translatable": "^6.5.0"
+    },
+    "require-dev": {
+        "illuminate/container": "^9.0||^10.0",
+        "phpunit/phpunit": "^9.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rinvex\\Subscriptions\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rinvex\\Subscriptions\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rinvex\\Subscriptions\\Providers\\SubscriptionsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

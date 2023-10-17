@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-final class CreateReactablesTable extends Migration
+return new class extends Migration
 {
     public function up(): void
     {
@@ -22,4 +22,4 @@ final class CreateReactablesTable extends Migration
     {
         Schema::dropIfExists('reactables');
     }
-}
+};
