@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlanSubscriptionsTable extends Migration
+final class CreatePlanSubscriptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreatePlanSubscriptionsTable extends Migration
      */
     public function up(): void
     {
-        Schema::create(config('rinvex.subscriptions.tables.plan_subscriptions'), function (Blueprint $table) {
+        Schema::create(config('rinvex.subscriptions.tables.plan_subscriptions'), function (Blueprint $table): void {
             $table->increments('id');
             $table->uuid()->nullable();
             $table->morphs('subscriber');
@@ -34,7 +34,7 @@ class CreatePlanSubscriptionsTable extends Migration
             // Indexes
             $table->unique('slug');
             $table->foreign('plan_id')->references('id')->on(config('rinvex.subscriptions.tables.plans'))
-                  ->onDelete('cascade')->onUpdate('cascade');
+                ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

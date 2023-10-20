@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Watson\Validating\Injectors;
 
 trait UniqueWithInjector
@@ -22,6 +24,6 @@ trait UniqueWithInjector
             }
         }
 
-        return 'unique_with:' . implode(',', $parameters);
+        return 'unique_with:'.implode(',', $parameters);
     }
 }

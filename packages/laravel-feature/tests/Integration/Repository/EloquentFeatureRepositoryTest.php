@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Tests\Integration\Repository;
 
 use Illuminate\Database\Eloquent\Model;
@@ -11,13 +13,14 @@ use LaravelFeature\Featurable\FeaturableInterface;
 use LaravelFeature\Repository\EloquentFeatureRepository;
 use LaravelFeature\Tests\TestCase;
 use LaravelFeature\Model\Feature as FeatureModel;
+use Schema;
 
-class EloquentFeatureRepositoryTest extends TestCase
+final class EloquentFeatureRepositoryTest extends TestCase
 {
     /** @var EloquentFeatureRepository */
     private $repository;
 
-    public function setUp() : void
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -27,7 +30,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests the repository save operation.
      */
-    public function testSave()
+    public function testSave(): void
     {
         $feature = Feature::fromNameAndStatus('my.feature', true);
 
@@ -42,7 +45,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests that the save operation throws an exception if something goes wrong.
      */
-    public function testSaveThrowsExceptionOnError()
+    public function testSaveThrowsExceptionOnError(): void
     {
         $feature = Feature::fromNameAndStatus(null, true);
 
@@ -54,7 +57,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests that the removal operation goes well.
      */
-    public function testRemove()
+    public function testRemove(): void
     {
         $this->addTestFeature();
 
@@ -70,7 +73,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests the removal operation throws an exception if the feature is not found.
      */
-    public function testRemoveThrowsErrorOnFeatureNotFound()
+    public function testRemoveThrowsErrorOnFeatureNotFound(): void
     {
         $this->addTestFeature();
 
@@ -85,7 +88,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests a feature is found.
      */
-    public function testFindByName()
+    public function testFindByName(): void
     {
         $this->addTestFeature();
 
@@ -98,7 +101,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests an exception is thrown if the feature is not found.
      */
-    public function testFindByNameThrowsErrorOnFeatureNotFound()
+    public function testFindByNameThrowsErrorOnFeatureNotFound(): void
     {
         $this->addTestFeature();
 
@@ -111,7 +114,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests the enable operation for a specific FeaturableInterface entity.
      */
-    public function testEnableFor()
+    public function testEnableFor(): void
     {
         $this->createTestEntityTable();
 
@@ -132,7 +135,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests the enable operation throws an error if the feature is not found.
      */
-    public function testEnableForThrowsErrorOnFeatureNotFound()
+    public function testEnableForThrowsErrorOnFeatureNotFound(): void
     {
         $this->createTestEntityTable();
 
@@ -149,7 +152,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests nothing happens if the feature is already enabled globally.
      */
-    public function testEnableForDoesNothingIfFeatureIsGloballyEnabled()
+    public function testEnableForDoesNothingIfFeatureIsGloballyEnabled(): void
     {
         $this->createTestEntityTable();
 
@@ -170,7 +173,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests the disable of a feature for a specific FeaturableInterface entity.
      */
-    public function testDisableFor()
+    public function testDisableFor(): void
     {
         $this->createTestEntityTable();
 
@@ -192,7 +195,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests the disable operation throws an error if the feature is not found.
      */
-    public function testDisableForThrowsErrorOnFeatureNotFound()
+    public function testDisableForThrowsErrorOnFeatureNotFound(): void
     {
         $this->createTestEntityTable();
 
@@ -210,7 +213,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests nothing happens if the feature is already enabled globally.
      */
-    public function testDisableForDoesNothingIfFeatureIsGloballyEnabled()
+    public function testDisableForDoesNothingIfFeatureIsGloballyEnabled(): void
     {
         $this->createTestEntityTable();
 
@@ -231,7 +234,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests the enable status of a feature for a specific FeaturableInterface entity.
      */
-    public function testIsEnabledFor()
+    public function testIsEnabledFor(): void
     {
         $this->createTestEntityTable();
 
@@ -249,7 +252,7 @@ class EloquentFeatureRepositoryTest extends TestCase
     /**
      * Tests an exception is thrown if the feature is not found.
      */
-    public function testIsEnabledForThrowsExceptionOnFeatureNotFound()
+    public function testIsEnabledForThrowsExceptionOnFeatureNotFound(): void
     {
         $this->createTestEntityTable();
 
@@ -265,7 +268,7 @@ class EloquentFeatureRepositoryTest extends TestCase
 
     private function addTestFeature($name = 'test.feature', $isEnabled = false)
     {
-        $feature = new FeatureModel;
+        $feature = new FeatureModel();
 
         $feature->name = $name;
         $feature->is_enabled = $isEnabled;
@@ -283,28 +286,28 @@ class EloquentFeatureRepositoryTest extends TestCase
         return $entity;
     }
 
-    private function createTestEntityTable()
+    private function createTestEntityTable(): void
     {
-        \Schema::create('featurabletestentities', function (Blueprint $table) {
+        Schema::create('featurabletestentities', function (Blueprint $table): void {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
         });
     }
 
-    private function dropTestEntityTable()
+    private function dropTestEntityTable(): void
     {
-        \Schema::drop('featurabletestentities');
+        Schema::drop('featurabletestentities');
     }
 
-    private function enableTestFeatureOn($featurable)
+    private function enableTestFeatureOn($featurable): void
     {
         $feature = \LaravelFeature\Model\Feature::first();
         $featurable->features()->attach($feature->id);
     }
 }
 
-class FeaturableTestEntity extends Model implements FeaturableInterface
+final class FeaturableTestEntity extends Model implements FeaturableInterface
 {
     use Featurable;
     protected $table = 'featurabletestentities';

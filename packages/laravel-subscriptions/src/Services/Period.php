@@ -6,35 +6,35 @@ namespace Rinvex\Subscriptions\Services;
 
 use Carbon\Carbon;
 
-class Period
+final class Period
 {
     /**
      * Starting date of the period.
      *
      * @var string
      */
-    protected $start;
+    private $start;
 
     /**
      * Ending date of the period.
      *
      * @var string
      */
-    protected $end;
+    private $end;
 
     /**
      * Interval.
      *
      * @var string
      */
-    protected $interval;
+    private $interval;
 
     /**
      * Interval count.
      *
      * @var int
      */
-    protected $period = 1;
+    private $period = 1;
 
     /**
      * Create a new Period instance.
@@ -51,7 +51,7 @@ class Period
 
         if (empty($start)) {
             $this->start = Carbon::now();
-        } elseif (! $start instanceof Carbon) {
+        } elseif ( ! $start instanceof Carbon) {
             $this->start = new Carbon($start);
         } else {
             $this->start = $start;

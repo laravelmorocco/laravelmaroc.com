@@ -7,7 +7,7 @@ namespace Rinvex\Support\Validators;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
-class UniqueWithValidator
+final class UniqueWithValidator
 {
     public function validateUniqueWith($attribute, $value, $parameters, $validator)
     {
@@ -22,7 +22,7 @@ class UniqueWithValidator
             $presenceVerifier->setConnection($ruleParser->getConnection());
         }
 
-        return $presenceVerifier->getCount($ruleParser->getTable(), $ruleParser->getPrimaryField(), $ruleParser->getPrimaryValue(), $ruleParser->getIgnoreValue(), $ruleParser->getIgnoreColumn(), $ruleParser->getAdditionalFields()) === 0;
+        return 0 === $presenceVerifier->getCount($ruleParser->getTable(), $ruleParser->getPrimaryField(), $ruleParser->getPrimaryValue(), $ruleParser->getIgnoreValue(), $ruleParser->getIgnoreColumn(), $ruleParser->getAdditionalFields());
     }
 
     public function replaceUniqueWith($message, $attribute, $rule, $parameters, $validator)
@@ -39,9 +39,7 @@ class UniqueWithValidator
         }
 
         // Check if translator has custom validation attributes for the fields
-        $fields = array_map(function ($field) use ($customAttributes) {
-            return Arr::get($customAttributes, $field) ?: str_replace('_', ' ', Str::snake($field));
-        }, $fields);
+        $fields = array_map(fn ($field) => Arr::get($customAttributes, $field) ?: str_replace('_', ' ', Str::snake($field)), $fields);
 
         return str_replace(':fields', implode(', ', $fields), $message);
     }

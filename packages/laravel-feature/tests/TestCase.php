@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Tests;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+final class TestCase extends \Orchestra\Testbench\TestCase
 {
-    public function setUp() : void
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -18,9 +20,9 @@ class TestCase extends \Orchestra\Testbench\TestCase
      *
      * @return void
      */
-    protected function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp($app): void
     {
-        $app['config']->set('features.scanned_paths', [ __DIR__ . '/Integration/Service/test_folder' ]);
+        $app['config']->set('features.scanned_paths', [__DIR__.'/Integration/Service/test_folder']);
 
         $app['config']->set('database.default', 'testing');
         $app['config']->set('database.connections.testing', [

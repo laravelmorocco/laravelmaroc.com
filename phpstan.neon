@@ -13,9 +13,15 @@ parameters:
         - app/Http/Controllers/OAuthController.php
         - app/Http/Controllers/Api/Auth/LoginController.php
         - app/Markdown/MarkdownHelper.php
+
+        - app/Traits
+        - app/Spotlight
+        - app/Models
+        - app/Mail
+        - app/Listeners
+        - app/Http
     scanDirectories:
         - ./helpers
-    ignoreErrors:
-        - "#^Cannot access property \\$transaction on array\\|object\\.$#"
+
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false

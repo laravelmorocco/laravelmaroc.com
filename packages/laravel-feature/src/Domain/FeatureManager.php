@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Domain;
 
 use LaravelFeature\Domain\Model\Feature;
 use LaravelFeature\Domain\Repository\FeatureRepositoryInterface;
 use LaravelFeature\Featurable\FeaturableInterface;
 
-class FeatureManager
+final class FeatureManager
 {
     /** @var FeatureRepositoryInterface */
     private $repository;
@@ -20,19 +22,19 @@ class FeatureManager
         $this->repository = $repository;
     }
 
-    public function add($featureName, $isEnabled)
+    public function add($featureName, $isEnabled): void
     {
         $feature = Feature::fromNameAndStatus($featureName, $isEnabled);
         $this->repository->save($feature);
     }
 
-    public function remove($featureName)
+    public function remove($featureName): void
     {
         $feature = $this->repository->findByName($featureName);
         $this->repository->remove($feature);
     }
 
-    public function rename($featureOldName, $featureNewName)
+    public function rename($featureOldName, $featureNewName): void
     {
         /** @var Feature $feature */
         $feature = $this->repository->findByName($featureOldName);
@@ -41,7 +43,7 @@ class FeatureManager
         $this->repository->save($feature);
     }
 
-    public function enable($featureName)
+    public function enable($featureName): void
     {
         /** @var Feature $feature */
         $feature = $this->repository->findByName($featureName);
@@ -51,7 +53,7 @@ class FeatureManager
         $this->repository->save($feature);
     }
 
-    public function disable($featureName)
+    public function disable($featureName): void
     {
         /** @var Feature $feature */
         $feature = $this->repository->findByName($featureName);
@@ -68,12 +70,12 @@ class FeatureManager
         return $feature->isEnabled();
     }
 
-    public function enableFor($featureName, FeaturableInterface $featurable)
+    public function enableFor($featureName, FeaturableInterface $featurable): void
     {
         $this->repository->enableFor($featureName, $featurable);
     }
 
-    public function disableFor($featureName, FeaturableInterface $featurable)
+    public function disableFor($featureName, FeaturableInterface $featurable): void
     {
         $this->repository->disableFor($featureName, $featurable);
     }

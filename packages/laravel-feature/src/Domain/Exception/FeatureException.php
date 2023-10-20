@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Domain\Exception;
 
-class FeatureException extends \Exception
+use Exception;
+
+final class FeatureException extends Exception
 {
 }

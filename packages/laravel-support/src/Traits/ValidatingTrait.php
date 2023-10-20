@@ -6,11 +6,12 @@ namespace Rinvex\Support\Traits;
 
 use Watson\Validating\Injectors\UniqueWithInjector;
 use Watson\Validating\ValidatingTrait as BaseValidatingTrait;
+use Closure;
 
 trait ValidatingTrait
 {
-    use UniqueWithInjector;
     use BaseValidatingTrait;
+    use UniqueWithInjector;
 
     /**
      * Merge new validation rules with existing validation rules on the model.
@@ -29,11 +30,11 @@ trait ValidatingTrait
     /**
      * Register a validating event with the dispatcher.
      *
-     * @param \Closure|string $callback
+     * @param Closure|string $callback
      *
      * @return void
      */
-    public static function validating($callback)
+    public static function validating($callback): void
     {
         static::registerModelEvent('validating', $callback);
     }
@@ -41,11 +42,11 @@ trait ValidatingTrait
     /**
      * Register a validated event with the dispatcher.
      *
-     * @param \Closure|string $callback
+     * @param Closure|string $callback
      *
      * @return void
      */
-    public static function validated($callback)
+    public static function validated($callback): void
     {
         static::registerModelEvent('validated', $callback);
     }

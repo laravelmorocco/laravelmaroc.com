@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Watson\Validating\Tests\Injectors;
 
 use Mockery;
 use Watson\Validating\Tests\TestCase;
 
-class UniqueWithInjectorTest extends TestCase
+final class UniqueWithInjectorTest extends TestCase
 {
     public $trait;
 
@@ -14,7 +16,7 @@ class UniqueWithInjectorTest extends TestCase
         $this->trait = Mockery::mock(UniqueWithValidatingStub::class)->makePartial();
     }
 
-    public function testUpdateRulesUniquesUniqueWithWithUniquesInfersAttributes()
+    public function testUpdateRulesUniquesUniqueWithWithUniquesInfersAttributes(): void
     {
         $this->trait->exists = true;
 
@@ -29,7 +31,7 @@ class UniqueWithInjectorTest extends TestCase
         $this->assertEquals(['first_name' => ['unique_with:users,last_name,1']], $result);
     }
 
-    public function testUpdateRulesUniquesUniqueWithDoesNotOverrideProvidedParameters()
+    public function testUpdateRulesUniquesUniqueWithDoesNotOverrideProvidedParameters(): void
     {
         $this->trait->exists = true;
 
@@ -45,10 +47,10 @@ class UniqueWithInjectorTest extends TestCase
     }
 }
 
-class UniqueWithValidatingStub extends \Illuminate\Database\Eloquent\Model
+final class UniqueWithValidatingStub extends \Illuminate\Database\Eloquent\Model
 {
-    use \Watson\Validating\ValidatingTrait;
     use \Watson\Validating\Injectors\UniqueWithInjector;
+    use \Watson\Validating\ValidatingTrait;
 
     public function getKey()
     {

@@ -1,17 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Tests\Integration\Service;
 
 use LaravelFeature\Tests\TestCase;
 use LaravelFeature\Domain\FeatureManager;
 use LaravelFeature\Service\FeaturesViewScanner;
 
-class FeaturesViewScannerTest extends TestCase
+final class FeaturesViewScannerTest extends TestCase
 {
     /** @var FeaturesViewScanner */
     private $service;
 
-    public function setUp() : void
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -26,7 +28,7 @@ class FeaturesViewScannerTest extends TestCase
     /**
      * Tests the service is able to find features.
      */
-    public function testServiceFindsFeaturesRight()
+    public function testServiceFindsFeaturesRight(): void
     {
         $foundDirectives = $this->service->scan();
 

@@ -8,7 +8,7 @@ use App\Events\ArticleWasSubmittedForApproval;
 use App\Notifications\ArticleSubmitted;
 use Illuminate\Notifications\AnonymousNotifiable;
 
-final readonly class SendNewArticleNotification
+final class SendNewArticleNotification
 {
     public function __construct(private AnonymousNotifiable $notifiable)
     {

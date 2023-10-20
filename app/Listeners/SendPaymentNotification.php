@@ -8,7 +8,7 @@ use App\Events\SponsoringPaymentInitialize;
 use App\Notifications\NewSponsorPaymentNotification;
 use Illuminate\Notifications\AnonymousNotifiable;
 
-final readonly class SendPaymentNotification
+final class SendPaymentNotification
 {
     public function __construct(private AnonymousNotifiable $notifiable)
     {

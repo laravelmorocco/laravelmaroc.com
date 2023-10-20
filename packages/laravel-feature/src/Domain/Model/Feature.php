@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Domain\Model;
 
-class Feature
+final class Feature
 {
     private $name;
     private $isEnabled;
@@ -35,17 +37,17 @@ class Feature
         return $this->isEnabled;
     }
 
-    public function setNewName($newName)
+    public function setNewName($newName): void
     {
         $this->name = $newName;
     }
 
-    public function enable()
+    public function enable(): void
     {
         $this->isEnabled = true;
     }
 
-    public function disable()
+    public function disable(): void
     {
         $this->isEnabled = false;
     }

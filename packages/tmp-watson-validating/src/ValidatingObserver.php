@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Watson\Validating;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Event;
-use Watson\Validating\ValidationException;
 
-class ValidatingObserver
+final class ValidatingObserver
 {
     /**
      * Register the validation event for saving the model. Saving validation
@@ -38,17 +39,17 @@ class ValidatingObserver
      * @param  string $event
      * @return boolean
      */
-    protected function performValidation(Model $model, $event)
+    private function performValidation(Model $model, $event)
     {
         // If the model has validating enabled, perform it.
         if ($model->getValidating()) {
             // Fire the namespaced validating event and prevent validation
             // if it returns a value.
-            if ($this->fireValidatingEvent($model, $event) !== null) {
+            if (null !== $this->fireValidatingEvent($model, $event)) {
                 return;
             }
 
-            if ($model->isValid() === false) {
+            if (false === $model->isValid()) {
                 // Fire the validating failed event.
                 $this->fireValidatedEvent($model, 'failed');
 
@@ -72,7 +73,7 @@ class ValidatingObserver
      * @param  string $event
      * @return mixed
      */
-    protected function fireValidatingEvent(Model $model, $event)
+    private function fireValidatingEvent(Model $model, $event)
     {
         return Event::until("eloquent.validating: ".get_class($model), [$model, $event]);
     }
@@ -84,7 +85,7 @@ class ValidatingObserver
      * @param  string $status
      * @return void
      */
-    protected function fireValidatedEvent(Model $model, $status)
+    private function fireValidatedEvent(Model $model, $status): void
     {
         Event::dispatch("eloquent.validated: ".get_class($model), [$model, $status]);
     }

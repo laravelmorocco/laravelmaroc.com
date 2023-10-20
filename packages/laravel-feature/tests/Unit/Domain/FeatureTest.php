@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelFeature\Tests\Domain;
 
 use LaravelFeature\Domain\Model\Feature;
 use PHPUnit\Framework\TestCase;
 
-class FeatureTest extends TestCase
+final class FeatureTest extends TestCase
 {
     /**
      * Tests a simple feature object creation.
      */
-    public function testFeatureCreation()
+    public function testFeatureCreation(): void
     {
         $feature = Feature::fromNameAndStatus('my.feature', false);
 
@@ -21,7 +23,7 @@ class FeatureTest extends TestCase
     /**
      * Tests the name change for a feature.
      */
-    public function testNameChange()
+    public function testNameChange(): void
     {
         $feature = Feature::fromNameAndStatus('old.name', false);
         $feature->setNewName('new.name');
@@ -32,7 +34,7 @@ class FeatureTest extends TestCase
     /**
      * Tests the enable operation of a feature.
      */
-    public function testEnable()
+    public function testEnable(): void
     {
         $feature = Feature::fromNameAndStatus('my.feature', false);
 
@@ -44,7 +46,7 @@ class FeatureTest extends TestCase
     /**
      * Tests the disable operation of a feature.
      */
-    public function testDisable()
+    public function testDisable(): void
     {
         $feature = Feature::fromNameAndStatus('my.feature', true);
 

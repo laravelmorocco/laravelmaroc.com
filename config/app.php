@@ -169,7 +169,8 @@ return [
          */
         App\Providers\FortifyServiceProvider::class,
         //LaravelFeature\Provider\FeatureServiceProvider::class,
-
+        \Rinvex\Subscriptions\Providers\SubscriptionsServiceProvider::class,
+        \LaravelFeature\Provider\FeatureServiceProvider::class,
         /*
          * Application Service Providers...
          */

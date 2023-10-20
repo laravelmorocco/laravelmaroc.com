@@ -20,9 +20,9 @@ trait ConsoleTools
      *
      * @return void
      */
-    protected function loadViewsFrom($path, $namespace)
+    protected function loadViewsFrom($path, $namespace): void
     {
-        $this->callAfterResolving('view', function ($view) use ($path, $namespace) {
+        $this->callAfterResolving('view', function ($view) use ($path, $namespace): void {
             $view->prependNamespace($namespace, $path);
 
             if (isset($this->app->config['view']['paths']) && is_array($this->app->config['view']['paths'])) {
@@ -58,7 +58,7 @@ trait ConsoleTools
 
             $migrations = collect($stubs)->flatMap(function ($migration) use ($existing, $namespace) {
                 $sequence = mb_substr(basename($migration), 0, 17);
-                $match = collect($existing)->first(fn ($item, $key) => mb_strpos($item, str_replace($sequence, '', basename($migration))) !== false);
+                $match = collect($existing)->first(fn ($item, $key) => false !== mb_strpos($item, str_replace($sequence, '', basename($migration))));
 
                 return [$migration => $this->app->databasePath('migrations/'.$namespace.'/'.($match ? basename($match) : date('Y_m_d_His', time() + mb_substr($sequence, -6)).str_replace($sequence, '', basename($migration))))];
             })->toArray();

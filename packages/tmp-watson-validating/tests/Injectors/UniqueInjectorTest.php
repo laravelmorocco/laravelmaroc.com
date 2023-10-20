@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Watson\Validating\Tests\Injectors;
 
 use Mockery;
 use Watson\Validating\Tests\TestCase;
 
-class UniqueInjectorTest extends TestCase
+final class UniqueInjectorTest extends TestCase
 {
     public $trait;
 
@@ -14,7 +16,7 @@ class UniqueInjectorTest extends TestCase
         $this->trait = Mockery::mock(UniqueValidatingStub::class)->makePartial();
     }
 
-    public function testUpdateRulesUniquesWithoutUniques()
+    public function testUpdateRulesUniquesWithoutUniques(): void
     {
         $this->trait->setRules(['user_id' => ['required']]);
 
@@ -25,7 +27,7 @@ class UniqueInjectorTest extends TestCase
         $this->assertEquals(['user_id' => ['required']], $result);
     }
 
-    public function testUpdateRulesUniquesWithUniquesInfersAttributes()
+    public function testUpdateRulesUniquesWithUniquesInfersAttributes(): void
     {
         $this->trait->exists = true;
 
@@ -40,7 +42,7 @@ class UniqueInjectorTest extends TestCase
         $this->assertEquals(['user_id' => ['unique:sqlite.users,user_id,1,id']], $result);
     }
 
-    public function testGetPreparedRulesUniques()
+    public function testGetPreparedRulesUniques(): void
     {
         $this->trait->exists = true;
 
@@ -53,7 +55,7 @@ class UniqueInjectorTest extends TestCase
         $this->assertEquals(['user_id' => ['unique:sqlite.users,user_id,1,id']], $result);
     }
 
-    public function testUpdateRulesUniquesWithUniquesAndAdditionalWhereClauseInfersAttributes()
+    public function testUpdateRulesUniquesWithUniquesAndAdditionalWhereClauseInfersAttributes(): void
     {
         $this->trait->exists = true;
 
@@ -68,7 +70,7 @@ class UniqueInjectorTest extends TestCase
         $this->assertEquals(['user_id' => ['unique:sqlite.users,user_id,1,id,username,test']], $result);
     }
 
-    public function testUpdateRulesUniquesWithUniquesAndAdditionalWhereClauseInfersAttributesMaintainingNULLValue()
+    public function testUpdateRulesUniquesWithUniquesAndAdditionalWhereClauseInfersAttributesMaintainingNULLValue(): void
     {
         $this->trait->exists = true;
 
@@ -83,7 +85,7 @@ class UniqueInjectorTest extends TestCase
         $this->assertEquals(['user_id' => ['unique:sqlite.users,user_id,1,id,deleted,NULL']], $result);
     }
 
-    public function testUpdateRulesUniquesWithNonPersistedModelInfersAttributes()
+    public function testUpdateRulesUniquesWithNonPersistedModelInfersAttributes(): void
     {
         $this->trait->shouldReceive('getTable')->andReturn('users');
 
@@ -96,7 +98,7 @@ class UniqueInjectorTest extends TestCase
         $this->assertEquals(['user_id' => ['unique:sqlite.users,user_id']], $result);
     }
 
-    public function testUpdateRulesUniquesWorksWithMultipleUniques()
+    public function testUpdateRulesUniquesWorksWithMultipleUniques(): void
     {
         $this->trait->shouldReceive('getTable')->andReturn('users');
 
@@ -115,7 +117,7 @@ class UniqueInjectorTest extends TestCase
         ], $result);
     }
 
-    public function testUpdateRulesUniquesDoesNotOverrideProvidedParameters()
+    public function testUpdateRulesUniquesDoesNotOverrideProvidedParameters(): void
     {
         $this->trait->setRules(['users' => 'unique:foo,bar,5,bat']);
 
@@ -127,7 +129,7 @@ class UniqueInjectorTest extends TestCase
     }
 }
 
-class UniqueValidatingStub extends \Illuminate\Database\Eloquent\Model
+final class UniqueValidatingStub extends \Illuminate\Database\Eloquent\Model
 {
     use \Watson\Validating\ValidatingTrait;
 
