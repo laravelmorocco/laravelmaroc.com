@@ -63,30 +63,3 @@ const share = function () {
 };
 
 share();
-
-const addAffiliateLink = function () {
-  const articleContent = document.getElementById('content');
-
-  if (!articleContent) {
-    return;
-  }
-
-  const pTags = document.getElementById('content').querySelectorAll('p');
-  let i = 0;
-  pTags.forEach((p) => {
-    if (i === 7) {
-      const a = document.createElement('a');
-      a.setAttribute('href', 'https://www.digitalocean.com/?refcode=d6dca1691fb4&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge');
-      a.setAttribute('target', '_blank');
-      a.classList.add('relative', 'affiliate', 'block', 'w-full', 'mb-6', 'overflow-hidden', 'rounded-lg', 'cursor-pointer');
-      a.innerHTML = `
-           <img src="/images/affiliate-link.jpg" class="w-full rounded-t-lg" alt="Affiliate link" />
-           <span class="block w-full h-auto px-3 py-2 font-bold text-center text-white uppercase text-xs bg-gradient-to-r from-green-500 via-indigo-600 to-blue-500">Obtenez le code gratuit en créant votre serveur 🚀</span>
-       `;
-      p.parentNode.insertBefore(a, p.nextSibling);
-    }
-    i++;
-  });
-};
-
-addAffiliateLink();
