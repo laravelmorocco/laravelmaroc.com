@@ -28,15 +28,15 @@ jobs:
       #- name: Install Composer dependencies
       #run: composer install --prefer-dist --no-interaction
 
-      - name: Use Node.js 16
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
+      # - name: Use Node.js 16
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: "16"
 
-      - name: 🔨 Build Project
-        run: |
-          npm install
-          npm run build
+      # - name: 🔨 Build Project
+      #   run: |
+      #     npm install
+      #     npm run build
 
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
